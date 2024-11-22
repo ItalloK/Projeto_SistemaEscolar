@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Q2aaWnFRlWo=",
+  "dgSpecHash": "BEHSaoTXq4I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\Escola.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\Escola.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Italo\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.119\\stub.system.data.sqlite.core.netstandard.1.0.119.nupkg.sha512",
+    "C:\\Users\\Italo\\.nuget\\packages\\system.data.sqlite.core\\1.0.119\\system.data.sqlite.core.1.0.119.nupkg.sha512"
+  ],
   "logs": []
 }

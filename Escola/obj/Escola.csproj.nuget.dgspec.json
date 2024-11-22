@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\Escola.csproj": {}
+    "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\Escola.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\Escola.csproj": {
+    "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\Escola.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\Escola.csproj",
+        "projectUniqueName": "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\Escola.csproj",
         "projectName": "Escola",
-        "projectPath": "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\Escola.csproj",
+        "projectPath": "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\Escola.csproj",
         "packagesPath": "C:\\Users\\Italo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Italo\\Desktop\\Nova pasta\\Escola\\obj\\",
+        "outputPath": "E:\\Programação\\Projetos\\Sistema Escolar\\Escola\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,12 @@
       "frameworks": {
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
+          "dependencies": {
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.119, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
