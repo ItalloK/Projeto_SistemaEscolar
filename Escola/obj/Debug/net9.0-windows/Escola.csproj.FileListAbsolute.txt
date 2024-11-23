@@ -24,3 +24,5 @@ E:\Programação\Projetos\Sistema Escolar\Escola\bin\Debug\net9.0-windows\runtim
 E:\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.csproj.AssemblyReference.cache
 E:\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Configuracoes.resources
 E:\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.csproj.Up2Date
+E:\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.GerenciarAlunos.resources
+E:\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.GerenciarProfessores.resources

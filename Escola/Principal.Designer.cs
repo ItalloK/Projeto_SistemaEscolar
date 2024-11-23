@@ -100,6 +100,7 @@
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
+            MinimumSize = new Size(816, 448);
             Name = "Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Escola: NomeDaEscola";
