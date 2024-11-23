@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:configuracoes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|e:\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\global.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,11 +30,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "Configuracoes.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Configuracoes.cs",
               "RelativeDocumentMoniker": "Configuracoes.cs",
@@ -55,24 +55,22 @@
               "RelativeToolTip": "Global.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABQAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T22:19:01.546Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-22T22:19:01.546Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Configuracoes.cs [Projeto]",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Configuracoes.cs",
               "RelativeDocumentMoniker": "Configuracoes.cs",
               "ToolTip": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Configuracoes.cs [Projeto]",
               "RelativeToolTip": "Configuracoes.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T22:13:50.52Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2024-11-22T22:13:50.52Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Principal.cs",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Principal.cs",
               "RelativeDocumentMoniker": "Principal.cs",
@@ -85,7 +83,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Principal.cs [Projeto]",
               "DocumentMoniker": "E:\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Principal.cs",
               "RelativeDocumentMoniker": "Principal.cs",
