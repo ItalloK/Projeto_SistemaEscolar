@@ -266,9 +266,9 @@
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(400, 57);
             label7.Name = "label7";
-            label7.Size = new Size(95, 17);
+            label7.Size = new Size(189, 17);
             label7.TabIndex = 9999;
-            label7.Text = "Nacionalidade:";
+            label7.Text = "Cidade/Estado de Nascimento:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -278,9 +278,9 @@
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(3, 57);
             label6.Name = "label6";
-            label6.Size = new Size(87, 17);
+            label6.Size = new Size(126, 17);
             label6.TabIndex = 9999;
-            label6.Text = "Naturalidade:";
+            label6.Text = "País de Nascimento:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // mtb_CpfAlunoCad

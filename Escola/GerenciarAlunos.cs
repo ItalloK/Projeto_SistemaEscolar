@@ -80,7 +80,7 @@ namespace Escola
                 MessageBox.Show("Preencha todos os dados para poder cadastrar o ALUNO.");
                 return;
             }            
-
+            
             SalvarFoto(cpf);
         }
 
