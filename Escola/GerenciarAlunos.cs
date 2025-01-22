@@ -33,6 +33,9 @@ namespace Escola
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
             AtivarPainel(Panel_CadAluno);
+            cb_naturalidade.SelectedIndex = 0;
+            cb_CorAlunoCad.SelectedIndex = 0;
+            cb_SexoAlunoCad.SelectedIndex = 0;
         }
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
@@ -67,7 +70,7 @@ namespace Escola
             mtb_DataNascCad.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string dataNasc = mtb_DataNascCad.Text;
             string nome = tb_NomeAlunoCad.Text;
-            string naturalidade = tb_NaturalidadeAlunoCad.Text;
+            string naturalidade = cb_naturalidade.Text;
             string nacionalidade = tb_NacionalidadeAlunoCad.Text;
             string endereco = tb_EnderecoAlunoCad.Text;
             string sexo = cb_SexoAlunoCad.Text;

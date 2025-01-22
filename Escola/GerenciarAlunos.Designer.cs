@@ -37,11 +37,11 @@
             tb_EnderecoAlunoCad = new TextBox();
             label10 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
+            cb_naturalidade = new ComboBox();
             cb_CorAlunoCad = new ComboBox();
             label9 = new Label();
             label8 = new Label();
             tb_NacionalidadeAlunoCad = new TextBox();
-            tb_NaturalidadeAlunoCad = new TextBox();
             label7 = new Label();
             label6 = new Label();
             mtb_CpfAlunoCad = new MaskedTextBox();
@@ -180,11 +180,11 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(cb_naturalidade, 0, 3);
             tableLayoutPanel5.Controls.Add(cb_CorAlunoCad, 1, 5);
             tableLayoutPanel5.Controls.Add(label9, 1, 4);
             tableLayoutPanel5.Controls.Add(label8, 0, 4);
             tableLayoutPanel5.Controls.Add(tb_NacionalidadeAlunoCad, 1, 3);
-            tableLayoutPanel5.Controls.Add(tb_NaturalidadeAlunoCad, 0, 3);
             tableLayoutPanel5.Controls.Add(label7, 1, 2);
             tableLayoutPanel5.Controls.Add(label6, 0, 2);
             tableLayoutPanel5.Controls.Add(mtb_CpfAlunoCad, 1, 1);
@@ -204,6 +204,18 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel5.Size = new Size(794, 163);
             tableLayoutPanel5.TabIndex = 11;
+            // 
+            // cb_naturalidade
+            // 
+            cb_naturalidade.Dock = DockStyle.Fill;
+            cb_naturalidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_naturalidade.Font = new Font("Segoe UI", 9.75F);
+            cb_naturalidade.FormattingEnabled = true;
+            cb_naturalidade.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
+            cb_naturalidade.Location = new Point(3, 77);
+            cb_naturalidade.Name = "cb_naturalidade";
+            cb_naturalidade.Size = new Size(391, 25);
+            cb_naturalidade.TabIndex = 10000;
             // 
             // cb_CorAlunoCad
             // 
@@ -249,15 +261,6 @@
             tb_NacionalidadeAlunoCad.Name = "tb_NacionalidadeAlunoCad";
             tb_NacionalidadeAlunoCad.Size = new Size(391, 25);
             tb_NacionalidadeAlunoCad.TabIndex = 5;
-            // 
-            // tb_NaturalidadeAlunoCad
-            // 
-            tb_NaturalidadeAlunoCad.Dock = DockStyle.Fill;
-            tb_NaturalidadeAlunoCad.Font = new Font("Segoe UI", 9.75F);
-            tb_NaturalidadeAlunoCad.Location = new Point(3, 77);
-            tb_NaturalidadeAlunoCad.Name = "tb_NaturalidadeAlunoCad";
-            tb_NaturalidadeAlunoCad.Size = new Size(391, 25);
-            tb_NaturalidadeAlunoCad.TabIndex = 4;
             // 
             // label7
             // 
@@ -641,7 +644,6 @@
         private MaskedTextBox mtb_CpfAlunoCad;
         private Label label5;
         private TextBox tb_NacionalidadeAlunoCad;
-        private TextBox tb_NaturalidadeAlunoCad;
         private TableLayoutPanel tableLayoutPanel7;
         private Label label9;
         private Label label8;
@@ -661,5 +663,6 @@
         private CustomControls.Botoes.ButtonIG btn_CadAlunoGerenciador;
         private TableLayoutPanel tableLayoutPanel8;
         private PictureBox pb_FotoAluno;
+        private ComboBox cb_naturalidade;
     }
 }
