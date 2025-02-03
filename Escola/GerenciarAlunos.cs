@@ -105,11 +105,12 @@ namespace Escola
             try
             {
                 File.Copy(fotoPath, novoCaminho, true);
-                Console.WriteLine("Foto salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Console.WriteLine("Foto salva com sucesso!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao salvar a foto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine($"Erro ao salvar a foto: {ex.Message}");
+                return;
             }
             this.Close();
         }

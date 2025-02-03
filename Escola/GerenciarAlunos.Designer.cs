@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAlunos));
             Panel_CadAluno = new Panel();
             tableLayoutPanel8 = new TableLayoutPanel();
-            pb_FotoAluno = new PictureBox();
             btn_CarregarFoto = new CustomControls.Botoes.ButtonIG();
+            pb_FotoAluno = new PictureBox();
             tableLayoutPanel7 = new TableLayoutPanel();
             tb_EnderecoAlunoCad = new TextBox();
             label10 = new Label();
@@ -92,30 +92,18 @@
             // 
             // tableLayoutPanel8
             // 
-            tableLayoutPanel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel8.ColumnCount = 2;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableLayoutPanel8.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            tableLayoutPanel8.ColumnCount = 1;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel8.Controls.Add(btn_CarregarFoto, 0, 1);
             tableLayoutPanel8.Controls.Add(pb_FotoAluno, 0, 0);
-            tableLayoutPanel8.Controls.Add(btn_CarregarFoto, 1, 0);
-            tableLayoutPanel8.Location = new Point(3, 321);
+            tableLayoutPanel8.Location = new Point(555, 67);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 1;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(303, 96);
+            tableLayoutPanel8.RowCount = 2;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 82F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 18F));
+            tableLayoutPanel8.Size = new Size(239, 296);
             tableLayoutPanel8.TabIndex = 16;
-            // 
-            // pb_FotoAluno
-            // 
-            pb_FotoAluno.BorderStyle = BorderStyle.FixedSingle;
-            pb_FotoAluno.Dock = DockStyle.Fill;
-            pb_FotoAluno.Image = Properties.Resources.person;
-            pb_FotoAluno.Location = new Point(3, 3);
-            pb_FotoAluno.Name = "pb_FotoAluno";
-            pb_FotoAluno.Size = new Size(115, 90);
-            pb_FotoAluno.SizeMode = PictureBoxSizeMode.Zoom;
-            pb_FotoAluno.TabIndex = 1;
-            pb_FotoAluno.TabStop = false;
             // 
             // btn_CarregarFoto
             // 
@@ -129,14 +117,26 @@
             btn_CarregarFoto.FlatStyle = FlatStyle.Flat;
             btn_CarregarFoto.ForeColor = Color.White;
             btn_CarregarFoto.HoverBackgroundColor = Color.Black;
-            btn_CarregarFoto.Location = new Point(124, 62);
+            btn_CarregarFoto.Location = new Point(3, 262);
             btn_CarregarFoto.Name = "btn_CarregarFoto";
-            btn_CarregarFoto.Size = new Size(176, 31);
-            btn_CarregarFoto.TabIndex = 9;
+            btn_CarregarFoto.Size = new Size(233, 31);
+            btn_CarregarFoto.TabIndex = 11;
             btn_CarregarFoto.Text = "Carregar Foto";
             btn_CarregarFoto.TextColor = Color.White;
             btn_CarregarFoto.UseVisualStyleBackColor = false;
             btn_CarregarFoto.Click += btn_CarregarFoto_Click;
+            // 
+            // pb_FotoAluno
+            // 
+            pb_FotoAluno.BorderStyle = BorderStyle.FixedSingle;
+            pb_FotoAluno.Dock = DockStyle.Fill;
+            pb_FotoAluno.Image = Properties.Resources.person;
+            pb_FotoAluno.Location = new Point(3, 3);
+            pb_FotoAluno.Name = "pb_FotoAluno";
+            pb_FotoAluno.Size = new Size(233, 236);
+            pb_FotoAluno.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb_FotoAluno.TabIndex = 1;
+            pb_FotoAluno.TabStop = false;
             // 
             // tableLayoutPanel7
             // 
@@ -148,18 +148,19 @@
             tableLayoutPanel7.Location = new Point(3, 268);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 2;
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel7.Size = new Size(794, 52);
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 80F));
+            tableLayoutPanel7.Size = new Size(546, 95);
             tableLayoutPanel7.TabIndex = 13;
             // 
             // tb_EnderecoAlunoCad
             // 
             tb_EnderecoAlunoCad.Dock = DockStyle.Fill;
             tb_EnderecoAlunoCad.Font = new Font("Segoe UI", 9.75F);
-            tb_EnderecoAlunoCad.Location = new Point(3, 23);
+            tb_EnderecoAlunoCad.Location = new Point(3, 22);
+            tb_EnderecoAlunoCad.Multiline = true;
             tb_EnderecoAlunoCad.Name = "tb_EnderecoAlunoCad";
-            tb_EnderecoAlunoCad.Size = new Size(788, 25);
+            tb_EnderecoAlunoCad.Size = new Size(540, 70);
             tb_EnderecoAlunoCad.TabIndex = 8;
             // 
             // label10
@@ -167,7 +168,7 @@
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(3, 3);
+            label10.Location = new Point(3, 2);
             label10.Name = "label10";
             label10.Size = new Size(66, 17);
             label10.TabIndex = 9999;
@@ -202,7 +203,7 @@
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 13.333333F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(794, 163);
+            tableLayoutPanel5.Size = new Size(546, 163);
             tableLayoutPanel5.TabIndex = 11;
             // 
             // cb_naturalidade
@@ -214,7 +215,7 @@
             cb_naturalidade.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
             cb_naturalidade.Location = new Point(3, 77);
             cb_naturalidade.Name = "cb_naturalidade";
-            cb_naturalidade.Size = new Size(391, 25);
+            cb_naturalidade.Size = new Size(267, 25);
             cb_naturalidade.TabIndex = 10000;
             // 
             // cb_CorAlunoCad
@@ -224,9 +225,9 @@
             cb_CorAlunoCad.Font = new Font("Segoe UI", 9.75F);
             cb_CorAlunoCad.FormattingEnabled = true;
             cb_CorAlunoCad.Items.AddRange(new object[] { "Branca", "Preta", "Parda", "Amarela", "Indígena", "Prefiro não informar" });
-            cb_CorAlunoCad.Location = new Point(400, 130);
+            cb_CorAlunoCad.Location = new Point(276, 130);
             cb_CorAlunoCad.Name = "cb_CorAlunoCad";
-            cb_CorAlunoCad.Size = new Size(391, 25);
+            cb_CorAlunoCad.Size = new Size(267, 25);
             cb_CorAlunoCad.TabIndex = 7;
             // 
             // label9
@@ -234,7 +235,7 @@
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(400, 110);
+            label9.Location = new Point(276, 110);
             label9.Name = "label9";
             label9.Size = new Size(65, 17);
             label9.TabIndex = 9999;
@@ -257,9 +258,9 @@
             // 
             tb_NacionalidadeAlunoCad.Dock = DockStyle.Fill;
             tb_NacionalidadeAlunoCad.Font = new Font("Segoe UI", 9.75F);
-            tb_NacionalidadeAlunoCad.Location = new Point(400, 77);
+            tb_NacionalidadeAlunoCad.Location = new Point(276, 77);
             tb_NacionalidadeAlunoCad.Name = "tb_NacionalidadeAlunoCad";
-            tb_NacionalidadeAlunoCad.Size = new Size(391, 25);
+            tb_NacionalidadeAlunoCad.Size = new Size(267, 25);
             tb_NacionalidadeAlunoCad.TabIndex = 5;
             // 
             // label7
@@ -267,7 +268,7 @@
             label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(400, 57);
+            label7.Location = new Point(276, 57);
             label7.Name = "label7";
             label7.Size = new Size(189, 17);
             label7.TabIndex = 9999;
@@ -290,10 +291,10 @@
             // 
             mtb_CpfAlunoCad.Dock = DockStyle.Fill;
             mtb_CpfAlunoCad.Font = new Font("Segoe UI", 9.75F);
-            mtb_CpfAlunoCad.Location = new Point(400, 24);
+            mtb_CpfAlunoCad.Location = new Point(276, 24);
             mtb_CpfAlunoCad.Mask = "000.000.000-00";
             mtb_CpfAlunoCad.Name = "mtb_CpfAlunoCad";
-            mtb_CpfAlunoCad.Size = new Size(391, 25);
+            mtb_CpfAlunoCad.Size = new Size(267, 25);
             mtb_CpfAlunoCad.TabIndex = 3;
             // 
             // label5
@@ -301,7 +302,7 @@
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(400, 4);
+            label5.Location = new Point(276, 4);
             label5.Name = "label5";
             label5.Size = new Size(89, 17);
             label5.TabIndex = 9999;
@@ -327,7 +328,7 @@
             mtb_DataNascCad.Location = new Point(3, 24);
             mtb_DataNascCad.Mask = "00/00/0000";
             mtb_DataNascCad.Name = "mtb_DataNascCad";
-            mtb_DataNascCad.Size = new Size(391, 25);
+            mtb_DataNascCad.Size = new Size(267, 25);
             mtb_DataNascCad.TabIndex = 2;
             // 
             // cb_SexoAlunoCad
@@ -339,7 +340,7 @@
             cb_SexoAlunoCad.Items.AddRange(new object[] { "Masculino", "Feminino" });
             cb_SexoAlunoCad.Location = new Point(3, 130);
             cb_SexoAlunoCad.Name = "cb_SexoAlunoCad";
-            cb_SexoAlunoCad.Size = new Size(391, 25);
+            cb_SexoAlunoCad.Size = new Size(267, 25);
             cb_SexoAlunoCad.TabIndex = 6;
             // 
             // tableLayoutPanel4
@@ -412,7 +413,7 @@
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel3.Size = new Size(794, 53);
+            tableLayoutPanel3.Size = new Size(546, 53);
             tableLayoutPanel3.TabIndex = 9;
             // 
             // tb_NomeAlunoCad
@@ -421,7 +422,7 @@
             tb_NomeAlunoCad.Font = new Font("Segoe UI", 9.75F);
             tb_NomeAlunoCad.Location = new Point(3, 24);
             tb_NomeAlunoCad.Name = "tb_NomeAlunoCad";
-            tb_NomeAlunoCad.Size = new Size(788, 25);
+            tb_NomeAlunoCad.Size = new Size(540, 25);
             tb_NomeAlunoCad.TabIndex = 1;
             // 
             // label3
@@ -651,7 +652,6 @@
         private ComboBox cb_SexoAlunoCad;
         private TextBox tb_EnderecoAlunoCad;
         private Label label10;
-        private CustomControls.Botoes.ButtonIG btn_CarregarFoto;
         private Panel Panel_Gerenciar;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
@@ -664,5 +664,6 @@
         private TableLayoutPanel tableLayoutPanel8;
         private PictureBox pb_FotoAluno;
         private ComboBox cb_naturalidade;
+        private CustomControls.Botoes.ButtonIG btn_CarregarFoto;
     }
 }
