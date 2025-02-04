@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Escola.Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -83,6 +85,9 @@ namespace Escola
                 MessageBox.Show("Preencha todos os dados para poder cadastrar o ALUNO.");
                 return;
             }
+
+            Aluno aluno = new Aluno(nome, cpf, dataNasc, naturalidade, nacionalidade, sexo, cor, endereco);
+            aluno.CadAluno();
 
             SalvarFoto(cpf);
         }

@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Escola.Classes
 {
-    public class Pessoa
+    public class Responsavel : Pessoa
     {
-        public int id { get; set; }
-        public string nome { get; set; }
-        public string cpf { get; set; }
+        public string telefone { get; set; }
     }
 }
