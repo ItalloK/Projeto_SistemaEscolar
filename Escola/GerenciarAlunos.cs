@@ -76,14 +76,14 @@ namespace Escola
             string sexo = cb_SexoAlunoCad.Text;
             string cor = cb_CorAlunoCad.Text;
 
-            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome) 
+            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
                 || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
                 || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor))
             {
                 MessageBox.Show("Preencha todos os dados para poder cadastrar o ALUNO.");
                 return;
-            }            
-            
+            }
+
             SalvarFoto(cpf);
         }
 
@@ -113,6 +113,28 @@ namespace Escola
                 return;
             }
             this.Close();
+        }
+
+        private void btn_BuscarResponsavel_Click(object sender, EventArgs e)
+        {
+            BuscarResponsavel();
+        }
+
+        private void BuscarResponsavel()
+        {
+            mtb_BuscarCPFResp.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_BuscarCPFResp.Text;
+            if(cpf.Length != 11)
+            {
+                MessageBox.Show("Digite os 11 digitos do CPF do responsavel para poder pesquisar.");
+                return;
+            }
+            PesquisarCpfResponsavel(cpf);
+        }
+
+        private void PesquisarCpfResponsavel(string cpf)
+        {
+            
         }
     }
 }
