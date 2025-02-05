@@ -36,11 +36,11 @@
             tb_NomeAlunoCad = new TextBox();
             label3 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
-            cb_naturalidade = new ComboBox();
+            cb_nacionalidade = new ComboBox();
             cb_CorAlunoCad = new ComboBox();
             label9 = new Label();
             label8 = new Label();
-            tb_NacionalidadeAlunoCad = new TextBox();
+            tb_NaturalidadeAlunoCad = new TextBox();
             label7 = new Label();
             label6 = new Label();
             mtb_CpfAlunoCad = new MaskedTextBox();
@@ -187,11 +187,11 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Controls.Add(cb_naturalidade, 0, 3);
+            tableLayoutPanel5.Controls.Add(cb_nacionalidade, 0, 3);
             tableLayoutPanel5.Controls.Add(cb_CorAlunoCad, 1, 5);
             tableLayoutPanel5.Controls.Add(label9, 1, 4);
             tableLayoutPanel5.Controls.Add(label8, 0, 4);
-            tableLayoutPanel5.Controls.Add(tb_NacionalidadeAlunoCad, 1, 3);
+            tableLayoutPanel5.Controls.Add(tb_NaturalidadeAlunoCad, 1, 3);
             tableLayoutPanel5.Controls.Add(label7, 1, 2);
             tableLayoutPanel5.Controls.Add(label6, 0, 2);
             tableLayoutPanel5.Controls.Add(mtb_CpfAlunoCad, 1, 1);
@@ -212,17 +212,17 @@
             tableLayoutPanel5.Size = new Size(539, 145);
             tableLayoutPanel5.TabIndex = 11;
             // 
-            // cb_naturalidade
+            // cb_nacionalidade
             // 
-            cb_naturalidade.Dock = DockStyle.Fill;
-            cb_naturalidade.DropDownStyle = ComboBoxStyle.DropDownList;
-            cb_naturalidade.Font = new Font("Segoe UI", 9.75F);
-            cb_naturalidade.FormattingEnabled = true;
-            cb_naturalidade.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
-            cb_naturalidade.Location = new Point(3, 70);
-            cb_naturalidade.Name = "cb_naturalidade";
-            cb_naturalidade.Size = new Size(263, 25);
-            cb_naturalidade.TabIndex = 10000;
+            cb_nacionalidade.Dock = DockStyle.Fill;
+            cb_nacionalidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_nacionalidade.Font = new Font("Segoe UI", 9.75F);
+            cb_nacionalidade.FormattingEnabled = true;
+            cb_nacionalidade.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
+            cb_nacionalidade.Location = new Point(3, 70);
+            cb_nacionalidade.Name = "cb_nacionalidade";
+            cb_nacionalidade.Size = new Size(263, 25);
+            cb_nacionalidade.TabIndex = 10000;
             // 
             // cb_CorAlunoCad
             // 
@@ -260,14 +260,14 @@
             label8.Text = "Sexo:";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tb_NacionalidadeAlunoCad
+            // tb_NaturalidadeAlunoCad
             // 
-            tb_NacionalidadeAlunoCad.Dock = DockStyle.Fill;
-            tb_NacionalidadeAlunoCad.Font = new Font("Segoe UI", 9.75F);
-            tb_NacionalidadeAlunoCad.Location = new Point(272, 70);
-            tb_NacionalidadeAlunoCad.Name = "tb_NacionalidadeAlunoCad";
-            tb_NacionalidadeAlunoCad.Size = new Size(264, 25);
-            tb_NacionalidadeAlunoCad.TabIndex = 5;
+            tb_NaturalidadeAlunoCad.Dock = DockStyle.Fill;
+            tb_NaturalidadeAlunoCad.Font = new Font("Segoe UI", 9.75F);
+            tb_NaturalidadeAlunoCad.Location = new Point(272, 70);
+            tb_NaturalidadeAlunoCad.Name = "tb_NaturalidadeAlunoCad";
+            tb_NaturalidadeAlunoCad.Size = new Size(264, 25);
+            tb_NaturalidadeAlunoCad.TabIndex = 5;
             // 
             // label7
             // 
@@ -276,9 +276,9 @@
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(272, 50);
             label7.Name = "label7";
-            label7.Size = new Size(189, 17);
+            label7.Size = new Size(87, 17);
             label7.TabIndex = 9999;
-            label7.Text = "Cidade/Estado de Nascimento:";
+            label7.Text = "Naturalidade:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -288,9 +288,9 @@
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(3, 50);
             label6.Name = "label6";
-            label6.Size = new Size(126, 17);
+            label6.Size = new Size(95, 17);
             label6.TabIndex = 9999;
-            label6.Text = "País de Nascimento:";
+            label6.Text = "Nacionalidade:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // mtb_CpfAlunoCad
@@ -895,7 +895,7 @@
         private Label label6;
         private MaskedTextBox mtb_CpfAlunoCad;
         private Label label5;
-        private TextBox tb_NacionalidadeAlunoCad;
+        private TextBox tb_NaturalidadeAlunoCad;
         private TableLayoutPanel tableLayoutPanel7;
         private Label label9;
         private Label label8;
@@ -914,7 +914,7 @@
         private CustomControls.Botoes.ButtonIG btn_CadAlunoGerenciador;
         private TableLayoutPanel tableLayoutPanel8;
         private PictureBox pb_FotoAluno;
-        private ComboBox cb_naturalidade;
+        private ComboBox cb_nacionalidade;
         private CustomControls.Botoes.ButtonIG btn_CarregarFoto;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel9;

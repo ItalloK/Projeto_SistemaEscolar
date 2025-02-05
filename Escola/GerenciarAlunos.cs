@@ -35,7 +35,7 @@ namespace Escola
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
             AtivarPainel(Panel_CadAluno);
-            cb_naturalidade.SelectedIndex = 0;
+            cb_nacionalidade.SelectedIndex = 0;
             cb_CorAlunoCad.SelectedIndex = 0;
             cb_SexoAlunoCad.SelectedIndex = 0;
         }
@@ -72,8 +72,8 @@ namespace Escola
             mtb_DataNascCad.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string dataNasc = mtb_DataNascCad.Text;
             string nome = tb_NomeAlunoCad.Text;
-            string naturalidade = cb_naturalidade.Text;
-            string nacionalidade = tb_NacionalidadeAlunoCad.Text;
+            string nacionalidade = cb_nacionalidade.Text;
+            string naturalidade = tb_NaturalidadeAlunoCad.Text;
             string endereco = tb_EnderecoAlunoCad.Text;
             string sexo = cb_SexoAlunoCad.Text;
             string cor = cb_CorAlunoCad.Text;
@@ -86,10 +86,43 @@ namespace Escola
                 return;
             }
 
-            Aluno aluno = new Aluno(nome, cpf, dataNasc, naturalidade, nacionalidade, sexo, cor, endereco);
-            aluno.CadAluno();
+            /* por aqui uma verificação para ver se o responsavel ja esta cadastrado, se não tiver
+               utilizar a função de cadastrar o responsavel*/
+
+            if (!CadastrarResponsavel())
+            {
+                return;
+            }
+
+            Aluno aluno = new Aluno(nome, cpf, dataNasc, nacionalidade, naturalidade, sexo, cor, endereco);
+            aluno.CadAluno();            
 
             SalvarFoto(cpf);
+
+            this.Close();
+        }
+
+        private bool CadastrarResponsavel()
+        {
+            string nome = tb_NomeResponsavel.Text;
+            mtb_CpfResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_CpfResponsavel.Text;
+            mtb_TelResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtb_TelResponsavel.Text;
+            if (nome == "" || cpf == "" || telefone == "")
+            {
+                MessageBox.Show("Não é possivel cadastrar um aluno sem responsavel, digite os dados!");
+                return false;
+            }
+            if(cpf.Length != 11)
+            {
+                MessageBox.Show("Digite corretamente os 11 digitos do CPF do responsavel.");
+                return false;
+            }
+
+            Responsavel r = new Responsavel(nome, cpf, telefone);
+            r.CadResponsavel();
+            return true;
         }
 
         private void SalvarFoto(string cpf)
@@ -117,7 +150,6 @@ namespace Escola
                 Console.WriteLine($"Erro ao salvar a foto: {ex.Message}");
                 return;
             }
-            this.Close();
         }
 
         private void btn_BuscarResponsavel_Click(object sender, EventArgs e)
@@ -134,12 +166,9 @@ namespace Escola
                 MessageBox.Show("Digite os 11 digitos do CPF do responsavel para poder pesquisar.");
                 return;
             }
-            PesquisarCpfResponsavel(cpf);
-        }
 
-        private void PesquisarCpfResponsavel(string cpf)
-        {
-            
+
+
         }
     }
 }
