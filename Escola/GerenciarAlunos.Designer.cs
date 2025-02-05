@@ -167,7 +167,7 @@
             tb_NomeAlunoCad.Location = new Point(3, 22);
             tb_NomeAlunoCad.Name = "tb_NomeAlunoCad";
             tb_NomeAlunoCad.Size = new Size(533, 25);
-            tb_NomeAlunoCad.TabIndex = 1;
+            tb_NomeAlunoCad.TabIndex = 0;
             // 
             // label3
             // 
@@ -222,7 +222,7 @@
             cb_nacionalidade.Location = new Point(3, 70);
             cb_nacionalidade.Name = "cb_nacionalidade";
             cb_nacionalidade.Size = new Size(263, 25);
-            cb_nacionalidade.TabIndex = 10000;
+            cb_nacionalidade.TabIndex = 3;
             // 
             // cb_CorAlunoCad
             // 
@@ -234,7 +234,7 @@
             cb_CorAlunoCad.Location = new Point(272, 118);
             cb_CorAlunoCad.Name = "cb_CorAlunoCad";
             cb_CorAlunoCad.Size = new Size(264, 25);
-            cb_CorAlunoCad.TabIndex = 7;
+            cb_CorAlunoCad.TabIndex = 6;
             // 
             // label9
             // 
@@ -267,7 +267,7 @@
             tb_NaturalidadeAlunoCad.Location = new Point(272, 70);
             tb_NaturalidadeAlunoCad.Name = "tb_NaturalidadeAlunoCad";
             tb_NaturalidadeAlunoCad.Size = new Size(264, 25);
-            tb_NaturalidadeAlunoCad.TabIndex = 5;
+            tb_NaturalidadeAlunoCad.TabIndex = 4;
             // 
             // label7
             // 
@@ -301,7 +301,7 @@
             mtb_CpfAlunoCad.Mask = "000.000.000-00";
             mtb_CpfAlunoCad.Name = "mtb_CpfAlunoCad";
             mtb_CpfAlunoCad.Size = new Size(264, 25);
-            mtb_CpfAlunoCad.TabIndex = 3;
+            mtb_CpfAlunoCad.TabIndex = 2;
             // 
             // label5
             // 
@@ -335,7 +335,7 @@
             mtb_DataNascCad.Mask = "00/00/0000";
             mtb_DataNascCad.Name = "mtb_DataNascCad";
             mtb_DataNascCad.Size = new Size(263, 25);
-            mtb_DataNascCad.TabIndex = 2;
+            mtb_DataNascCad.TabIndex = 1;
             // 
             // cb_SexoAlunoCad
             // 
@@ -347,7 +347,7 @@
             cb_SexoAlunoCad.Location = new Point(3, 118);
             cb_SexoAlunoCad.Name = "cb_SexoAlunoCad";
             cb_SexoAlunoCad.Size = new Size(263, 25);
-            cb_SexoAlunoCad.TabIndex = 6;
+            cb_SexoAlunoCad.TabIndex = 5;
             // 
             // tableLayoutPanel7
             // 
@@ -371,7 +371,7 @@
             tb_EnderecoAlunoCad.Location = new Point(3, 22);
             tb_EnderecoAlunoCad.Name = "tb_EnderecoAlunoCad";
             tb_EnderecoAlunoCad.Size = new Size(533, 25);
-            tb_EnderecoAlunoCad.TabIndex = 8;
+            tb_EnderecoAlunoCad.TabIndex = 7;
             // 
             // label10
             // 
@@ -460,7 +460,7 @@
             tb_NomeResponsavel.Location = new Point(3, 17);
             tb_NomeResponsavel.Name = "tb_NomeResponsavel";
             tb_NomeResponsavel.Size = new Size(539, 25);
-            tb_NomeResponsavel.TabIndex = 1;
+            tb_NomeResponsavel.TabIndex = 8;
             // 
             // tableLayoutPanel13
             // 
@@ -489,7 +489,7 @@
             mtb_TelResponsavel.Mask = "(00) 0 0000-0000";
             mtb_TelResponsavel.Name = "mtb_TelResponsavel";
             mtb_TelResponsavel.Size = new Size(267, 25);
-            mtb_TelResponsavel.TabIndex = 4;
+            mtb_TelResponsavel.TabIndex = 10;
             // 
             // label14
             // 
@@ -517,7 +517,7 @@
             mtb_CpfResponsavel.Mask = "000.000.000-00";
             mtb_CpfResponsavel.Name = "mtb_CpfResponsavel";
             mtb_CpfResponsavel.Size = new Size(266, 25);
-            mtb_CpfResponsavel.TabIndex = 3;
+            mtb_CpfResponsavel.TabIndex = 9;
             // 
             // tableLayoutPanel8
             // 
@@ -552,7 +552,7 @@
             btn_CarregarFoto.Location = new Point(3, 256);
             btn_CarregarFoto.Name = "btn_CarregarFoto";
             btn_CarregarFoto.Size = new Size(225, 31);
-            btn_CarregarFoto.TabIndex = 11;
+            btn_CarregarFoto.TabIndex = 15;
             btn_CarregarFoto.Text = "Carregar Foto";
             btn_CarregarFoto.TextColor = Color.White;
             btn_CarregarFoto.UseVisualStyleBackColor = false;
@@ -605,7 +605,7 @@
             btn_BuscarResponsavel.Location = new Point(199, 48);
             btn_BuscarResponsavel.Name = "btn_BuscarResponsavel";
             btn_BuscarResponsavel.Size = new Size(29, 24);
-            btn_BuscarResponsavel.TabIndex = 2;
+            btn_BuscarResponsavel.TabIndex = 14;
             btn_BuscarResponsavel.UseVisualStyleBackColor = true;
             btn_BuscarResponsavel.Click += btn_BuscarResponsavel_Click;
             // 
@@ -617,7 +617,7 @@
             mtb_BuscarCPFResp.Mask = "000.000.000-00";
             mtb_BuscarCPFResp.Name = "mtb_BuscarCPFResp";
             mtb_BuscarCPFResp.Size = new Size(190, 25);
-            mtb_BuscarCPFResp.TabIndex = 3;
+            mtb_BuscarCPFResp.TabIndex = 13;
             // 
             // tableLayoutPanel4
             // 
@@ -650,7 +650,7 @@
             btn_CadastrarAluno.Location = new Point(643, 3);
             btn_CadastrarAluno.Name = "btn_CadastrarAluno";
             btn_CadastrarAluno.Size = new Size(154, 24);
-            btn_CadastrarAluno.TabIndex = 11;
+            btn_CadastrarAluno.TabIndex = 12;
             btn_CadastrarAluno.Text = "Cadastrar Aluno";
             btn_CadastrarAluno.TextColor = Color.White;
             btn_CadastrarAluno.UseVisualStyleBackColor = false;
@@ -671,7 +671,7 @@
             btn_CancelarCadastro.Location = new Point(483, 3);
             btn_CancelarCadastro.Name = "btn_CancelarCadastro";
             btn_CancelarCadastro.Size = new Size(154, 24);
-            btn_CancelarCadastro.TabIndex = 10;
+            btn_CancelarCadastro.TabIndex = 11;
             btn_CancelarCadastro.Text = "Cancelar Cadastro";
             btn_CancelarCadastro.TextColor = Color.White;
             btn_CancelarCadastro.UseVisualStyleBackColor = false;

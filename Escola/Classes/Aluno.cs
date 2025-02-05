@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -30,6 +31,29 @@ namespace Escola.Classes
         }
 
         public void CadAluno()
+        {
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = "INSERT INTO Aluno (Nome, Cpf, DataNascimento, Nacionalidade, Naturalidade, Sexo, CorRaca, Endereco) VALUES (@Nome, @Cpf, @DataNascimento, @Nacionalidade, @Naturalidade, @Sexo, @CorRaca, @Endereco)";
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", this.nome);
+                    command.Parameters.AddWithValue("@Cpf", this.cpf);
+                    command.Parameters.AddWithValue("@DataNascimento", this.dataNascimento);
+                    command.Parameters.AddWithValue("@Nacionalidade", this.nacionalidade);
+                    command.Parameters.AddWithValue("@Naturalidade", this.naturalidade);
+                    command.Parameters.AddWithValue("@Sexo", this.sexo);
+                    command.Parameters.AddWithValue("@CorRaca", this.corraca);
+                    command.Parameters.AddWithValue("@Endereco", this.endereco);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Aluno cadastrado com sucesso.");
+                    DadosCadastro();                    
+                }
+            }
+        }
+
+        private void DadosCadastro()
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Aluno Cadastrado < ~~~~~~~~~~~~");
             Debug.WriteLine($"Nome..........: {this.nome}");

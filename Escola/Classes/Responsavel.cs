@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +21,24 @@ namespace Escola.Classes
         }
 
         public void CadResponsavel()
+        {
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = "INSERT INTO Responsavel (Nome, Cpf, Telefone) VALUES (@Nome, @Cpf, @Telefone)";
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", this.nome);
+                    command.Parameters.AddWithValue("@Cpf", this.cpf);
+                    command.Parameters.AddWithValue("@Telefone", this.telefone);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Responsavel cadastrado com sucesso.");
+                    DadosCadastro();
+                }
+            }
+        }
+
+        private void DadosCadastro()
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Responsavel Cadastrado < ~~~~~~~~~~~~");
             Debug.WriteLine($"Nome.....: {this.nome}");
