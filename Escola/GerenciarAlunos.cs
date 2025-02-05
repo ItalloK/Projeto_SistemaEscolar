@@ -49,7 +49,7 @@ namespace Escola
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Imagens|*.jpg;*.jpeg;*.png;*.bmp",
+                Filter = "Imagens|*.png;",
                 Title = "Selecione uma foto"
             };
 

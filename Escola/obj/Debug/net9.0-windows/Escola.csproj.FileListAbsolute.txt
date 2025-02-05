@@ -54,3 +54,4 @@ C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.pdb
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.genruntimeconfig.cache
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\ref\Escola.dll
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_Carteirinha.resources

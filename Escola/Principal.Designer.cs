@@ -34,13 +34,14 @@
             cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();
             professoresToolStripMenuItem = new ToolStripMenuItem();
             gerenciarProfessoresToolStripMenuItem = new ToolStripMenuItem();
+            carteirinhaToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { alunosToolStripMenuItem, professoresToolStripMenuItem, configuraçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { alunosToolStripMenuItem, professoresToolStripMenuItem, carteirinhaToolStripMenuItem, configuraçõesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 25);
@@ -81,6 +82,16 @@
             gerenciarProfessoresToolStripMenuItem.Text = "Gerenciar Professores";
             gerenciarProfessoresToolStripMenuItem.Click += gerenciarProfessoresToolStripMenuItem_Click;
             // 
+            // carteirinhaToolStripMenuItem
+            // 
+            carteirinhaToolStripMenuItem.Font = new Font("Segoe UI", 9.75F);
+            carteirinhaToolStripMenuItem.Image = Properties.Resources.carteirinha;
+            carteirinhaToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            carteirinhaToolStripMenuItem.Name = "carteirinhaToolStripMenuItem";
+            carteirinhaToolStripMenuItem.Size = new Size(99, 21);
+            carteirinhaToolStripMenuItem.Text = "Carteirinha";
+            carteirinhaToolStripMenuItem.Click += carteirinhaToolStripMenuItem_Click;
+            // 
             // configuraçõesToolStripMenuItem
             // 
             configuraçõesToolStripMenuItem.Font = new Font("Segoe UI", 9.75F);
@@ -118,5 +129,6 @@
         private ToolStripMenuItem cadastrarAlunoToolStripMenuItem;
         private ToolStripMenuItem gerenciarProfessoresToolStripMenuItem;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private ToolStripMenuItem carteirinhaToolStripMenuItem;
     }
 }

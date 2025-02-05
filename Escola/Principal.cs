@@ -37,5 +37,11 @@ namespace Escola
             config.OnConfiguracoesConfirmadas += SetarConfig;
             config.ShowDialog();
         }
+
+        private void carteirinhaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Carteirinha f_Carteirinha = new F_Carteirinha();
+            f_Carteirinha.ShowDialog();
+        }
     }
 }

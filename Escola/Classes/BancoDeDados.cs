@@ -54,7 +54,19 @@ namespace Escola.Classes
                                     Nome TEXT NOT NULL,
                                     Cpf TEXT NOT NULL,
                                     Telefone TEXT NOT NULL
-                            )" }
+                            )" },
+                        {"Professor", @"
+                            CREATE TABLE IF NOT EXISTS Professor (
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Nome TEXT NOT NULL,
+                                Cpf TEXT NOT NULL,
+                                DataNascimento TEXT NOT NULL,
+                                Sexo TEXT NOT NULL,
+                                Endereco TEXT NOT NULL,
+                                Naturalidade TEXT NOT NULL,
+                                Nacionalidade TEXT NOT NULL,
+                                CorRaca TEXT NOT NULL
+                            )"}
                     };
 
                     foreach (var tabela in tabelasSQL)

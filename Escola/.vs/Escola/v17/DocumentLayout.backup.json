@@ -3,28 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\classes\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:classes\\professor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\classes\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:classes\\aluno.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\f_carteirinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:f_carteirinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\f_carteirinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:f_carteirinha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\classes\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:classes\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\classes\\responsavel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:classes\\responsavel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\classes\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:classes\\pessoa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,79 +38,66 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BancoDeDados.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\BancoDeDados.cs",
-              "RelativeDocumentMoniker": "Classes\\BancoDeDados.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\BancoDeDados.cs",
-              "RelativeToolTip": "Classes\\BancoDeDados.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "Professor.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Professor.cs",
+              "RelativeDocumentMoniker": "Classes\\Professor.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Professor.cs",
+              "RelativeToolTip": "Classes\\Professor.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAAEoAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T17:24:20.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Responsavel.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Responsavel.cs",
-              "RelativeDocumentMoniker": "Classes\\Responsavel.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Responsavel.cs",
-              "RelativeToolTip": "Classes\\Responsavel.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAACEAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T22:28:40.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Pessoa.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Pessoa.cs",
-              "RelativeDocumentMoniker": "Classes\\Pessoa.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Pessoa.cs",
-              "RelativeToolTip": "Classes\\Pessoa.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T22:25:16.432Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Aluno.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Aluno.cs",
-              "RelativeDocumentMoniker": "Classes\\Aluno.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Aluno.cs",
-              "RelativeToolTip": "Classes\\Aluno.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAUwDAAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T22:27:46.771Z",
+              "WhenOpened": "2025-02-05T23:40:30.009Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GerenciarAlunos.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\GerenciarAlunos.cs",
-              "RelativeDocumentMoniker": "GerenciarAlunos.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\GerenciarAlunos.cs",
-              "RelativeToolTip": "GerenciarAlunos.cs",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAAAGwAAAAxAAAAAAAAAA==",
+              "Title": "Aluno.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Aluno.cs",
+              "RelativeDocumentMoniker": "Classes\\Aluno.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\Aluno.cs",
+              "RelativeToolTip": "Classes\\Aluno.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:17:22.842Z",
+              "WhenOpened": "2025-02-05T23:40:20.347Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GerenciarAlunos.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\GerenciarAlunos.cs",
-              "RelativeDocumentMoniker": "GerenciarAlunos.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\GerenciarAlunos.cs [Projeto]",
-              "RelativeToolTip": "GerenciarAlunos.cs [Projeto]",
+              "DocumentIndex": 4,
+              "Title": "BancoDeDados.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\BancoDeDados.cs",
+              "RelativeDocumentMoniker": "Classes\\BancoDeDados.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Classes\\BancoDeDados.cs",
+              "RelativeToolTip": "Classes\\BancoDeDados.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAEMAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-04T22:55:51.606Z",
+              "WhenOpened": "2025-02-05T23:35:57.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "F_Carteirinha.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\F_Carteirinha.cs",
+              "RelativeDocumentMoniker": "F_Carteirinha.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\F_Carteirinha.cs",
+              "RelativeToolTip": "F_Carteirinha.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAmwEQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T21:54:02.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "F_Carteirinha.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\F_Carteirinha.cs",
+              "RelativeDocumentMoniker": "F_Carteirinha.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\F_Carteirinha.cs [Projeto]",
+              "RelativeToolTip": "F_Carteirinha.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-05T21:33:53.376Z",
               "EditorCaption": " [Projeto]"
             }
           ]

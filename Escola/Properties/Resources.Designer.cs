@@ -63,6 +63,16 @@ namespace Escola.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap carteirinha {
+            get {
+                object obj = ResourceManager.GetObject("carteirinha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap configuracoes {
             get {
                 object obj = ResourceManager.GetObject("configuracoes", resourceCulture);
