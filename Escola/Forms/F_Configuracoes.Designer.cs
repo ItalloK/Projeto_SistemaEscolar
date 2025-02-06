@@ -1,6 +1,6 @@
 ﻿namespace Escola
 {
-    partial class Configuracoes
+    partial class F_Configuracoes
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Configuracoes));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Configuracoes));
             label1 = new Label();
             tb_NomeEscola = new TextBox();
             label2 = new Label();

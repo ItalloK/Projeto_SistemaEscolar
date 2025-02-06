@@ -4,19 +4,19 @@
     <Compile Update="Botoes.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Update="Configuracoes.cs">
+    <Compile Update="Forms\F_Configuracoes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="F_Carteirinha.cs">
+    <Compile Update="Forms\F_Carteirinha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GerenciarAlunos.cs">
+    <Compile Update="Forms\F_GerenciarAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="GerenciarProfessores.cs">
+    <Compile Update="Forms\F_GerenciarProfessores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Principal.cs">
+    <Compile Update="Forms\F_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -37,10 +37,6 @@ C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\bin\Debug
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\bin\Debug\net9.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\bin\Debug\net9.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.csproj.AssemblyReference.cache
-C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Configuracoes.resources
-C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.GerenciarAlunos.resources
-C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.GerenciarProfessores.resources
-C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Principal.resources
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Properties.Resources.resources
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.csproj.GenerateResource.cache
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.GeneratedMSBuildEditorConfig.editorconfig
@@ -56,3 +52,7 @@ C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\ref\Escola.dll
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_Carteirinha.resources
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\bin\Debug\net9.0-windows\QRCoder.dll
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_Configuracoes.resources
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_GerenciarAlunos.resources
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_GerenciarProfessores.resources
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_Principal.resources

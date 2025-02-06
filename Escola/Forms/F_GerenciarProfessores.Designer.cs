@@ -1,6 +1,6 @@
 ﻿namespace Escola
 {
-    partial class GerenciarProfessores
+    partial class F_GerenciarProfessores
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarProfessores));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_GerenciarProfessores));
             panel_GerenciarProfessores = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             buttonig3 = new CustomControls.Botoes.ButtonIG();

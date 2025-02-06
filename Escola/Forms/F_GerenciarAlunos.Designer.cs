@@ -1,6 +1,6 @@
 ﻿namespace Escola
 {
-    partial class GerenciarAlunos
+    partial class F_GerenciarAlunos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GerenciarAlunos));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_GerenciarAlunos));
             Panel_CadAluno = new Panel();
             tableLayoutPanel6 = new TableLayoutPanel();
             tableLayoutPanel9 = new TableLayoutPanel();

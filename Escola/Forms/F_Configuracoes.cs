@@ -3,12 +3,12 @@ using System.Windows.Forms;
 
 namespace Escola
 {
-    public partial class Configuracoes : Form
+    public partial class F_Configuracoes : Form
     {
         private Configs.AppSettings _settings = new Configs.AppSettings();
         public event Action OnConfiguracoesConfirmadas = delegate { };
 
-        public Configuracoes()
+        public F_Configuracoes()
         {
             InitializeComponent();
             _settings = Configs.CarregarConfiguracoes();

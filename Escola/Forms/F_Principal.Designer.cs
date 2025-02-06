@@ -1,6 +1,6 @@
 ﻿namespace Escola
 {
-    partial class Principal
+    partial class F_Principal
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Principal));
             menuStrip1 = new MenuStrip();
             alunosToolStripMenuItem = new ToolStripMenuItem();
             cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();

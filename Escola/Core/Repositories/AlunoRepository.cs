@@ -1,5 +1,6 @@
 ﻿using Escola.Core.Entities;
 using Escola.Core.Infrastructure;
+using Escola.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Escola.Core.Repositories
 {
-    public class AlunoRepository
+    public class AlunoRepository : IAluno
     {
         public void CadAluno(Aluno a)
         {
@@ -35,7 +36,7 @@ namespace Escola.Core.Repositories
             }
         }
 
-        private void DadosCadastro(Aluno a)
+        public void DadosCadastro(Aluno a)
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Aluno Cadastrado < ~~~~~~~~~~~~");
             Debug.WriteLine($"Nome..........: {a.nome}");

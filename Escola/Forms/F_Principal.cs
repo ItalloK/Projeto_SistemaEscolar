@@ -3,11 +3,11 @@ using System.Runtime;
 
 namespace Escola
 {
-    public partial class Principal : Form
+    public partial class F_Principal : Form
     {
         private Configs.AppSettings _settings = new Configs.AppSettings();
 
-        public Principal()
+        public F_Principal()
         {
             InitializeComponent();
             SetarConfig(); // seta as configurações
@@ -21,19 +21,19 @@ namespace Escola
 
         private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GerenciarAlunos ga = new GerenciarAlunos();
+            F_GerenciarAlunos ga = new F_GerenciarAlunos();
             ga.ShowDialog();
         }
 
         private void gerenciarProfessoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            GerenciarProfessores gp = new GerenciarProfessores();
+            F_GerenciarProfessores gp = new F_GerenciarProfessores();
             gp.ShowDialog();
         }
 
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Configuracoes config = new Configuracoes();
+            F_Configuracoes config = new F_Configuracoes();
             config.OnConfiguracoesConfirmadas += SetarConfig;
             config.ShowDialog();
         }

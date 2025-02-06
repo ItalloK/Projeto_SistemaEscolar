@@ -7,10 +7,11 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using Escola.Core.Entities;
 using Escola.Core.Infrastructure;
+using Escola.Core.Interfaces;
 
 namespace Escola.Core.Repositories
 {
-    public class ProfessorRepository
+    public class ProfessorRepository : IProfessor
     {
         public void CadProfessor(Professor p)
         {
@@ -34,7 +35,7 @@ namespace Escola.Core.Repositories
                 }
             }
         }
-        private void DadosCadastro(Professor p)
+        public void DadosCadastro(Professor p)
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Professor Cadastrado < ~~~~~~~~~~~~");
             Debug.WriteLine($"Nome..........: {p.nome}");

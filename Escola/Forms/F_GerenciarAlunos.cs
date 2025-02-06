@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace Escola
 {
-    public partial class GerenciarAlunos : Form
+    public partial class F_GerenciarAlunos : Form
     {
 
         private string fotoPath = string.Empty;
 
-        public GerenciarAlunos()
+        public F_GerenciarAlunos()
         {
             InitializeComponent();
             AtivarPainel(Panel_Gerenciar);
