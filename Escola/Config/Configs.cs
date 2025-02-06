@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text.Json;
 
-public static class Config
+public static class Configs
 {
     private const string ConfigFilePath = "config.json";
 

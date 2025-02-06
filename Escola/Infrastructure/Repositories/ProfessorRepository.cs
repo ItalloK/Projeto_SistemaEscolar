@@ -1,13 +1,14 @@
-﻿using Escola.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Diagnostics;
+using Escola.Core.Entities;
+using Escola.Infrastructure.Database;
 
-namespace Escola.Repository
+namespace Escola.Infrastructure.Repositories
 {
     public class ProfessorRepository
     {

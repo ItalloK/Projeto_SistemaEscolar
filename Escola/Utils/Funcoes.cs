@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Escola.Config;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola
+namespace Escola.Utils
 {
     public class Funcoes
     {
@@ -32,10 +33,11 @@ namespace Escola
         {
             string tipoStr = string.Empty;
 
-            if(tipo == Global.TIPO_ALUNO)
+            if (tipo == Global.TIPO_ALUNO)
             {
                 tipoStr = "Alunos";
-            }else if (tipo == Global.TIPO_PROFESSOR)
+            }
+            else if (tipo == Global.TIPO_PROFESSOR)
             {
                 tipoStr = "Professores";
             }

@@ -1,4 +1,5 @@
-﻿using Escola.Classes;
+﻿using Escola.Core.Entities;
+using Escola.Infrastructure.Database;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola.Repository
+namespace Escola.Infrastructure.Repositories
 {
     public class AlunoRepository
     {

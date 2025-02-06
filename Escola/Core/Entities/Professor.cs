@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola.Classes
+namespace Escola.Core.Entities
 {
     public class Professor : Pessoa
     {

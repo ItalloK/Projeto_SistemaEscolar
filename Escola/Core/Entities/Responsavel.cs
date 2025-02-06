@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Escola.Infrastructure.Database;
+using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
 using System.Diagnostics;
@@ -7,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola.Classes
+namespace Escola.Core.Entities
 {
     public class Responsavel : Pessoa
     {
@@ -28,9 +29,9 @@ namespace Escola.Classes
                 string sql = "INSERT INTO Responsavel (Nome, Cpf, Telefone) VALUES (@Nome, @Cpf, @Telefone)";
                 using (var command = new SQLiteCommand(sql, connection))
                 {
-                    command.Parameters.AddWithValue("@Nome", this.nome);
-                    command.Parameters.AddWithValue("@Cpf", this.cpf);
-                    command.Parameters.AddWithValue("@Telefone", this.telefone);
+                    command.Parameters.AddWithValue("@Nome", nome);
+                    command.Parameters.AddWithValue("@Cpf", cpf);
+                    command.Parameters.AddWithValue("@Telefone", telefone);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Responsavel cadastrado com sucesso.");
                     DadosCadastro();
@@ -41,9 +42,9 @@ namespace Escola.Classes
         private void DadosCadastro()
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Responsavel Cadastrado < ~~~~~~~~~~~~");
-            Debug.WriteLine($"Nome.....: {this.nome}");
-            Debug.WriteLine($"CPF......: {this.cpf}");
-            Debug.WriteLine($"Telefone.: {this.telefone}");
+            Debug.WriteLine($"Nome.....: {nome}");
+            Debug.WriteLine($"CPF......: {cpf}");
+            Debug.WriteLine($"Telefone.: {telefone}");
             Debug.WriteLine(" ~~~~~~~~~~~~ > Responsavel Cadastrado < ~~~~~~~~~~~~");
         }
     }

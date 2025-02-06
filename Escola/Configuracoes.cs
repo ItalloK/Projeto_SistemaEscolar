@@ -5,13 +5,13 @@ namespace Escola
 {
     public partial class Configuracoes : Form
     {
-        private Config.AppSettings _settings = new Config.AppSettings();
+        private Configs.AppSettings _settings = new Configs.AppSettings();
         public event Action OnConfiguracoesConfirmadas = delegate { };
 
         public Configuracoes()
         {
             InitializeComponent();
-            _settings = Config.CarregarConfiguracoes();
+            _settings = Configs.CarregarConfiguracoes();
             tb_NomeEscola.Text = _settings.NomeEscola;
         }
 
@@ -25,7 +25,7 @@ namespace Escola
             _settings.NomeEscola = tb_NomeEscola.Text;
             try
             {
-                Config.SalvarConfiguracoes(_settings);
+                Configs.SalvarConfiguracoes(_settings);
             }
             catch (Exception ex)
             {

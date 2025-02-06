@@ -8,8 +8,9 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
+using Escola.Config;
 
-namespace Escola.Classes
+namespace Escola.Utils
 {
     public class QrCode
     {
@@ -32,7 +33,7 @@ namespace Escola.Classes
                 QRCodeGenerator qrGenerator = new QRCodeGenerator();
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(dadoUsuario, QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
-                
+
                 Bitmap qrCodeImage = qrCode.GetGraphic(20); // O número 20 define o tamanho do QR Code
 
                 string caminhoArquivo = Path.Combine(pastaDestino, dadoUsuario + ".png");

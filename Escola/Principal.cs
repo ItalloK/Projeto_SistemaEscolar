@@ -5,7 +5,7 @@ namespace Escola
 {
     public partial class Principal : Form
     {
-        private Config.AppSettings _settings = new Config.AppSettings();
+        private Configs.AppSettings _settings = new Configs.AppSettings();
 
         public Principal()
         {
@@ -15,7 +15,7 @@ namespace Escola
 
         private void SetarConfig()
         {
-            _settings = Config.CarregarConfiguracoes();
+            _settings = Configs.CarregarConfiguracoes();
             this.Text = _settings.NomeEscola;
         }
 
