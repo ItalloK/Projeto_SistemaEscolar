@@ -32,6 +32,7 @@
             label1 = new Label();
             btn_Buscar = new Button();
             panel1 = new Panel();
+            pb_QrCode = new PictureBox();
             lbl_Serie = new Label();
             lbl_TextSerie = new Label();
             lbl_Turma = new Label();
@@ -47,10 +48,9 @@
             pb_FotoPerfil = new PictureBox();
             cb_Tipo = new ComboBox();
             mtb_CpfBuscar = new MaskedTextBox();
-            pb_QrCode = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_QrCode).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -102,15 +102,24 @@
             panel1.Size = new Size(550, 230);
             panel1.TabIndex = 16;
             // 
+            // pb_QrCode
+            // 
+            pb_QrCode.BackColor = Color.White;
+            pb_QrCode.Location = new Point(495, 176);
+            pb_QrCode.Name = "pb_QrCode";
+            pb_QrCode.Size = new Size(50, 50);
+            pb_QrCode.SizeMode = PictureBoxSizeMode.Zoom;
+            pb_QrCode.TabIndex = 13;
+            pb_QrCode.TabStop = false;
+            // 
             // lbl_Serie
             // 
             lbl_Serie.AutoSize = true;
             lbl_Serie.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_Serie.Location = new Point(402, 141);
             lbl_Serie.Name = "lbl_Serie";
-            lbl_Serie.Size = new Size(65, 21);
+            lbl_Serie.Size = new Size(0, 21);
             lbl_Serie.TabIndex = 12;
-            lbl_Serie.Text = "8º ANO";
             lbl_Serie.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_TextSerie
@@ -130,9 +139,8 @@
             lbl_Turma.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_Turma.Location = new Point(169, 141);
             lbl_Turma.Name = "lbl_Turma";
-            lbl_Turma.Size = new Size(33, 21);
+            lbl_Turma.Size = new Size(0, 21);
             lbl_Turma.TabIndex = 10;
-            lbl_Turma.Text = "101";
             lbl_Turma.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_TextTurma
@@ -152,9 +160,8 @@
             lbl_Codigo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_Codigo.Location = new Point(13, 189);
             lbl_Codigo.Name = "lbl_Codigo";
-            lbl_Codigo.Size = new Size(64, 21);
+            lbl_Codigo.Size = new Size(0, 21);
             lbl_Codigo.TabIndex = 8;
-            lbl_Codigo.Text = "000000";
             lbl_Codigo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label9
@@ -174,9 +181,8 @@
             lbl_Sexo.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_Sexo.Location = new Point(402, 86);
             lbl_Sexo.Name = "lbl_Sexo";
-            lbl_Sexo.Size = new Size(86, 21);
+            lbl_Sexo.Size = new Size(0, 21);
             lbl_Sexo.TabIndex = 6;
-            lbl_Sexo.Text = "FEMININO";
             lbl_Sexo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label7
@@ -196,9 +202,8 @@
             lbl_DataNasc.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_DataNasc.Location = new Point(169, 86);
             lbl_DataNasc.Name = "lbl_DataNasc";
-            lbl_DataNasc.Size = new Size(96, 21);
+            lbl_DataNasc.Size = new Size(0, 21);
             lbl_DataNasc.TabIndex = 4;
-            lbl_DataNasc.Text = "00/00/0000";
             lbl_DataNasc.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -218,9 +223,8 @@
             lbl_Nome.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lbl_Nome.Location = new Point(169, 30);
             lbl_Nome.Name = "lbl_Nome";
-            lbl_Nome.Size = new Size(144, 21);
+            lbl_Nome.Size = new Size(0, 21);
             lbl_Nome.TabIndex = 2;
-            lbl_Nome.Text = "NOME DA PESSOA";
             lbl_Nome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label2
@@ -266,16 +270,6 @@
             mtb_CpfBuscar.Size = new Size(400, 25);
             mtb_CpfBuscar.TabIndex = 19;
             // 
-            // pb_QrCode
-            // 
-            pb_QrCode.BackColor = Color.White;
-            pb_QrCode.Location = new Point(495, 176);
-            pb_QrCode.Name = "pb_QrCode";
-            pb_QrCode.Size = new Size(50, 50);
-            pb_QrCode.SizeMode = PictureBoxSizeMode.Zoom;
-            pb_QrCode.TabIndex = 13;
-            pb_QrCode.TabStop = false;
-            // 
             // F_Carteirinha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -296,8 +290,8 @@
             Load += F_Carteirinha_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_QrCode).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }

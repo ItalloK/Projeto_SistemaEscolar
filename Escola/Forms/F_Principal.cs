@@ -1,3 +1,4 @@
+using Escola.Forms;
 using Escola.Properties;
 using System.Runtime;
 
@@ -42,6 +43,12 @@ namespace Escola
         {
             F_Carteirinha f_Carteirinha = new F_Carteirinha();
             f_Carteirinha.ShowDialog();
+        }
+
+        private void matricularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_Matricular f_Matricular = new F_Matricular();
+            f_Matricular.ShowDialog();
         }
     }
 }

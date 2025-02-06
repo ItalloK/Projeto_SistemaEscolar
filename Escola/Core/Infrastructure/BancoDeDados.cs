@@ -29,7 +29,7 @@ namespace Escola.Core.Infrastructure
             if (!File.Exists("Banco de Dados\\database.db"))
             {
                 SQLiteConnection.CreateFile("Banco de Dados\\database.db");
-                Console.WriteLine("Banco de dados criado com sucesso!");
+                Debug.WriteLine("Banco de dados criado com sucesso!");
 
                 using (SQLiteConnection conexao = new SQLiteConnection(stringConexao))
                 {
@@ -66,6 +66,22 @@ namespace Escola.Core.Infrastructure
                                 Naturalidade TEXT NOT NULL,
                                 Nacionalidade TEXT NOT NULL,
                                 CorRaca TEXT NOT NULL
+                            )"},
+                        {"Turmas",@"
+                            CREATE TABLE Turmas (
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Tipo TEXT NOT NULL,
+                                Turno TEXT NOT NULL,
+                                Serie TEXT NOT NULL,
+                                MaxAlunos INTEGER NOT NULL
+                            )"},
+                        {"Aluno_Turma", @"
+                            CREATE TABLE Aluno_Turma (
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                AlunoId INTEGER NOT NULL,
+                                TurmaId INTEGER NOT NULL,
+                                FOREIGN KEY (AlunoId) REFERENCES Aluno(Id),
+                                FOREIGN KEY (TurmaId) REFERENCES Turmas(Id)
                             )"}
                     };
 
@@ -74,7 +90,7 @@ namespace Escola.Core.Infrastructure
                         using (SQLiteCommand comando = new SQLiteCommand(tabela.Value, conexao))
                         {
                             comando.ExecuteNonQuery();
-                            Console.WriteLine($"Tabela '{tabela.Key}' verificada/criada com sucesso.");
+                            Debug.WriteLine($"Tabela '{tabela.Key}' verificada/criada com sucesso.");
                         }
                     }
 
@@ -83,7 +99,7 @@ namespace Escola.Core.Infrastructure
             }
             else
             {
-                Console.WriteLine("O banco de dados já existe.");
+                Debug.WriteLine("O banco de dados já existe.");
             }
         }
     }

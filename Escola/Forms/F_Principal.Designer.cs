@@ -36,6 +36,7 @@
             gerenciarProfessoresToolStripMenuItem = new ToolStripMenuItem();
             carteirinhaToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
+            matricularToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // 
             // alunosToolStripMenuItem
             // 
-            alunosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarAlunoToolStripMenuItem });
+            alunosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarAlunoToolStripMenuItem, matricularToolStripMenuItem });
             alunosToolStripMenuItem.Font = new Font("Segoe UI", 9.75F);
             alunosToolStripMenuItem.Image = Properties.Resources.estudantes;
             alunosToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
@@ -61,7 +62,7 @@
             // cadastrarAlunoToolStripMenuItem
             // 
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            cadastrarAlunoToolStripMenuItem.Size = new Size(169, 22);
+            cadastrarAlunoToolStripMenuItem.Size = new Size(180, 22);
             cadastrarAlunoToolStripMenuItem.Text = "Gerenciar Aluno";
             cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
             // 
@@ -102,7 +103,14 @@
             configuraçõesToolStripMenuItem.Text = "Configurações";
             configuraçõesToolStripMenuItem.Click += configuraçõesToolStripMenuItem_Click;
             // 
-            // Principal
+            // matricularToolStripMenuItem
+            // 
+            matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
+            matricularToolStripMenuItem.Size = new Size(180, 22);
+            matricularToolStripMenuItem.Text = "Matricular";
+            matricularToolStripMenuItem.Click += matricularToolStripMenuItem_Click;
+            // 
+            // F_Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -112,7 +120,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             MinimumSize = new Size(816, 448);
-            Name = "Principal";
+            Name = "F_Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Escola: NomeDaEscola";
             menuStrip1.ResumeLayout(false);
@@ -130,5 +138,6 @@
         private ToolStripMenuItem gerenciarProfessoresToolStripMenuItem;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem carteirinhaToolStripMenuItem;
+        private ToolStripMenuItem matricularToolStripMenuItem;
     }
 }

@@ -83,5 +83,22 @@ namespace Escola.Core.Repositories
             }
             return null;
         }
+
+        public bool VerificarAlunoMatriculado(Aluno a)
+        {
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = "SELECT COUNT(1) FROM Aluno_Turma WHERE AlunoId = @Id";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Id", a.id);
+
+                    var result = command.ExecuteScalar();
+                    return Convert.ToInt32(result) == 0; // true se não tiver matriculado.
+                }
+            }
+        }
     }
 }

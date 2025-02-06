@@ -837,7 +837,7 @@
             btn_CadAlunoGerenciador.UseVisualStyleBackColor = false;
             btn_CadAlunoGerenciador.Click += btn_CadAlunoGerenciador_Click;
             // 
-            // GerenciarAlunos
+            // F_GerenciarAlunos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -847,7 +847,7 @@
             Controls.Add(Panel_Gerenciar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
-            Name = "GerenciarAlunos";
+            Name = "F_GerenciarAlunos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciar Alunos";
             Panel_CadAluno.ResumeLayout(false);
