@@ -1,4 +1,5 @@
 ﻿using Escola.Classes;
+using Escola.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -55,7 +56,9 @@ namespace Escola
 
         private void BuscarAluno(string cpf)
         {
-            Aluno aluno = new Aluno("", "", "", "", "", "", "", "").BuscarAlunoPorCPF(cpf);
+            AlunoRepository repository = new AlunoRepository();
+            Aluno? aluno = repository.BuscarAlunoPorCPF(cpf);
+
             if (aluno != null)
             {
                 lbl_Nome.Text = aluno.nome;
@@ -78,7 +81,9 @@ namespace Escola
 
         private void BuscarProfessor(string cpf)
         {
-            Professor professor = new Professor("", "", "", "", "", "", "", "").BuscarProfessorPorCPF(cpf);
+            ProfessorRepository repository = new ProfessorRepository();
+            Professor? professor = repository.BuscarProfessorPorCPF(cpf);
+
             if (professor != null)
             {
                 lbl_Nome.Text = professor.nome;

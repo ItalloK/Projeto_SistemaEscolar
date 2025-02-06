@@ -1,4 +1,5 @@
 ﻿using Escola.Classes;
+using Escola.Repository;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -49,7 +50,7 @@ namespace Escola
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
-                Filter = "Imagens|*.png;",
+                Filter = "Imagens|*.png; *.jpg; *.jpeg;",
                 Title = "Selecione uma foto"
             };
 
@@ -94,10 +95,22 @@ namespace Escola
                 return;
             }
 
-            Aluno aluno = new Aluno(nome, cpf, dataNasc, nacionalidade, naturalidade, sexo, cor, endereco);
-            aluno.CadAluno();
+            Aluno aluno = new Aluno
+            {
+                nome = nome,
+                cpf = cpf,
+                dataNascimento = dataNasc,
+                nacionalidade = nacionalidade,
+                naturalidade = naturalidade,
+                sexo = sexo,
+                corraca = cor,
+                endereco = endereco
+            };
+            AlunoRepository repository = new AlunoRepository();
+            repository.CadAluno(aluno); // cadastra o aluno
+
             QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
-            SalvarFoto(cpf);
+            Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
 
             this.Close();
         }
@@ -123,33 +136,6 @@ namespace Escola
             Responsavel r = new Responsavel(nome, cpf, telefone);
             r.CadResponsavel();
             return true;
-        }
-
-        private void SalvarFoto(string cpf)
-        {
-            if (string.IsNullOrWhiteSpace(fotoPath) || !File.Exists(fotoPath))
-            {
-                MessageBox.Show("Por favor, carregue uma foto antes de salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Alunos");
-            if (!Directory.Exists(pastaDestino))
-            {
-                Directory.CreateDirectory(pastaDestino);
-            }
-
-            string extensao = Path.GetExtension(fotoPath);
-            string novoCaminho = Path.Combine(pastaDestino, $"{cpf}{extensao}");
-            try
-            {
-                File.Copy(fotoPath, novoCaminho, true);
-                Console.WriteLine("Foto salva com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao salvar a foto: {ex.Message}");
-                return;
-            }
         }
 
         private void btn_BuscarResponsavel_Click(object sender, EventArgs e)

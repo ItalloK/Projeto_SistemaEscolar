@@ -28,5 +28,41 @@ namespace Escola
             }
         }
 
+        public static void SalvarFoto(string cpf, string fotoPath, int tipo)
+        {
+            string tipoStr = string.Empty;
+
+            if(tipo == Global.TIPO_ALUNO)
+            {
+                tipoStr = "Alunos";
+            }else if (tipo == Global.TIPO_PROFESSOR)
+            {
+                tipoStr = "Professores";
+            }
+
+            if (string.IsNullOrWhiteSpace(fotoPath) || !File.Exists(fotoPath))
+            {
+                MessageBox.Show("Por favor, carregue uma foto antes de salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", tipoStr);
+            if (!Directory.Exists(pastaDestino))
+            {
+                Directory.CreateDirectory(pastaDestino);
+            }
+
+            string extensao = Path.GetExtension(fotoPath);
+            string novoCaminho = Path.Combine(pastaDestino, $"{cpf}{extensao}");
+            try
+            {
+                File.Copy(fotoPath, novoCaminho, true);
+                Console.WriteLine("Foto salva com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao salvar a foto: {ex.Message}");
+                return;
+            }
+        }
     }
 }
