@@ -47,8 +47,10 @@
             pb_FotoPerfil = new PictureBox();
             cb_Tipo = new ComboBox();
             mtb_CpfBuscar = new MaskedTextBox();
+            pb_QrCode = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_QrCode).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -80,6 +82,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Gainsboro;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pb_QrCode);
             panel1.Controls.Add(lbl_Serie);
             panel1.Controls.Add(lbl_TextSerie);
             panel1.Controls.Add(lbl_Turma);
@@ -263,6 +266,16 @@
             mtb_CpfBuscar.Size = new Size(400, 25);
             mtb_CpfBuscar.TabIndex = 19;
             // 
+            // pb_QrCode
+            // 
+            pb_QrCode.BackColor = Color.White;
+            pb_QrCode.Location = new Point(495, 176);
+            pb_QrCode.Name = "pb_QrCode";
+            pb_QrCode.Size = new Size(50, 50);
+            pb_QrCode.SizeMode = PictureBoxSizeMode.Zoom;
+            pb_QrCode.TabIndex = 13;
+            pb_QrCode.TabStop = false;
+            // 
             // F_Carteirinha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -274,7 +287,9 @@
             Controls.Add(panel1);
             Controls.Add(btn_Buscar);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "F_Carteirinha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Carteirinha";
@@ -282,6 +297,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_QrCode).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -305,5 +321,6 @@
         private Label lbl_TextTurma;
         private Label lbl_Serie;
         private Label lbl_TextSerie;
+        private PictureBox pb_QrCode;
     }
 }

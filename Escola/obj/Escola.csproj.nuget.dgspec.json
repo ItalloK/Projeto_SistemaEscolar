@@ -51,6 +51,10 @@
         "net9.0-windows7.0": {
           "targetAlias": "net9.0-windows",
           "dependencies": {
+            "QRCoder": {
+              "target": "Package",
+              "version": "[1.6.0, )"
+            },
             "System.Data.SQLite.Core": {
               "target": "Package",
               "version": "[1.0.119, )"

@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Escola
 {
-    internal class Global
+    public class Global
     {
+        public const int TIPO_ALUNO = 0;
+        public const int TIPO_PROFESSOR = 1;
     }
 }

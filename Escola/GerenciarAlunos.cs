@@ -95,8 +95,8 @@ namespace Escola
             }
 
             Aluno aluno = new Aluno(nome, cpf, dataNasc, nacionalidade, naturalidade, sexo, cor, endereco);
-            aluno.CadAluno();            
-
+            aluno.CadAluno();
+            QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
             SalvarFoto(cpf);
 
             this.Close();

@@ -59,7 +59,7 @@ namespace Escola
             if (aluno != null)
             {
                 lbl_Nome.Text = aluno.nome;
-                lbl_DataNasc.Text = aluno.dataNascimento;
+                lbl_DataNasc.Text = Funcoes.FormatarData(aluno.dataNascimento);
                 lbl_Sexo.Text = aluno.sexo;
                 lbl_Codigo.Text = Funcoes.FormatarCodigo(aluno.id);
 
@@ -82,7 +82,7 @@ namespace Escola
             if (professor != null)
             {
                 lbl_Nome.Text = professor.nome;
-                lbl_DataNasc.Text = professor.dataNascimento;
+                lbl_DataNasc.Text = Funcoes.FormatarData(professor.dataNascimento);
                 lbl_Sexo.Text = professor.sexo;
                 lbl_Codigo.Text = Funcoes.FormatarCodigo(professor.id);
                 lbl_TextTurma.Text = "Tipo:";
@@ -107,12 +107,16 @@ namespace Escola
             }
 
             string pastaDestino = "";
+            string pastaDestQrCode = "";
             if (tipo == TIPO_ALUNO)
             {
                 pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Alunos");
-            }else if(tipo == TIPO_PROFESSOR)
+                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Alunos");
+            }
+            else if(tipo == TIPO_PROFESSOR)
             {
                 pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Professores");
+                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Professores");
             }
             
 
@@ -124,12 +128,14 @@ namespace Escola
 
             
             string[] arquivos = Directory.GetFiles(pastaDestino, cpf + ".*"); // Procura a imagem com qualquer extensao
+            string[] qrCodes = Directory.GetFiles(pastaDestQrCode, cpf + ".*");
 
             if (arquivos.Length > 0)
             {
                 try
                 {
                     pb_FotoPerfil.Image = Image.FromFile(arquivos[0]); // Carrega a primeira imagem encontrada
+                    pb_QrCode.Image = Image.FromFile(qrCodes[0]);
                 }
                 catch (Exception ex)
                 {
