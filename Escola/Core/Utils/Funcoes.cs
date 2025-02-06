@@ -65,5 +65,18 @@ namespace Escola.Core.Utils
                 return;
             }
         }
+
+        public static bool ValidarCPF(string cpf)
+        {
+            if(cpf.Length != 11)
+            {
+                MessageBox.Show("Digite os 11 numeros do CPF!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
     }
 }

@@ -129,11 +129,8 @@ namespace Escola
                 MessageBox.Show("Não é possivel cadastrar um aluno sem responsavel, digite os dados!");
                 return false;
             }
-            if(cpf.Length != 11)
-            {
-                MessageBox.Show("Digite corretamente os 11 digitos do CPF do responsavel.");
-                return false;
-            }
+
+            if (!Funcoes.ValidarCPF(cpf)) return false;
 
             Responsavel r = new Responsavel(nome, cpf, telefone);
             r.CadResponsavel();
@@ -149,14 +146,7 @@ namespace Escola
         {
             mtb_BuscarCPFResp.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string cpf = mtb_BuscarCPFResp.Text;
-            if(cpf.Length != 11)
-            {
-                MessageBox.Show("Digite os 11 digitos do CPF do responsavel para poder pesquisar.");
-                return;
-            }
-
-
-
+            if (!Funcoes.ValidarCPF(cpf)) return;
         }
     }
 }

@@ -31,11 +31,9 @@ namespace Escola.Forms
         {
             mtb_CpfBuscar.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string cpf = mtb_CpfBuscar.Text;
-            if (cpf.Length != 11)
-            {
-                MessageBox.Show("Digite os 11 digitos do CPF!");
-                return;
-            }
+
+            if (!Funcoes.ValidarCPF(cpf)) return;
+
             BuscarAluno(cpf);
         }
 
@@ -110,11 +108,9 @@ namespace Escola.Forms
             int turmaId = Convert.ToInt32(cb_Turmas.SelectedValue);
             mtb_CpfBuscar.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string cpf = mtb_CpfBuscar.Text;
-            if(cpf.Length != 11)
-            {
-                MessageBox.Show("Digite os 11 numeros do CPF!");
-                return;
-            }
+
+            if (!Funcoes.ValidarCPF(cpf)) return;
+            
             if(idAluno == -1)
             {
                 MessageBox.Show("Voce deve procurar o aluno antes de tentar matricular ele!");

@@ -34,11 +34,9 @@ namespace Escola
         {
             mtb_CpfBuscar.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string cpf = mtb_CpfBuscar.Text;
-            if (cpf.Length != 11)
-            {
-                MessageBox.Show("Digite os 11 digitos do CPF corretamente");
-                return;
-            }
+
+            if (!Funcoes.ValidarCPF(cpf)) return;
+
             int index = cb_Tipo.SelectedIndex;
             if (index == 0)
             {

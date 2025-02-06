@@ -607,7 +607,7 @@
             label2.Text = "Cadastrar Professor";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // GerenciarProfessores
+            // F_GerenciarProfessores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -616,7 +616,7 @@
             Controls.Add(panel_GerenciarProfessores);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
-            Name = "GerenciarProfessores";
+            Name = "F_GerenciarProfessores";
             Text = "Gerenciar Professores";
             panel_GerenciarProfessores.ResumeLayout(false);
             panel_GerenciarProfessores.PerformLayout();
