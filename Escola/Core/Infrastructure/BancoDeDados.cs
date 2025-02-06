@@ -3,7 +3,7 @@ using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
 
-namespace Escola.Infrastructure.Database
+namespace Escola.Core.Infrastructure
 {
     internal class BancoDeDados
     {

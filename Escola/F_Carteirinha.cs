@@ -1,6 +1,6 @@
 ﻿using Escola.Core.Entities;
-using Escola.Infrastructure.Repositories;
-using Escola.Utils;
+using Escola.Core.Repositories;
+using Escola.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -8,9 +8,8 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
-using Escola.Config;
 
-namespace Escola.Utils
+namespace Escola.Core.Utils
 {
     public class QrCode
     {

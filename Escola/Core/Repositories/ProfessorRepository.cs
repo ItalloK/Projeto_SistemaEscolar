@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 using System.Data.SQLite;
 using System.Diagnostics;
 using Escola.Core.Entities;
-using Escola.Infrastructure.Database;
+using Escola.Core.Infrastructure;
 
-namespace Escola.Infrastructure.Repositories
+namespace Escola.Core.Repositories
 {
     public class ProfessorRepository
     {

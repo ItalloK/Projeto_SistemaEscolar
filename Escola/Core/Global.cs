@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Escola.Config
+namespace Escola.Core
 {
     public class Global
     {

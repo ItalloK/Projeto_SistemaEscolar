@@ -1,4 +1,4 @@
-﻿using Escola.Infrastructure.Database;
+﻿using Escola.Core.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
