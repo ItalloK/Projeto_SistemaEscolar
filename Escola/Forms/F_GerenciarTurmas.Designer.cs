@@ -36,11 +36,11 @@
             dgv_DadosAluno = new DataGridView();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            buttonig4 = new CustomControls.Botoes.ButtonIG();
+            buttonig3 = new CustomControls.Botoes.ButtonIG();
             textBox1 = new TextBox();
             btn_CadAlunoGerenciador = new CustomControls.Botoes.ButtonIG();
             label1 = new Label();
-            buttonig3 = new CustomControls.Botoes.ButtonIG();
-            buttonig4 = new CustomControls.Botoes.ButtonIG();
             panel_GerenciarTurmas.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Dados).BeginInit();
@@ -131,6 +131,7 @@
             dgv_DadosAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DadosAluno.Size = new Size(794, 159);
             dgv_DadosAluno.TabIndex = 2;
+            dgv_DadosAluno.CellFormatting += dgv_DadosAluno_CellFormatting;
             // 
             // label2
             // 
@@ -162,6 +163,48 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.Size = new Size(794, 32);
             tableLayoutPanel1.TabIndex = 6;
+            // 
+            // buttonig4
+            // 
+            buttonig4.BackColor = Color.Gray;
+            buttonig4.BackgroundColor = Color.Gray;
+            buttonig4.BorderColor = Color.PaleVioletRed;
+            buttonig4.BorderRadius = 5;
+            buttonig4.BorderSize = 0;
+            buttonig4.Dock = DockStyle.Fill;
+            buttonig4.FlatAppearance.BorderSize = 0;
+            buttonig4.FlatStyle = FlatStyle.Flat;
+            buttonig4.Font = new Font("Segoe UI", 9.75F);
+            buttonig4.ForeColor = Color.White;
+            buttonig4.HoverBackgroundColor = Color.Black;
+            buttonig4.Location = new Point(636, 3);
+            buttonig4.Name = "buttonig4";
+            buttonig4.Size = new Size(155, 26);
+            buttonig4.TabIndex = 6;
+            buttonig4.Text = "Deletar Turma";
+            buttonig4.TextColor = Color.White;
+            buttonig4.UseVisualStyleBackColor = false;
+            // 
+            // buttonig3
+            // 
+            buttonig3.BackColor = Color.Gray;
+            buttonig3.BackgroundColor = Color.Gray;
+            buttonig3.BorderColor = Color.PaleVioletRed;
+            buttonig3.BorderRadius = 5;
+            buttonig3.BorderSize = 0;
+            buttonig3.Dock = DockStyle.Fill;
+            buttonig3.FlatAppearance.BorderSize = 0;
+            buttonig3.FlatStyle = FlatStyle.Flat;
+            buttonig3.Font = new Font("Segoe UI", 9.75F);
+            buttonig3.ForeColor = Color.White;
+            buttonig3.HoverBackgroundColor = Color.Black;
+            buttonig3.Location = new Point(478, 3);
+            buttonig3.Name = "buttonig3";
+            buttonig3.Size = new Size(152, 26);
+            buttonig3.TabIndex = 5;
+            buttonig3.Text = "Atualizar Turma";
+            buttonig3.TextColor = Color.White;
+            buttonig3.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
@@ -203,48 +246,6 @@
             label1.TabIndex = 5;
             label1.Text = "Gerenciar Turmas";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // buttonig3
-            // 
-            buttonig3.BackColor = Color.Gray;
-            buttonig3.BackgroundColor = Color.Gray;
-            buttonig3.BorderColor = Color.PaleVioletRed;
-            buttonig3.BorderRadius = 5;
-            buttonig3.BorderSize = 0;
-            buttonig3.Dock = DockStyle.Fill;
-            buttonig3.FlatAppearance.BorderSize = 0;
-            buttonig3.FlatStyle = FlatStyle.Flat;
-            buttonig3.Font = new Font("Segoe UI", 9.75F);
-            buttonig3.ForeColor = Color.White;
-            buttonig3.HoverBackgroundColor = Color.Black;
-            buttonig3.Location = new Point(478, 3);
-            buttonig3.Name = "buttonig3";
-            buttonig3.Size = new Size(152, 26);
-            buttonig3.TabIndex = 5;
-            buttonig3.Text = "Atualizar Turma";
-            buttonig3.TextColor = Color.White;
-            buttonig3.UseVisualStyleBackColor = false;
-            // 
-            // buttonig4
-            // 
-            buttonig4.BackColor = Color.Gray;
-            buttonig4.BackgroundColor = Color.Gray;
-            buttonig4.BorderColor = Color.PaleVioletRed;
-            buttonig4.BorderRadius = 5;
-            buttonig4.BorderSize = 0;
-            buttonig4.Dock = DockStyle.Fill;
-            buttonig4.FlatAppearance.BorderSize = 0;
-            buttonig4.FlatStyle = FlatStyle.Flat;
-            buttonig4.Font = new Font("Segoe UI", 9.75F);
-            buttonig4.ForeColor = Color.White;
-            buttonig4.HoverBackgroundColor = Color.Black;
-            buttonig4.Location = new Point(636, 3);
-            buttonig4.Name = "buttonig4";
-            buttonig4.Size = new Size(155, 26);
-            buttonig4.TabIndex = 6;
-            buttonig4.Text = "Deletar Turma";
-            buttonig4.TextColor = Color.White;
-            buttonig4.UseVisualStyleBackColor = false;
             // 
             // F_GerenciarTurmas
             // 

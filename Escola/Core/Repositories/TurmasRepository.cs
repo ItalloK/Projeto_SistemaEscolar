@@ -12,9 +12,9 @@ namespace Escola.Core.Repositories
 {
     public class TurmasRepository:ITurmas
     {
-        public void CadTurma(Turma t)
+        public bool CadTurma(Turma t)
         {
-
+            return true;
         }
 
         public Turma PegarTurma()

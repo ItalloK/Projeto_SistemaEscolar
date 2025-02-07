@@ -9,6 +9,6 @@ namespace Escola.Core.Interfaces
 {
     public interface IMatricula
     {
-        public void MatricularAluno(Matricula m);
+        public bool MatricularAluno(Matricula m);
     }
 }

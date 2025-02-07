@@ -9,7 +9,7 @@ namespace Escola.Core.Interfaces
 {
     public interface ITurmas
     {
-        public void CadTurma(Turma t);
+        public bool CadTurma(Turma t);
         public Turma PegarTurma();
         public List<Turma> PegarTurmas();
         public List<Aluno> PegarAlunosPorTurma(Turma t);

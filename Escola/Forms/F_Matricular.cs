@@ -43,6 +43,13 @@ namespace Escola.Forms
             Aluno? aluno = a.BuscarAlunoPorCPF(cpf);
             if (aluno != null)
             {
+                AlunoRepository alunoRepository = new AlunoRepository();
+                if (!alunoRepository.VerificarAlunoMatriculado(aluno))
+                {
+                    MessageBox.Show("Aluno ja está matriculado!");
+                    return;
+                }
+
                 idAluno = aluno.id; // seta o ID do aluno na variavel global ao achar o aluno.
                 lbl_NomeAluno.Text = aluno.nome;
                 lbl_SexoAluno.Text = aluno.sexo;
@@ -146,9 +153,17 @@ namespace Escola.Forms
             }
 
             MatriculaRepository matriculaRepository = new MatriculaRepository();
-            matriculaRepository.MatricularAluno(m);
-
-            this.Close();
+            bool sucesso = matriculaRepository.MatricularAluno(m);
+            if (sucesso)
+            {
+                MessageBox.Show("Aluno Matriculado!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao cadastrar aluno.");
+                return;
+            }
         }
     }
 }

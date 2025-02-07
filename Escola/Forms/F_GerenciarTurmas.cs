@@ -1,5 +1,6 @@
 ﻿using Escola.Core.Entities;
 using Escola.Core.Repositories;
+using Escola.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -79,6 +80,17 @@ namespace Escola.Forms
                     dgv_DadosAluno.Columns["Nome"]!.HeaderText = "Nome";
                     dgv_DadosAluno.Columns["Sexo"]!.HeaderText = "Sexo";
                 }
+            }
+        }
+
+        private void dgv_DadosAluno_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //função abaixo pega o ' id ' ou ' codigo ' e poe 5 zeros antes do id do aluno;
+            if (dgv_DadosAluno.Columns[e.ColumnIndex].Name == "id" && e.Value != null)
+            {
+                int id = Convert.ToInt32(e.Value);
+                e.Value = Funcoes.FormatarCodigo(id);
+                e.FormattingApplied = true;
             }
         }
     }

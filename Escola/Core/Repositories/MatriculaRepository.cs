@@ -12,20 +12,39 @@ namespace Escola.Core.Repositories
 {
     public class MatriculaRepository : IMatricula
     {
-        public void MatricularAluno(Matricula m)
+        public bool MatricularAluno(Matricula m)
         {
-            using (var connection = BancoDeDados.GetConnection())
+            try
             {
-                connection.Open();
-                string sql = "INSERT INTO Aluno_Turma (AlunoId, TurmaId) VALUES (@AlunoId, @TurmaId)";
-                using (var command = new SQLiteCommand(sql, connection))
+                using (var connection = BancoDeDados.GetConnection())
                 {
-                    command.Parameters.AddWithValue("@AlunoId", m.aluno.id);
-                    command.Parameters.AddWithValue("@TurmaId", m.turma.id);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Aluno matriculado com sucesso.");
+                    connection.Open();
+                    string sql = "INSERT INTO Aluno_Turma (AlunoId, TurmaId) VALUES (@AlunoId, @TurmaId)";
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@AlunoId", m.aluno.id);
+                        command.Parameters.AddWithValue("@TurmaId", m.turma.id);
+                        int linhasAfetadas = command.ExecuteNonQuery();
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
+            }catch(SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }catch(Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
             }
+            
         }
     }
 }
