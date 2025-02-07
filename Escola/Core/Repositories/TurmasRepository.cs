@@ -4,6 +4,7 @@ using Escola.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,45 @@ namespace Escola.Core.Repositories
     {
         public bool CadTurma(Turma t)
         {
-            return true;
+            Debug.WriteLine($"Tipo:{t.tipo} | Turno: {t.turno} | Serie: {t.serie} | MaxAlunos: {t.maxAlunos}");
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"INSERT INTO Turmas (Tipo, Turno, Serie, MaxAlunos) 
+                                    VALUES (@Tipo, @Turno, @Serie, @MaxAlunos)";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Tipo", t.tipo);
+                        command.Parameters.AddWithValue("@Turno", t.turno);
+                        command.Parameters.AddWithValue("@Serie", t.serie);
+                        command.Parameters.AddWithValue("@MaxAlunos", t.maxAlunos);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro de banco de dados: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+                return false;
+            }
         }
 
         public Turma PegarTurma()

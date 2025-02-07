@@ -41,12 +41,29 @@
             textBox1 = new TextBox();
             btn_CadAlunoGerenciador = new CustomControls.Botoes.ButtonIG();
             label1 = new Label();
+            panel_CadTurma = new Panel();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            cb_EscMaxAluno = new ComboBox();
+            label7 = new Label();
+            cb_EscTurno = new ComboBox();
+            label6 = new Label();
+            cb_EscTipo = new ComboBox();
+            label4 = new Label();
+            cb_EscSerie = new ComboBox();
+            label5 = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            btn_CancelarCadTurma = new CustomControls.Botoes.ButtonIG();
+            btn_CadastrarTurma = new CustomControls.Botoes.ButtonIG();
+            label3 = new Label();
             panel_GerenciarTurmas.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_Dados).BeginInit();
             tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgv_DadosAluno).BeginInit();
             tableLayoutPanel1.SuspendLayout();
+            panel_CadTurma.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // panel_GerenciarTurmas
@@ -235,6 +252,7 @@
             btn_CadAlunoGerenciador.Text = "Cadastrar Turma";
             btn_CadAlunoGerenciador.TextColor = Color.White;
             btn_CadAlunoGerenciador.UseVisualStyleBackColor = false;
+            btn_CadAlunoGerenciador.Click += btn_CadAlunoGerenciador_Click;
             // 
             // label1
             // 
@@ -247,12 +265,205 @@
             label1.Text = "Gerenciar Turmas";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // panel_CadTurma
+            // 
+            panel_CadTurma.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_CadTurma.Controls.Add(tableLayoutPanel5);
+            panel_CadTurma.Controls.Add(tableLayoutPanel4);
+            panel_CadTurma.Controls.Add(label3);
+            panel_CadTurma.Location = new Point(0, 0);
+            panel_CadTurma.Name = "panel_CadTurma";
+            panel_CadTurma.Size = new Size(800, 450);
+            panel_CadTurma.TabIndex = 1;
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel5.ColumnCount = 1;
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel5.Controls.Add(cb_EscMaxAluno, 0, 7);
+            tableLayoutPanel5.Controls.Add(label7, 0, 6);
+            tableLayoutPanel5.Controls.Add(cb_EscTurno, 0, 5);
+            tableLayoutPanel5.Controls.Add(label6, 0, 4);
+            tableLayoutPanel5.Controls.Add(cb_EscTipo, 0, 3);
+            tableLayoutPanel5.Controls.Add(label4, 0, 0);
+            tableLayoutPanel5.Controls.Add(cb_EscSerie, 0, 1);
+            tableLayoutPanel5.Controls.Add(label5, 0, 2);
+            tableLayoutPanel5.Location = new Point(6, 40);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 8;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.Size = new Size(788, 372);
+            tableLayoutPanel5.TabIndex = 2;
+            // 
+            // cb_EscMaxAluno
+            // 
+            cb_EscMaxAluno.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_EscMaxAluno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_EscMaxAluno.FormattingEnabled = true;
+            cb_EscMaxAluno.Location = new Point(3, 325);
+            cb_EscMaxAluno.Name = "cb_EscMaxAluno";
+            cb_EscMaxAluno.Size = new Size(308, 29);
+            cb_EscMaxAluno.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label7.Location = new Point(3, 301);
+            label7.Name = "label7";
+            label7.Size = new Size(338, 21);
+            label7.TabIndex = 6;
+            label7.Text = "Escolha o maximo de Alunos para esta turma:";
+            // 
+            // cb_EscTurno
+            // 
+            cb_EscTurno.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_EscTurno.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_EscTurno.FormattingEnabled = true;
+            cb_EscTurno.Location = new Point(3, 233);
+            cb_EscTurno.Name = "cb_EscTurno";
+            cb_EscTurno.Size = new Size(308, 29);
+            cb_EscTurno.TabIndex = 5;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label6.Location = new Point(3, 209);
+            label6.Name = "label6";
+            label6.Size = new Size(127, 21);
+            label6.TabIndex = 4;
+            label6.Text = "Escolha o Turno:";
+            // 
+            // cb_EscTipo
+            // 
+            cb_EscTipo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_EscTipo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_EscTipo.FormattingEnabled = true;
+            cb_EscTipo.Location = new Point(3, 141);
+            cb_EscTipo.Name = "cb_EscTipo";
+            cb_EscTipo.Size = new Size(308, 29);
+            cb_EscTipo.TabIndex = 3;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label4.Location = new Point(3, 25);
+            label4.Name = "label4";
+            label4.Size = new Size(120, 21);
+            label4.TabIndex = 0;
+            label4.Text = "Escolha a Serie:";
+            // 
+            // cb_EscSerie
+            // 
+            cb_EscSerie.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_EscSerie.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cb_EscSerie.FormattingEnabled = true;
+            cb_EscSerie.Location = new Point(3, 49);
+            cb_EscSerie.Name = "cb_EscSerie";
+            cb_EscSerie.Size = new Size(308, 29);
+            cb_EscSerie.TabIndex = 1;
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.Location = new Point(3, 117);
+            label5.Name = "label5";
+            label5.Size = new Size(117, 21);
+            label5.TabIndex = 2;
+            label5.Text = "Escolha o Tipo:";
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 3;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel4.Controls.Add(btn_CancelarCadTurma, 1, 0);
+            tableLayoutPanel4.Controls.Add(btn_CadastrarTurma, 2, 0);
+            tableLayoutPanel4.Dock = DockStyle.Bottom;
+            tableLayoutPanel4.Location = new Point(0, 418);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 1;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.Size = new Size(800, 32);
+            tableLayoutPanel4.TabIndex = 1;
+            // 
+            // btn_CancelarCadTurma
+            // 
+            btn_CancelarCadTurma.BackColor = Color.Gray;
+            btn_CancelarCadTurma.BackgroundColor = Color.Gray;
+            btn_CancelarCadTurma.BorderColor = Color.PaleVioletRed;
+            btn_CancelarCadTurma.BorderRadius = 5;
+            btn_CancelarCadTurma.BorderSize = 0;
+            btn_CancelarCadTurma.Dock = DockStyle.Fill;
+            btn_CancelarCadTurma.FlatAppearance.BorderSize = 0;
+            btn_CancelarCadTurma.FlatStyle = FlatStyle.Flat;
+            btn_CancelarCadTurma.Font = new Font("Segoe UI", 9.75F);
+            btn_CancelarCadTurma.ForeColor = Color.White;
+            btn_CancelarCadTurma.HoverBackgroundColor = Color.Black;
+            btn_CancelarCadTurma.Location = new Point(403, 3);
+            btn_CancelarCadTurma.Name = "btn_CancelarCadTurma";
+            btn_CancelarCadTurma.Size = new Size(194, 26);
+            btn_CancelarCadTurma.TabIndex = 0;
+            btn_CancelarCadTurma.Text = "Cancelar";
+            btn_CancelarCadTurma.TextColor = Color.White;
+            btn_CancelarCadTurma.UseVisualStyleBackColor = false;
+            btn_CancelarCadTurma.Click += btn_CancelarCadTurma_Click;
+            // 
+            // btn_CadastrarTurma
+            // 
+            btn_CadastrarTurma.BackColor = Color.Gray;
+            btn_CadastrarTurma.BackgroundColor = Color.Gray;
+            btn_CadastrarTurma.BorderColor = Color.PaleVioletRed;
+            btn_CadastrarTurma.BorderRadius = 5;
+            btn_CadastrarTurma.BorderSize = 0;
+            btn_CadastrarTurma.Dock = DockStyle.Fill;
+            btn_CadastrarTurma.FlatAppearance.BorderSize = 0;
+            btn_CadastrarTurma.FlatStyle = FlatStyle.Flat;
+            btn_CadastrarTurma.Font = new Font("Segoe UI", 9.75F);
+            btn_CadastrarTurma.ForeColor = Color.White;
+            btn_CadastrarTurma.HoverBackgroundColor = Color.Black;
+            btn_CadastrarTurma.Location = new Point(603, 3);
+            btn_CadastrarTurma.Name = "btn_CadastrarTurma";
+            btn_CadastrarTurma.Size = new Size(194, 26);
+            btn_CadastrarTurma.TabIndex = 1;
+            btn_CadastrarTurma.Text = "Cadastrar Turma";
+            btn_CadastrarTurma.TextColor = Color.White;
+            btn_CadastrarTurma.UseVisualStyleBackColor = false;
+            btn_CadastrarTurma.Click += btn_CadastrarTurma_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(12, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(159, 25);
+            label3.TabIndex = 0;
+            label3.Text = "Cadastrar Turma";
+            // 
             // F_GerenciarTurmas
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel_CadTurma);
             Controls.Add(panel_GerenciarTurmas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_GerenciarTurmas";
@@ -268,6 +479,11 @@
             ((System.ComponentModel.ISupportInitialize)dgv_DadosAluno).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            panel_CadTurma.ResumeLayout(false);
+            panel_CadTurma.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel5.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -285,5 +501,19 @@
         private DataGridView dgv_DadosAluno;
         private CustomControls.Botoes.ButtonIG buttonig4;
         private CustomControls.Botoes.ButtonIG buttonig3;
+        private Panel panel_CadTurma;
+        private Label label3;
+        private TableLayoutPanel tableLayoutPanel4;
+        private CustomControls.Botoes.ButtonIG btn_CancelarCadTurma;
+        private CustomControls.Botoes.ButtonIG btn_CadastrarTurma;
+        private TableLayoutPanel tableLayoutPanel5;
+        private Label label4;
+        private ComboBox cb_EscSerie;
+        private ComboBox cb_EscMaxAluno;
+        private Label label7;
+        private ComboBox cb_EscTurno;
+        private Label label6;
+        private ComboBox cb_EscTipo;
+        private Label label5;
     }
 }

@@ -19,6 +19,52 @@ namespace Escola.Forms
         public F_GerenciarTurmas()
         {
             InitializeComponent();
+            AtivarPainel(panel_GerenciarTurmas);
+            CarregarPropriedadesCadTurma(); // carrega as propriedas do form de cadastro de turma
+        }
+
+        private void AtivarPainel(Panel p)
+        {
+            panel_GerenciarTurmas.Visible = false;
+            panel_CadTurma.Visible = false;
+            p.Visible = true;
+            p.Location = new Point(0, 0);
+        }
+
+        private void CarregarPropriedadesCadTurma()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                int numero = i + 1;
+                string texto = numero + " ano";
+                cb_EscSerie.Items.Add(new KeyValuePair<int, string>(numero, texto));
+            }
+            cb_EscSerie.DisplayMember = "Value";
+            cb_EscSerie.ValueMember = "Key";
+            cb_EscSerie.SelectedIndex = 0;
+
+
+            cb_EscTipo.Items.Add("Fundamental");
+            cb_EscTipo.Items.Add("Medio");
+            cb_EscTipo.SelectedIndex = 0;
+
+
+            cb_EscTurno.Items.Add("Matutino");
+            cb_EscTurno.Items.Add("Vespertino");
+            cb_EscTurno.Items.Add("Noturno");
+            cb_EscTurno.SelectedIndex = 0;
+
+
+            for (int i = 0; i < 50; i++)
+            {
+                int numero = i + 1;
+                string texto = numero + (numero == 1 ? " aluno" : " alunos");
+
+                cb_EscMaxAluno.Items.Add(new KeyValuePair<int, string>(numero, texto));
+            }
+            cb_EscMaxAluno.DisplayMember = "Value";
+            cb_EscMaxAluno.ValueMember = "Key";
+            cb_EscMaxAluno.SelectedIndex = 0;
         }
 
         private void F_GerenciarTurmas_Load(object sender, EventArgs e)
@@ -91,6 +137,69 @@ namespace Escola.Forms
                 int id = Convert.ToInt32(e.Value);
                 e.Value = Funcoes.FormatarCodigo(id);
                 e.FormattingApplied = true;
+            }
+        }
+
+        private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
+        {
+            AtivarPainel(panel_CadTurma);
+        }
+
+        private void btn_CancelarCadTurma_Click(object sender, EventArgs e)
+        {
+            AtivarPainel(panel_GerenciarTurmas);
+        }
+
+        private void btn_CadastrarTurma_Click(object sender, EventArgs e)
+        {
+            CadastrarTurma();
+        }
+
+        private void CadastrarTurma()
+        {
+            int valorMaxAlunos = (int)((KeyValuePair<int, string>)cb_EscMaxAluno.SelectedItem).Key;
+
+            if (valorMaxAlunos < 1 || valorMaxAlunos > 50)
+            {
+                MessageBox.Show("O numero maximo de alunos não pode ser menor que 1 ou maior que 50!");
+                return;
+            }
+
+            int valorSerie = (int)((KeyValuePair<int, string>)cb_EscSerie.SelectedItem).Key;
+
+            if (valorSerie < 1 || valorSerie > 9)
+            {
+                MessageBox.Show("A serie nao pode ser menor que 1 ou maior que 9!");
+                return;
+            }
+
+            string tipo = cb_EscTipo.Text;
+            string turno = cb_EscTurno.Text;
+
+            if(valorSerie > 3 && tipo == "Medio")
+            {
+                MessageBox.Show("Erro, a serie não pode ser maior que 3 e o tipo medio!");
+                return;
+            }
+
+            Turma turma = new Turma
+            {
+                serie = valorSerie.ToString(),
+                tipo = tipo,
+                turno = turno,
+                maxAlunos = valorMaxAlunos
+            };
+
+            TurmasRepository tr = new TurmasRepository();
+            bool sucesso = tr.CadTurma(turma);
+            if (sucesso) {
+                MessageBox.Show("Turma cadastrada!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Turma não cadastrada!");
+                return;
             }
         }
     }
