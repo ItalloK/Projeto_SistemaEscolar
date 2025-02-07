@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\repositories\\turmasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\repositories\\turmasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\infrastructure\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\infrastructure\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\repositories\\alunorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +30,42 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BancoDeDados.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Infrastructure\\BancoDeDados.cs",
-              "RelativeDocumentMoniker": "Core\\Infrastructure\\BancoDeDados.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Infrastructure\\BancoDeDados.cs",
-              "RelativeToolTip": "Core\\Infrastructure\\BancoDeDados.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAE4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T12:19:19.476Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "TurmasRepository.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\TurmasRepository.cs",
-              "RelativeDocumentMoniker": "Core\\Repositories\\TurmasRepository.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\TurmasRepository.cs",
-              "RelativeToolTip": "Core\\Repositories\\TurmasRepository.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAQwHEAAAAJAAAAAAAAAA==",
+              "Title": "AlunoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\AlunoRepository.cs",
+              "RelativeDocumentMoniker": "Core\\Repositories\\AlunoRepository.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\AlunoRepository.cs",
+              "RelativeToolTip": "Core\\Repositories\\AlunoRepository.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T12:05:17.709Z",
+              "WhenOpened": "2025-02-07T15:35:49.36Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "F_GerenciarTurmas.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs",
-              "RelativeDocumentMoniker": "Forms\\F_GerenciarTurmas.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs",
-              "RelativeToolTip": "Forms\\F_GerenciarTurmas.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAQwE8AAAAiAAAAAAAAAA==",
+              "Title": "F_GerenciarAlunos.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs",
+              "RelativeDocumentMoniker": "Forms\\F_GerenciarAlunos.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs",
+              "RelativeToolTip": "Forms\\F_GerenciarAlunos.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHEAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T11:44:37.2Z",
+              "WhenOpened": "2025-02-07T15:32:01.163Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "F_GerenciarTurmas.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs",
-              "RelativeDocumentMoniker": "Forms\\F_GerenciarTurmas.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs [Projeto]",
-              "RelativeToolTip": "Forms\\F_GerenciarTurmas.cs [Projeto]",
+              "Title": "F_GerenciarProfessores.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs",
+              "RelativeDocumentMoniker": "Forms\\F_GerenciarProfessores.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs",
+              "RelativeToolTip": "Forms\\F_GerenciarProfessores.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T11:16:54.367Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-02-07T15:37:35.929Z",
+              "EditorCaption": ""
             }
           ]
         }

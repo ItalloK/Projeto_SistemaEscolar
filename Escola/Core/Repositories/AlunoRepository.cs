@@ -13,26 +13,50 @@ namespace Escola.Core.Repositories
 {
     public class AlunoRepository : IAluno
     {
-        public void CadAluno(Aluno a)
+        public bool CadAluno(Aluno a)
         {
-            using (var connection = BancoDeDados.GetConnection())
+            try
             {
-                connection.Open();
-                string sql = "INSERT INTO Aluno (Nome, Cpf, DataNascimento, Nacionalidade, Naturalidade, Sexo, CorRaca, Endereco) VALUES (@Nome, @Cpf, @DataNascimento, @Nacionalidade, @Naturalidade, @Sexo, @CorRaca, @Endereco)";
-                using (var command = new SQLiteCommand(sql, connection))
+                using (var connection = BancoDeDados.GetConnection())
                 {
-                    command.Parameters.AddWithValue("@Nome", a.nome);
-                    command.Parameters.AddWithValue("@Cpf", a.cpf);
-                    command.Parameters.AddWithValue("@DataNascimento", a.dataNascimento);
-                    command.Parameters.AddWithValue("@Nacionalidade", a.nacionalidade);
-                    command.Parameters.AddWithValue("@Naturalidade", a.naturalidade);
-                    command.Parameters.AddWithValue("@Sexo", a.sexo);
-                    command.Parameters.AddWithValue("@CorRaca", a.corraca);
-                    command.Parameters.AddWithValue("@Endereco", a.endereco);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Aluno cadastrado com sucesso.");
-                    DadosCadastro(a);
+                    connection.Open();
+                    string sql = @"INSERT INTO Aluno (Nome, Cpf, DataNascimento, Nacionalidade, Naturalidade, Sexo, CorRaca, Endereco) 
+                           VALUES (@Nome, @Cpf, @DataNascimento, @Nacionalidade, @Naturalidade, @Sexo, @CorRaca, @Endereco)";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", a.nome);
+                        command.Parameters.AddWithValue("@Cpf", a.cpf);
+                        command.Parameters.AddWithValue("@DataNascimento", a.dataNascimento);
+                        command.Parameters.AddWithValue("@Nacionalidade", a.nacionalidade);
+                        command.Parameters.AddWithValue("@Naturalidade", a.naturalidade);
+                        command.Parameters.AddWithValue("@Sexo", a.sexo);
+                        command.Parameters.AddWithValue("@CorRaca", a.corraca);
+                        command.Parameters.AddWithValue("@Endereco", a.endereco);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            DadosCadastro(a);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro de banco de dados: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+                return false;
             }
         }
 

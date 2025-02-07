@@ -9,7 +9,7 @@ namespace Escola.Core.Interfaces
 {
     public interface IAluno
     {
-        public void CadAluno(Aluno a);
+        public bool CadAluno(Aluno a);
         public void DadosCadastro(Aluno a);
         public Aluno? BuscarAlunoPorCPF(string cpf);
     }

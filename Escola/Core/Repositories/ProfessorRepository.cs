@@ -13,28 +13,51 @@ namespace Escola.Core.Repositories
 {
     public class ProfessorRepository : IProfessor
     {
-        public void CadProfessor(Professor p)
+        public bool CadProfessor(Professor p)
         {
-            using (var connection = BancoDeDados.GetConnection())
+            try
             {
-                connection.Open();
-                string sql = "INSERT INTO Professor (Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca) VALUES (@Nome, @Cpf, @DataNascimento, @Sexo, @Endereco, @Naturalidade, @Nacionalidade, @CorRaca)";
-                using (var command = new SQLiteCommand(sql, connection))
+                using (var connection = BancoDeDados.GetConnection())
                 {
-                    command.Parameters.AddWithValue("@Nome", p.nome);
-                    command.Parameters.AddWithValue("@Cpf", p.cpf);
-                    command.Parameters.AddWithValue("@DataNascimento", p.dataNascimento);
-                    command.Parameters.AddWithValue("@Sexo", p.sexo);
-                    command.Parameters.AddWithValue("@Endereco", p.endereco);
-                    command.Parameters.AddWithValue("@Naturalidade", p.naturalidade);
-                    command.Parameters.AddWithValue("@Nacionalidade", p.nacionalidade);
-                    command.Parameters.AddWithValue("@CorRaca", p.corraca);
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Professor cadastrado com sucesso.");
-                    DadosCadastro(p);
+                    connection.Open();
+                    string sql = "INSERT INTO Professor (Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca) VALUES (@Nome, @Cpf, @DataNascimento, @Sexo, @Endereco, @Naturalidade, @Nacionalidade, @CorRaca)";
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", p.nome);
+                        command.Parameters.AddWithValue("@Cpf", p.cpf);
+                        command.Parameters.AddWithValue("@DataNascimento", p.dataNascimento);
+                        command.Parameters.AddWithValue("@Sexo", p.sexo);
+                        command.Parameters.AddWithValue("@Endereco", p.endereco);
+                        command.Parameters.AddWithValue("@Naturalidade", p.naturalidade);
+                        command.Parameters.AddWithValue("@Nacionalidade", p.nacionalidade);
+                        command.Parameters.AddWithValue("@CorRaca", p.corraca);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            DadosCadastro(p);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
                 }
             }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }            
         }
+
         public void DadosCadastro(Professor p)
         {
             Debug.WriteLine(" ~~~~~~~~~~~~ > Professor Cadastrado < ~~~~~~~~~~~~");

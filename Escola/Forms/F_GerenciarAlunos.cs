@@ -111,13 +111,20 @@ namespace Escola
                 endereco = endereco
             };
             AlunoRepository repository = new AlunoRepository();
-            repository.CadAluno(aluno); // cadastra o aluno
+            bool sucesso = repository.CadAluno(aluno); // cadastra o aluno
 
-            QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
-
-            Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
-
-            this.Close();
+            if (sucesso)
+            {
+                MessageBox.Show("Aluno cadastrado com sucesso.");
+                QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
+                Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao cadastrar aluno.");
+                return;
+            }
         }
 
         private bool CadastrarResponsavel()

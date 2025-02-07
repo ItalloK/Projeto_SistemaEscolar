@@ -1,5 +1,6 @@
 ﻿using Escola.Core;
 using Escola.Core.Entities;
+using Escola.Core.Interfaces;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
 using System;
@@ -101,12 +102,20 @@ namespace Escola
                 endereco = endereco
             };
             ProfessorRepository repository = new ProfessorRepository();
-            repository.CadProfessor(professor); // cadastra o professor
 
-            QrCode.GerarQRcode(cpf, Global.TIPO_PROFESSOR); // gerar qrCode
-            Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_PROFESSOR); // salvar foto na pasta do professor
-
-            this.Close();
+            bool sucesso = repository.CadProfessor(professor); // cadastra o professor
+            if (sucesso)
+            {
+                MessageBox.Show("Professor cadastrado com sucesso.");
+                QrCode.GerarQRcode(cpf, Global.TIPO_PROFESSOR); // gerar qrCode
+                Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_PROFESSOR); // salvar foto na pasta do professor
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao cadastrar professor.");
+                return;
+            }
         }
     }
 }
