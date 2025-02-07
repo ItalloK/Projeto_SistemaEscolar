@@ -32,17 +32,21 @@
             menuStrip1 = new MenuStrip();
             alunosToolStripMenuItem = new ToolStripMenuItem();
             cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();
+            matricularToolStripMenuItem = new ToolStripMenuItem();
             professoresToolStripMenuItem = new ToolStripMenuItem();
             gerenciarProfessoresToolStripMenuItem = new ToolStripMenuItem();
+            turmasToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarTurmasToolStripMenuItem = new ToolStripMenuItem();
             carteirinhaToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
-            matricularToolStripMenuItem = new ToolStripMenuItem();
+            pb_Principal = new PictureBox();
             menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pb_Principal).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { alunosToolStripMenuItem, professoresToolStripMenuItem, carteirinhaToolStripMenuItem, configuraçõesToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { alunosToolStripMenuItem, professoresToolStripMenuItem, turmasToolStripMenuItem, carteirinhaToolStripMenuItem, configuraçõesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 25);
@@ -62,9 +66,16 @@
             // cadastrarAlunoToolStripMenuItem
             // 
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            cadastrarAlunoToolStripMenuItem.Size = new Size(180, 22);
+            cadastrarAlunoToolStripMenuItem.Size = new Size(169, 22);
             cadastrarAlunoToolStripMenuItem.Text = "Gerenciar Aluno";
             cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
+            // 
+            // matricularToolStripMenuItem
+            // 
+            matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
+            matricularToolStripMenuItem.Size = new Size(169, 22);
+            matricularToolStripMenuItem.Text = "Matricular";
+            matricularToolStripMenuItem.Click += matricularToolStripMenuItem_Click;
             // 
             // professoresToolStripMenuItem
             // 
@@ -82,6 +93,22 @@
             gerenciarProfessoresToolStripMenuItem.Size = new Size(205, 22);
             gerenciarProfessoresToolStripMenuItem.Text = "Gerenciar Professores";
             gerenciarProfessoresToolStripMenuItem.Click += gerenciarProfessoresToolStripMenuItem_Click;
+            // 
+            // turmasToolStripMenuItem
+            // 
+            turmasToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarTurmasToolStripMenuItem });
+            turmasToolStripMenuItem.Font = new Font("Segoe UI", 9.75F);
+            turmasToolStripMenuItem.Image = Properties.Resources.turmas;
+            turmasToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
+            turmasToolStripMenuItem.Name = "turmasToolStripMenuItem";
+            turmasToolStripMenuItem.Size = new Size(79, 21);
+            turmasToolStripMenuItem.Text = "Turmas";
+            // 
+            // gerenciarTurmasToolStripMenuItem
+            // 
+            gerenciarTurmasToolStripMenuItem.Name = "gerenciarTurmasToolStripMenuItem";
+            gerenciarTurmasToolStripMenuItem.Size = new Size(179, 22);
+            gerenciarTurmasToolStripMenuItem.Text = "Gerenciar Turmas";
             // 
             // carteirinhaToolStripMenuItem
             // 
@@ -103,19 +130,23 @@
             configuraçõesToolStripMenuItem.Text = "Configurações";
             configuraçõesToolStripMenuItem.Click += configuraçõesToolStripMenuItem_Click;
             // 
-            // matricularToolStripMenuItem
+            // pb_Principal
             // 
-            matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
-            matricularToolStripMenuItem.Size = new Size(180, 22);
-            matricularToolStripMenuItem.Text = "Matricular";
-            matricularToolStripMenuItem.Click += matricularToolStripMenuItem_Click;
+            pb_Principal.Dock = DockStyle.Fill;
+            pb_Principal.Location = new Point(0, 25);
+            pb_Principal.Name = "pb_Principal";
+            pb_Principal.Size = new Size(800, 400);
+            pb_Principal.SizeMode = PictureBoxSizeMode.Zoom;
+            pb_Principal.TabIndex = 1;
+            pb_Principal.TabStop = false;
             // 
             // F_Principal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(800, 409);
+            ClientSize = new Size(800, 425);
+            Controls.Add(pb_Principal);
             Controls.Add(menuStrip1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
@@ -125,6 +156,7 @@
             Text = "Escola: NomeDaEscola";
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pb_Principal).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,5 +171,8 @@
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem carteirinhaToolStripMenuItem;
         private ToolStripMenuItem matricularToolStripMenuItem;
+        private ToolStripMenuItem turmasToolStripMenuItem;
+        private ToolStripMenuItem gerenciarTurmasToolStripMenuItem;
+        private PictureBox pb_Principal;
     }
 }

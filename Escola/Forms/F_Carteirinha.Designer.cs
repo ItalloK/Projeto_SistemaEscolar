@@ -31,26 +31,28 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_Carteirinha));
             label1 = new Label();
             btn_Buscar = new Button();
-            panel1 = new Panel();
+            panel_Fundo = new Panel();
             pb_QrCode = new PictureBox();
             lbl_Serie = new Label();
             lbl_TextSerie = new Label();
             lbl_Turma = new Label();
             lbl_TextTurma = new Label();
             lbl_Codigo = new Label();
-            label9 = new Label();
+            lbl_TextCodigo = new Label();
             lbl_Sexo = new Label();
-            label7 = new Label();
+            lbl_TextSexo = new Label();
             lbl_DataNasc = new Label();
-            label4 = new Label();
+            lbl_TextDataNasc = new Label();
             lbl_Nome = new Label();
-            label2 = new Label();
+            lbl_TextNome = new Label();
             pb_FotoPerfil = new PictureBox();
+            pb_FundoCarteirinha = new PictureBox();
             cb_Tipo = new ComboBox();
             mtb_CpfBuscar = new MaskedTextBox();
-            panel1.SuspendLayout();
+            panel_Fundo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_QrCode).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_FundoCarteirinha).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -77,34 +79,35 @@
             btn_Buscar.UseVisualStyleBackColor = true;
             btn_Buscar.Click += btn_Buscar_Click;
             // 
-            // panel1
+            // panel_Fundo
             // 
-            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.BackColor = Color.Gainsboro;
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(pb_QrCode);
-            panel1.Controls.Add(lbl_Serie);
-            panel1.Controls.Add(lbl_TextSerie);
-            panel1.Controls.Add(lbl_Turma);
-            panel1.Controls.Add(lbl_TextTurma);
-            panel1.Controls.Add(lbl_Codigo);
-            panel1.Controls.Add(label9);
-            panel1.Controls.Add(lbl_Sexo);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(lbl_DataNasc);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(lbl_Nome);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(pb_FotoPerfil);
-            panel1.Location = new Point(12, 63);
-            panel1.Margin = new Padding(0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(550, 230);
-            panel1.TabIndex = 16;
+            panel_Fundo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel_Fundo.BackColor = Color.Transparent;
+            panel_Fundo.BorderStyle = BorderStyle.FixedSingle;
+            panel_Fundo.Controls.Add(pb_QrCode);
+            panel_Fundo.Controls.Add(lbl_Serie);
+            panel_Fundo.Controls.Add(lbl_TextSerie);
+            panel_Fundo.Controls.Add(lbl_Turma);
+            panel_Fundo.Controls.Add(lbl_TextTurma);
+            panel_Fundo.Controls.Add(lbl_Codigo);
+            panel_Fundo.Controls.Add(lbl_TextCodigo);
+            panel_Fundo.Controls.Add(lbl_Sexo);
+            panel_Fundo.Controls.Add(lbl_TextSexo);
+            panel_Fundo.Controls.Add(lbl_DataNasc);
+            panel_Fundo.Controls.Add(lbl_TextDataNasc);
+            panel_Fundo.Controls.Add(lbl_Nome);
+            panel_Fundo.Controls.Add(lbl_TextNome);
+            panel_Fundo.Controls.Add(pb_FotoPerfil);
+            panel_Fundo.Controls.Add(pb_FundoCarteirinha);
+            panel_Fundo.Location = new Point(12, 63);
+            panel_Fundo.Margin = new Padding(0);
+            panel_Fundo.Name = "panel_Fundo";
+            panel_Fundo.Size = new Size(550, 230);
+            panel_Fundo.TabIndex = 16;
             // 
             // pb_QrCode
             // 
-            pb_QrCode.BackColor = Color.White;
+            pb_QrCode.BackColor = Color.Transparent;
             pb_QrCode.Location = new Point(495, 176);
             pb_QrCode.Name = "pb_QrCode";
             pb_QrCode.Size = new Size(50, 50);
@@ -125,7 +128,8 @@
             // lbl_TextSerie
             // 
             lbl_TextSerie.AutoSize = true;
-            lbl_TextSerie.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_TextSerie.BackColor = Color.Transparent;
+            lbl_TextSerie.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lbl_TextSerie.Location = new Point(402, 124);
             lbl_TextSerie.Name = "lbl_TextSerie";
             lbl_TextSerie.Size = new Size(40, 17);
@@ -146,10 +150,11 @@
             // lbl_TextTurma
             // 
             lbl_TextTurma.AutoSize = true;
-            lbl_TextTurma.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbl_TextTurma.BackColor = Color.Transparent;
+            lbl_TextTurma.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             lbl_TextTurma.Location = new Point(169, 124);
             lbl_TextTurma.Name = "lbl_TextTurma";
-            lbl_TextTurma.Size = new Size(48, 17);
+            lbl_TextTurma.Size = new Size(49, 17);
             lbl_TextTurma.TabIndex = 9;
             lbl_TextTurma.Text = "Turma:";
             lbl_TextTurma.TextAlign = ContentAlignment.MiddleCenter;
@@ -164,16 +169,17 @@
             lbl_Codigo.TabIndex = 8;
             lbl_Codigo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // lbl_TextCodigo
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(13, 172);
-            label9.Name = "label9";
-            label9.Size = new Size(54, 17);
-            label9.TabIndex = 7;
-            label9.Text = "Código:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_TextCodigo.AutoSize = true;
+            lbl_TextCodigo.BackColor = Color.Transparent;
+            lbl_TextCodigo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            lbl_TextCodigo.Location = new Point(13, 172);
+            lbl_TextCodigo.Name = "lbl_TextCodigo";
+            lbl_TextCodigo.Size = new Size(54, 17);
+            lbl_TextCodigo.TabIndex = 7;
+            lbl_TextCodigo.Text = "Código:";
+            lbl_TextCodigo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_Sexo
             // 
@@ -185,16 +191,17 @@
             lbl_Sexo.TabIndex = 6;
             lbl_Sexo.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // lbl_TextSexo
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(402, 69);
-            label7.Name = "label7";
-            label7.Size = new Size(39, 17);
-            label7.TabIndex = 5;
-            label7.Text = "Sexo:";
-            label7.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_TextSexo.AutoSize = true;
+            lbl_TextSexo.BackColor = Color.Transparent;
+            lbl_TextSexo.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            lbl_TextSexo.Location = new Point(402, 69);
+            lbl_TextSexo.Name = "lbl_TextSexo";
+            lbl_TextSexo.Size = new Size(40, 17);
+            lbl_TextSexo.TabIndex = 5;
+            lbl_TextSexo.Text = "Sexo:";
+            lbl_TextSexo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_DataNasc
             // 
@@ -206,16 +213,17 @@
             lbl_DataNasc.TabIndex = 4;
             lbl_DataNasc.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lbl_TextDataNasc
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(169, 69);
-            label4.Name = "label4";
-            label4.Size = new Size(130, 17);
-            label4.TabIndex = 3;
-            label4.Text = "Data de Nascimento:";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_TextDataNasc.AutoSize = true;
+            lbl_TextDataNasc.BackColor = Color.Transparent;
+            lbl_TextDataNasc.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            lbl_TextDataNasc.Location = new Point(169, 69);
+            lbl_TextDataNasc.Name = "lbl_TextDataNasc";
+            lbl_TextDataNasc.Size = new Size(134, 17);
+            lbl_TextDataNasc.TabIndex = 3;
+            lbl_TextDataNasc.Text = "Data de Nascimento:";
+            lbl_TextDataNasc.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_Nome
             // 
@@ -227,16 +235,17 @@
             lbl_Nome.TabIndex = 2;
             lbl_Nome.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lbl_TextNome
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(169, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(47, 17);
-            label2.TabIndex = 1;
-            label2.Text = "Nome:";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_TextNome.AutoSize = true;
+            lbl_TextNome.BackColor = Color.Transparent;
+            lbl_TextNome.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            lbl_TextNome.Location = new Point(169, 13);
+            lbl_TextNome.Name = "lbl_TextNome";
+            lbl_TextNome.Size = new Size(48, 17);
+            lbl_TextNome.TabIndex = 1;
+            lbl_TextNome.Text = "Nome:";
+            lbl_TextNome.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pb_FotoPerfil
             // 
@@ -248,6 +257,15 @@
             pb_FotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
             pb_FotoPerfil.TabIndex = 0;
             pb_FotoPerfil.TabStop = false;
+            // 
+            // pb_FundoCarteirinha
+            // 
+            pb_FundoCarteirinha.Dock = DockStyle.Fill;
+            pb_FundoCarteirinha.Location = new Point(0, 0);
+            pb_FundoCarteirinha.Name = "pb_FundoCarteirinha";
+            pb_FundoCarteirinha.Size = new Size(548, 228);
+            pb_FundoCarteirinha.TabIndex = 14;
+            pb_FundoCarteirinha.TabStop = false;
             // 
             // cb_Tipo
             // 
@@ -278,7 +296,7 @@
             ClientSize = new Size(574, 302);
             Controls.Add(mtb_CpfBuscar);
             Controls.Add(cb_Tipo);
-            Controls.Add(panel1);
+            Controls.Add(panel_Fundo);
             Controls.Add(btn_Buscar);
             Controls.Add(label1);
             FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -287,11 +305,13 @@
             Name = "F_Carteirinha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Carteirinha";
+            FormClosing += F_Carteirinha_FormClosing;
             Load += F_Carteirinha_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel_Fundo.ResumeLayout(false);
+            panel_Fundo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pb_QrCode).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb_FotoPerfil).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_FundoCarteirinha).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -299,22 +319,23 @@
         #endregion
         private Label label1;
         private Button btn_Buscar;
-        private Panel panel1;
+        private Panel panel_Fundo;
         private ComboBox cb_Tipo;
         private MaskedTextBox mtb_CpfBuscar;
         private PictureBox pb_FotoPerfil;
-        private Label label2;
+        private Label lbl_TextNome;
         private Label lbl_Nome;
-        private Label label4;
+        private Label lbl_TextDataNasc;
         private Label lbl_DataNasc;
         private Label lbl_Sexo;
-        private Label label7;
+        private Label lbl_TextSexo;
         private Label lbl_Codigo;
-        private Label label9;
+        private Label lbl_TextCodigo;
         private Label lbl_Turma;
         private Label lbl_TextTurma;
         private Label lbl_Serie;
         private Label lbl_TextSerie;
         private PictureBox pb_QrCode;
+        private PictureBox pb_FundoCarteirinha;
     }
 }

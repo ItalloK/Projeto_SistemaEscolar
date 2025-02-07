@@ -87,6 +87,8 @@ namespace Escola
                 return;
             }
 
+            if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
+
             Professor professor = new Professor
             {
                 nome = nome,

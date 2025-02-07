@@ -9,20 +9,20 @@ public static class Configs
     public class AppSettings
     {
         public string NomeEscola { get; set; } = "Padrão";
+        public string FotoPrincipal { get; set; } = "";
+        public string FundoCarteirinha { get; set; } = "";
     }
 
     public static AppSettings CarregarConfiguracoes()
     {
         if (File.Exists(ConfigFilePath))
         {
-            // Carregar configurações existentes
-            string json = File.ReadAllText(ConfigFilePath);
+            string json = File.ReadAllText(ConfigFilePath); // Carregar configurações existentes
             return JsonSerializer.Deserialize<AppSettings>(json);
         }
         else
         {
-            // Criar configurações padrão
-            var defaultSettings = new AppSettings();
+            var defaultSettings = new AppSettings(); // Criar configurações padrão
             SalvarConfiguracoes(defaultSettings); // Salvar arquivo padrão
             return defaultSettings;
         }

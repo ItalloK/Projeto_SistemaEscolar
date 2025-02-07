@@ -10,5 +10,7 @@ namespace Escola.Core
     {
         public const int TIPO_ALUNO = 0;
         public const int TIPO_PROFESSOR = 1;
+        public const int TIPO_CONFIG = 2;
+        public const int TIPO_CARTEIRINHA = 3;
     }
 }

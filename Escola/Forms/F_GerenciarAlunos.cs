@@ -89,6 +89,8 @@ namespace Escola
                 return;
             }
 
+            if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
+
             /* por aqui uma verificação para ver se o responsavel ja esta cadastrado, se não tiver
                utilizar a função de cadastrar o responsavel*/
 
@@ -112,6 +114,7 @@ namespace Escola
             repository.CadAluno(aluno); // cadastra o aluno
 
             QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
+
             Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
 
             this.Close();

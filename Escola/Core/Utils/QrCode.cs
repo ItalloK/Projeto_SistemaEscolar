@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using QRCoder;
-using System;
 using System.Drawing;
 using System.IO;
 using System.Diagnostics;
+using QRCoder;
 
 namespace Escola.Core.Utils
 {
     public class QrCode
     {
-
         public static void GerarQRcode(string dadoUsuario, int tipo)
         {
             string pastaDestino = "";
@@ -33,9 +27,15 @@ namespace Escola.Core.Utils
                 QRCodeData qrCodeData = qrGenerator.CreateQrCode(dadoUsuario, QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
 
-                Bitmap qrCodeImage = qrCode.GetGraphic(20); // O número 20 define o tamanho do QR Code
+                // Gerando QR Code com fundo branco (temporário)
+                Bitmap qrCodeImage = qrCode.GetGraphic(20, Color.Black, Color.White, true);
+
+                // Tornando o fundo branco transparente
+                qrCodeImage.MakeTransparent(Color.White);
 
                 string caminhoArquivo = Path.Combine(pastaDestino, dadoUsuario + ".png");
+
+                // Salvar a imagem como PNG para preservar a transparência
                 qrCodeImage.Save(caminhoArquivo, System.Drawing.Imaging.ImageFormat.Png);
 
                 Debug.WriteLine($"QR Code gerado e salvo em: {caminhoArquivo}");

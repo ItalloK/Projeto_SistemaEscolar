@@ -31,22 +31,30 @@ namespace Escola.Core.Utils
         public static void SalvarFoto(string cpf, string fotoPath, int tipo)
         {
             string tipoStr = string.Empty;
+            string localSalvar = string.Empty;
 
             if (tipo == Global.TIPO_ALUNO)
             {
                 tipoStr = "Alunos";
+                localSalvar = "Fotos";
             }
             else if (tipo == Global.TIPO_PROFESSOR)
             {
                 tipoStr = "Professores";
+                localSalvar = "Fotos";
+            }
+            else if (tipo == Global.TIPO_CONFIG)
+            {
+                tipoStr = "Principal";
+                localSalvar = "Configuracoes";
+            }
+            else if (tipo == Global.TIPO_CARTEIRINHA)
+            {
+                tipoStr = "Carteirinha";
+                localSalvar = "Configuracoes";
             }
 
-            if (string.IsNullOrWhiteSpace(fotoPath) || !File.Exists(fotoPath))
-            {
-                MessageBox.Show("Por favor, carregue uma foto antes de salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", tipoStr);
+            string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, localSalvar, tipoStr);
             if (!Directory.Exists(pastaDestino))
             {
                 Directory.CreateDirectory(pastaDestino);
@@ -57,20 +65,34 @@ namespace Escola.Core.Utils
             try
             {
                 File.Copy(fotoPath, novoCaminho, true);
-                Console.WriteLine("Foto salva com sucesso!");
+                Debug.WriteLine("Foto salva com sucesso!");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erro ao salvar a foto: {ex.Message}");
+                Debug.WriteLine($"Erro ao salvar a foto: {ex.Message}");
                 return;
             }
         }
+
 
         public static bool ValidarCPF(string cpf)
         {
             if(cpf.Length != 11)
             {
                 MessageBox.Show("Digite os 11 numeros do CPF!");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public static bool VerificarSeCarregouFoto(string fotopath)
+        {
+            if (string.IsNullOrWhiteSpace(fotopath) || !File.Exists(fotopath))
+            {
+                MessageBox.Show("Por favor, carregue uma foto antes de salvar.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             else

@@ -22,6 +22,8 @@ namespace Escola
         public F_Carteirinha()
         {
             InitializeComponent();
+            CarregarFundo();
+            ConfigurarFundoTexto();
         }
 
         private void F_Carteirinha_Load(object sender, EventArgs e)
@@ -42,7 +44,7 @@ namespace Escola
             {
                 BuscarAluno(cpf);
             }
-            else if(index == 1)
+            else if (index == 1)
             {
                 BuscarProfessor(cpf);
             }
@@ -117,12 +119,12 @@ namespace Escola
                 pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Alunos");
                 pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Alunos");
             }
-            else if(tipo == TIPO_PROFESSOR)
+            else if (tipo == TIPO_PROFESSOR)
             {
                 pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Professores");
                 pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Professores");
             }
-            
+
 
             if (!Directory.Exists(pastaDestino))
             {
@@ -130,7 +132,7 @@ namespace Escola
                 return;
             }
 
-            
+
             string[] arquivos = Directory.GetFiles(pastaDestino, cpf + ".*"); // Procura a imagem com qualquer extensao
             string[] qrCodes = Directory.GetFiles(pastaDestQrCode, cpf + ".*");
 
@@ -150,6 +152,54 @@ namespace Escola
             {
                 pb_FotoPerfil.Image = Properties.Resources.person;
                 Debug.WriteLine("Imagem não encontrada, setada padrão.");
+            }
+        }
+
+        private void CarregarFundo()
+        {
+            Configs.AppSettings _settings = Configs.CarregarConfiguracoes();
+            if (_settings.FundoCarteirinha != "")
+            {
+                pb_FundoCarteirinha.Image = Image.FromFile(_settings.FundoCarteirinha);
+            }
+            else
+            {
+                panel_Fundo.BackgroundImage = null;
+            }
+        }
+
+        private void ConfigurarFundoTexto()
+        {
+            pb_FundoCarteirinha.Controls.Add(lbl_TextNome);
+            pb_FundoCarteirinha.Controls.Add(lbl_TextCodigo);
+            pb_FundoCarteirinha.Controls.Add(lbl_TextDataNasc);
+            pb_FundoCarteirinha.Controls.Add(lbl_TextSexo);
+            pb_FundoCarteirinha.Controls.Add(lbl_TextTurma);
+            pb_FundoCarteirinha.Controls.Add(lbl_TextSerie);
+
+            lbl_Nome.BackColor = Color.Transparent;
+            lbl_DataNasc.BackColor = Color.Transparent;
+            lbl_Sexo.BackColor = Color.Transparent;
+            lbl_Turma.BackColor = Color.Transparent;
+            lbl_Serie.BackColor = Color.Transparent;
+            lbl_Codigo.BackColor = Color.Transparent;
+
+            pb_FundoCarteirinha.Controls.Add(lbl_Nome);
+            pb_FundoCarteirinha.Controls.Add(lbl_DataNasc);
+            pb_FundoCarteirinha.Controls.Add(lbl_Sexo);
+            pb_FundoCarteirinha.Controls.Add(lbl_Turma);
+            pb_FundoCarteirinha.Controls.Add(lbl_Serie);
+            pb_FundoCarteirinha.Controls.Add(lbl_Codigo);
+
+            pb_FundoCarteirinha.Controls.Add(pb_QrCode);
+        }
+
+        private void F_Carteirinha_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (pb_FundoCarteirinha.Image != null)
+            {
+                pb_FundoCarteirinha.Image.Dispose(); // Libera os recursos da imagem
+                pb_FundoCarteirinha.Image = null;    // Define a imagem como null
             }
         }
     }

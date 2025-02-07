@@ -18,6 +18,14 @@ namespace Escola
         {
             _settings = Configs.CarregarConfiguracoes();
             this.Text = _settings.NomeEscola;
+            if (!string.IsNullOrEmpty(_settings.FotoPrincipal) && File.Exists(_settings.FotoPrincipal))
+            {
+                pb_Principal.Image = Image.FromFile(_settings.FotoPrincipal);
+            }
+            else
+            {
+                pb_Principal.Image = null;
+            }
         }
 
         private void cadastrarAlunoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -34,9 +42,10 @@ namespace Escola
 
         private void configuraçõesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            F_Configuracoes config = new F_Configuracoes();
-            config.OnConfiguracoesConfirmadas += SetarConfig;
-            config.ShowDialog();
+
+            F_Configuracoes formConfiguracoes = new F_Configuracoes(pb_Principal);
+            formConfiguracoes.ImagemAlterada += SetarConfig; 
+            formConfiguracoes.ShowDialog();
         }
 
         private void carteirinhaToolStripMenuItem_Click(object sender, EventArgs e)
