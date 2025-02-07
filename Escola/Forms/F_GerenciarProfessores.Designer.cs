@@ -612,8 +612,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_CadProfessor);
             Controls.Add(panel_GerenciarProfessores);
+            Controls.Add(panel_CadProfessor);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarProfessores";

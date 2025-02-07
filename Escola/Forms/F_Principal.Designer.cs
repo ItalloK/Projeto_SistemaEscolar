@@ -107,8 +107,9 @@
             // gerenciarTurmasToolStripMenuItem
             // 
             gerenciarTurmasToolStripMenuItem.Name = "gerenciarTurmasToolStripMenuItem";
-            gerenciarTurmasToolStripMenuItem.Size = new Size(179, 22);
+            gerenciarTurmasToolStripMenuItem.Size = new Size(180, 22);
             gerenciarTurmasToolStripMenuItem.Text = "Gerenciar Turmas";
+            gerenciarTurmasToolStripMenuItem.Click += gerenciarTurmasToolStripMenuItem_Click;
             // 
             // carteirinhaToolStripMenuItem
             // 

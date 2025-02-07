@@ -12,5 +12,6 @@ namespace Escola.Core.Interfaces
         public void CadTurma(Turma t);
         public Turma PegarTurma();
         public List<Turma> PegarTurmas();
+        public List<Aluno> PegarAlunosPorTurma(Turma t);
     }
 }

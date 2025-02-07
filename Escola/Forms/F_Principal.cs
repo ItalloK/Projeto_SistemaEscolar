@@ -44,7 +44,7 @@ namespace Escola
         {
 
             F_Configuracoes formConfiguracoes = new F_Configuracoes(pb_Principal);
-            formConfiguracoes.ImagemAlterada += SetarConfig; 
+            formConfiguracoes.ImagemAlterada += SetarConfig;
             formConfiguracoes.ShowDialog();
         }
 
@@ -58,6 +58,12 @@ namespace Escola
         {
             F_Matricular f_Matricular = new F_Matricular();
             f_Matricular.ShowDialog();
+        }
+
+        private void gerenciarTurmasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciarTurmas f_GerenciarTurmas = new F_GerenciarTurmas();
+            f_GerenciarTurmas.ShowDialog();
         }
     }
 }

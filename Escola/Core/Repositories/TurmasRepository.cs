@@ -62,5 +62,55 @@ namespace Escola.Core.Repositories
             }
             return turmas;
         }
+
+        public List<Aluno> PegarAlunosPorTurma(Turma t)
+        {
+            var alunos = new List<Aluno>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"
+                        SELECT 
+                            A.Id,
+                            A.Nome,
+                            A.Cpf,
+                            A.DataNascimento,
+                            A.Nacionalidade,
+                            A.Naturalidade,
+                            A.Sexo,
+                            A.CorRaca,
+                            A.Endereco
+                        FROM Aluno A
+                        JOIN Aluno_Turma AT ON A.Id = AT.AlunoId
+                        WHERE AT.TurmaId = @TurmaId;";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@TurmaId", t.id);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var aluno = new Aluno
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                dataNascimento = reader["DataNascimento"]?.ToString() ?? string.Empty,
+                                nacionalidade = reader["Nacionalidade"]?.ToString() ?? string.Empty,
+                                naturalidade = reader["Naturalidade"]?.ToString() ?? string.Empty,
+                                sexo = reader["Sexo"]?.ToString() ?? string.Empty,
+                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty,
+                                endereco = reader["Endereco"]?.ToString() ?? string.Empty
+                            };
+                            alunos.Add(aluno);
+                        }
+                    }
+                }
+            }
+            return alunos;
+        }
     }
 }

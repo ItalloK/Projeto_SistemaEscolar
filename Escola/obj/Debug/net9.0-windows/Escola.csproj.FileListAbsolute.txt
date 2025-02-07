@@ -57,3 +57,4 @@ C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_GerenciarProfessores.resources
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.F_Principal.resources
 C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Forms.F_Matricular.resources
+C:\Users\itall\Documents\Programação\Projetos\Sistema Escolar\Escola\obj\Debug\net9.0-windows\Escola.Forms.F_GerenciarTurmas.resources
