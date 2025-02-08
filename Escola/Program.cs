@@ -1,3 +1,5 @@
+using Escola.Core.Infrastructure;
+
 namespace Escola
 {
     internal static class Program
@@ -8,9 +10,8 @@ namespace Escola
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            BancoDeDados bd = new BancoDeDados(); // cria banco de dados
             Application.Run(new F_Principal());
         }
     }

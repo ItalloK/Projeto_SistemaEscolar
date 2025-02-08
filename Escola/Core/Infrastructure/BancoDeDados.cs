@@ -82,6 +82,14 @@ namespace Escola.Core.Infrastructure
                                 TurmaId INTEGER NOT NULL,
                                 FOREIGN KEY (AlunoId) REFERENCES Aluno(Id),
                                 FOREIGN KEY (TurmaId) REFERENCES Turmas(Id)
+                            )" },
+                        {"Aluno_Responsavel", @"
+                                CREATE TABLE Aluno_Responsavel (
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                AlunoCpf INTEGER NOT NULL,
+                                ResponsavelCpf INTEGER NOT NULL,
+                                FOREIGN KEY (AlunoCpf) REFERENCES Aluno(Cpf),
+                                FOREIGN KEY (ResponsavelCpf) REFERENCES Responsavel(Cpf)
                             )"}
                     };
 

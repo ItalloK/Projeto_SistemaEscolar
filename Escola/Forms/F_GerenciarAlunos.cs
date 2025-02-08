@@ -1,11 +1,13 @@
 ﻿using Escola.Core;
 using Escola.Core.Entities;
+using Escola.Core.Infrastructure;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
@@ -91,13 +93,32 @@ namespace Escola
 
             if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
 
-            /* por aqui uma verificação para ver se o responsavel ja esta cadastrado, se não tiver
-               utilizar a função de cadastrar o responsavel*/
+            /**/
 
-            if (!CadastrarResponsavel())
+            string nomeRes = tb_NomeResponsavel.Text;
+            mtb_CpfResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpfRes = mtb_CpfResponsavel.Text;
+            mtb_TelResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefoneRes = mtb_TelResponsavel.Text;
+            if (nomeRes == "" || cpfRes == "" || telefoneRes == "")
             {
+                MessageBox.Show("Não é possivel cadastrar um aluno sem responsavel, digite os dados!");
                 return;
             }
+            Responsavel responsavel = new Responsavel
+            {
+                nome = nomeRes,
+                cpf = cpfRes,
+                telefone = telefoneRes
+            };
+
+            if (!VerificarSeResponsavelTaCadastrado(responsavel)) // verifica se ja ta cadastrado o responsavel
+            {
+                if (!CadastrarResponsavel(responsavel)) // tenta cadastrar o responsavel
+                {
+                    return;
+                }
+            }            
 
             Aluno aluno = new Aluno
             {
@@ -111,7 +132,7 @@ namespace Escola
                 endereco = endereco
             };
             AlunoRepository repository = new AlunoRepository();
-            bool sucesso = repository.CadAluno(aluno); // cadastra o aluno
+            bool sucesso = repository.CadAlunoComResponsavel(aluno, responsavel); // cadastra o aluno
 
             if (sucesso)
             {
@@ -127,24 +148,21 @@ namespace Escola
             }
         }
 
-        private bool CadastrarResponsavel()
+        private bool CadastrarResponsavel(Responsavel r)
         {
-            string nome = tb_NomeResponsavel.Text;
-            mtb_CpfResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            string cpf = mtb_CpfResponsavel.Text;
-            mtb_TelResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            string telefone = mtb_TelResponsavel.Text;
-            if (nome == "" || cpf == "" || telefone == "")
+            if (!Funcoes.ValidarCPF(r.cpf)) return false;
+            ResponsavelRepository rr = new ResponsavelRepository();
+            bool sucesso = rr.CadResponsavel(r);
+            if (sucesso)
             {
-                MessageBox.Show("Não é possivel cadastrar um aluno sem responsavel, digite os dados!");
+                MessageBox.Show("Responsavel cadastrado!");
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Responsavel não cadastrado!");
                 return false;
             }
-
-            if (!Funcoes.ValidarCPF(cpf)) return false;
-
-            Responsavel r = new Responsavel(nome, cpf, telefone);
-            r.CadResponsavel();
-            return true;
         }
 
         private void btn_BuscarResponsavel_Click(object sender, EventArgs e)
@@ -157,6 +175,70 @@ namespace Escola
             mtb_BuscarCPFResp.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string cpf = mtb_BuscarCPFResp.Text;
             if (!Funcoes.ValidarCPF(cpf)) return;
+
+            ResponsavelRepository rr = new ResponsavelRepository();
+            var res = rr.PegarResponsavel(cpf);
+
+            if (res != null)
+            {
+                int idRes = res.id;
+                string nomeRes = res.nome;
+                string telefoneRes = res.telefone;
+                string cpfRes = res.cpf;
+                tb_NomeResponsavel.Text = nomeRes;
+                mtb_CpfResponsavel.Text = cpfRes;
+                mtb_TelResponsavel.Text = telefoneRes;
+                MessageBox.Show("Responsavel encontrado.");
+            }
+            else
+            {
+                MessageBox.Show("Responsavel não encontrado!");
+                return;
+            }
+        }
+
+        private void F_GerenciarAlunos_Load(object sender, EventArgs e)
+        {
+            CarregarAlunos();
+        }
+
+        private void CarregarAlunos()
+        {
+            AlunoRepository ar = new AlunoRepository();
+            var alunos = ar.PegarTodosAlunos();
+            dgv_Dados.DataSource = alunos;
+            if (dgv_Dados.Columns.Count > 0) // Verifica se as colunas foram geradas
+            {
+                string[] colunasVisiveis = { "id", "nome", "sexo", "dataNascimento" };
+                foreach (DataGridViewColumn column in dgv_Dados.Columns)
+                {
+                    column.Visible = colunasVisiveis.Contains(column.Name);
+                }
+
+                dgv_Dados.Columns["id"]!.DisplayIndex = 0;
+                dgv_Dados.Columns["nome"]!.DisplayIndex = 1;
+                dgv_Dados.Columns["dataNascimento"]!.DisplayIndex = 2;
+                dgv_Dados.Columns["sexo"]!.DisplayIndex = 3;
+
+                dgv_Dados.Columns["id"]!.HeaderText = "Codigo";
+                dgv_Dados.Columns["nome"]!.HeaderText = "Nome";
+                dgv_Dados.Columns["dataNascimento"]!.HeaderText = "Data de Nascimento";
+                dgv_Dados.Columns["sexo"]!.HeaderText = "Sexo";
+            }
+        }
+
+        private bool VerificarSeResponsavelTaCadastrado(Responsavel r)
+        {
+            ResponsavelRepository rr = new ResponsavelRepository();
+            bool sucesso = rr.VerificarResponsavel(r);
+            if (sucesso)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

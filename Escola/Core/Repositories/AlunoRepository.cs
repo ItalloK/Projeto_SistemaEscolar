@@ -13,6 +13,92 @@ namespace Escola.Core.Repositories
 {
     public class AlunoRepository : IAluno
     {
+        public List<Aluno> PegarTodosAlunos()
+        {
+            var alunos = new List<Aluno>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"SELECT * FROM Aluno";
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var aluno = new Aluno
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                dataNascimento = reader["DataNascimento"]?.ToString() ?? string.Empty,
+                                nacionalidade = reader["Nacionalidade"]?.ToString() ?? string.Empty,
+                                naturalidade = reader["Naturalidade"]?.ToString() ?? string.Empty,
+                                sexo = reader["Sexo"]?.ToString() ?? string.Empty,
+                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty,
+                                endereco = reader["Endereco"]?.ToString() ?? string.Empty
+                            };
+                            alunos.Add(aluno);
+                        }
+                    }
+                }
+            }
+            return alunos;
+        }
+
+        public bool CadAlunoComResponsavel(Aluno a, Responsavel r)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"INSERT INTO Aluno (Nome, Cpf, DataNascimento, Nacionalidade, Naturalidade, Sexo, CorRaca, Endereco) 
+                           VALUES (@Nome, @Cpf, @DataNascimento, @Nacionalidade, @Naturalidade, @Sexo, @CorRaca, @Endereco)";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", a.nome);
+                        command.Parameters.AddWithValue("@Cpf", a.cpf);
+                        command.Parameters.AddWithValue("@DataNascimento", a.dataNascimento);
+                        command.Parameters.AddWithValue("@Nacionalidade", a.nacionalidade);
+                        command.Parameters.AddWithValue("@Naturalidade", a.naturalidade);
+                        command.Parameters.AddWithValue("@Sexo", a.sexo);
+                        command.Parameters.AddWithValue("@CorRaca", a.corraca);
+                        command.Parameters.AddWithValue("@Endereco", a.endereco);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            string sqlNew = @"INSERT INTO Aluno_Responsavel (AlunoCpf, ResponsavelCpf) VALUES (@ACpf, @RCpf)";
+                            using (var commandNew = new SQLiteCommand(sqlNew, connection))
+                            {
+                                commandNew.Parameters.AddWithValue("@ACpf", a.cpf);
+                                commandNew.Parameters.AddWithValue("@RCpf", r.cpf);
+                                commandNew.ExecuteNonQuery();
+                            }
+
+                            DadosCadastro(a);
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+            return false;
+        }
+
         public bool CadAluno(Aluno a)
         {
             try
