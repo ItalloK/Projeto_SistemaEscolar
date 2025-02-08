@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\repositories\\turmasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\repositories\\turmasrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarturmas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,15 +30,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TurmasRepository.cs",
               "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\TurmasRepository.cs",
               "RelativeDocumentMoniker": "Core\\Repositories\\TurmasRepository.cs",
               "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\TurmasRepository.cs",
               "RelativeToolTip": "Core\\Repositories\\TurmasRepository.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAQwB4AAAA8AAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAADEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T00:49:16.289Z",
+              "WhenOpened": "2025-02-08T13:23:25.353Z",
               "EditorCaption": ""
             },
             {
@@ -49,21 +49,21 @@
               "RelativeDocumentMoniker": "Forms\\F_GerenciarTurmas.cs",
               "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs",
               "RelativeToolTip": "Forms\\F_GerenciarTurmas.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAQwCoBAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAlwGoBAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T00:20:29.517Z",
+              "WhenOpened": "2025-02-08T13:20:57.138Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "F_GerenciarTurmas.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs",
               "RelativeDocumentMoniker": "Forms\\F_GerenciarTurmas.cs",
               "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarTurmas.cs [Projeto]",
               "RelativeToolTip": "Forms\\F_GerenciarTurmas.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-08T00:20:15.059Z",
+              "WhenOpened": "2025-02-08T13:20:41.971Z",
               "EditorCaption": " [Projeto]"
             }
           ]

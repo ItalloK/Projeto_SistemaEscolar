@@ -323,5 +323,51 @@ namespace Escola.Forms
                 return;
             }
         }
+
+        private void btn_DeletarTurma_Click(object sender, EventArgs e)
+        {
+            DeletarTurma();
+        }
+
+        private void DeletarTurma()
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+                int turma = Convert.ToInt32(row.Cells["id"].Value);
+
+                DialogResult resultado = MessageBox.Show($"Deseja realmente deletar a turma: {turma}", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                {
+                    Turma t = new Turma
+                    {
+                        id = turma
+                    };
+
+                    TurmasRepository tr = new TurmasRepository();
+                    bool sucesso = tr.DelTurma(t);
+                    if (sucesso)
+                    {
+                        MessageBox.Show("Turma deletada!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao deletar turma");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Voce cancelou!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma turma para poder deletar!");
+                return;
+            }
+        }
     }
 }

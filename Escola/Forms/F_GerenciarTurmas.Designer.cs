@@ -36,7 +36,7 @@
             dgv_DadosAluno = new DataGridView();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            buttonig4 = new CustomControls.Botoes.ButtonIG();
+            btn_DeletarTurma = new CustomControls.Botoes.ButtonIG();
             btn_EditarTurma = new CustomControls.Botoes.ButtonIG();
             textBox1 = new TextBox();
             btn_CadAlunoGerenciador = new CustomControls.Botoes.ButtonIG();
@@ -187,7 +187,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Controls.Add(buttonig4, 3, 0);
+            tableLayoutPanel1.Controls.Add(btn_DeletarTurma, 3, 0);
             tableLayoutPanel1.Controls.Add(btn_EditarTurma, 2, 0);
             tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(btn_CadAlunoGerenciador, 1, 0);
@@ -198,26 +198,27 @@
             tableLayoutPanel1.Size = new Size(794, 32);
             tableLayoutPanel1.TabIndex = 6;
             // 
-            // buttonig4
+            // btn_DeletarTurma
             // 
-            buttonig4.BackColor = Color.Gray;
-            buttonig4.BackgroundColor = Color.Gray;
-            buttonig4.BorderColor = Color.PaleVioletRed;
-            buttonig4.BorderRadius = 5;
-            buttonig4.BorderSize = 0;
-            buttonig4.Dock = DockStyle.Fill;
-            buttonig4.FlatAppearance.BorderSize = 0;
-            buttonig4.FlatStyle = FlatStyle.Flat;
-            buttonig4.Font = new Font("Segoe UI", 9.75F);
-            buttonig4.ForeColor = Color.White;
-            buttonig4.HoverBackgroundColor = Color.Black;
-            buttonig4.Location = new Point(636, 3);
-            buttonig4.Name = "buttonig4";
-            buttonig4.Size = new Size(155, 26);
-            buttonig4.TabIndex = 6;
-            buttonig4.Text = "Deletar Turma";
-            buttonig4.TextColor = Color.White;
-            buttonig4.UseVisualStyleBackColor = false;
+            btn_DeletarTurma.BackColor = Color.Gray;
+            btn_DeletarTurma.BackgroundColor = Color.Gray;
+            btn_DeletarTurma.BorderColor = Color.PaleVioletRed;
+            btn_DeletarTurma.BorderRadius = 5;
+            btn_DeletarTurma.BorderSize = 0;
+            btn_DeletarTurma.Dock = DockStyle.Fill;
+            btn_DeletarTurma.FlatAppearance.BorderSize = 0;
+            btn_DeletarTurma.FlatStyle = FlatStyle.Flat;
+            btn_DeletarTurma.Font = new Font("Segoe UI", 9.75F);
+            btn_DeletarTurma.ForeColor = Color.White;
+            btn_DeletarTurma.HoverBackgroundColor = Color.Black;
+            btn_DeletarTurma.Location = new Point(636, 3);
+            btn_DeletarTurma.Name = "btn_DeletarTurma";
+            btn_DeletarTurma.Size = new Size(155, 26);
+            btn_DeletarTurma.TabIndex = 6;
+            btn_DeletarTurma.Text = "Deletar Turma";
+            btn_DeletarTurma.TextColor = Color.White;
+            btn_DeletarTurma.UseVisualStyleBackColor = false;
+            btn_DeletarTurma.Click += btn_DeletarTurma_Click;
             // 
             // btn_EditarTurma
             // 
@@ -672,9 +673,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel_GerenciarTurmas);
             Controls.Add(panel_AtualizarTurma);
             Controls.Add(panel_CadTurma);
-            Controls.Add(panel_GerenciarTurmas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_GerenciarTurmas";
             StartPosition = FormStartPosition.CenterScreen;
@@ -714,7 +715,7 @@
         private Label label2;
         private DataGridView dgv_Dados;
         private DataGridView dgv_DadosAluno;
-        private CustomControls.Botoes.ButtonIG buttonig4;
+        private CustomControls.Botoes.ButtonIG btn_DeletarTurma;
         private CustomControls.Botoes.ButtonIG btn_EditarTurma;
         private Panel panel_CadTurma;
         private Label label3;

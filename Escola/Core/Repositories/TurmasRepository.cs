@@ -13,6 +13,41 @@ namespace Escola.Core.Repositories
 {
     public class TurmasRepository:ITurmas
     {
+        public bool DelTurma(Turma t)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"DELETE FROM Turmas WHERE Id = @Id";
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Id", t.id);
+                        int linhasAfetadas = command.ExecuteNonQuery();
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
+
         public bool AttTurma(Turma t)
         {
             try
