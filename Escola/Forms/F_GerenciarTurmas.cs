@@ -1,10 +1,12 @@
 ﻿using Escola.Core.Entities;
+using Escola.Core.Interfaces;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -21,12 +23,14 @@ namespace Escola.Forms
             InitializeComponent();
             AtivarPainel(panel_GerenciarTurmas);
             CarregarPropriedadesCadTurma(); // carrega as propriedas do form de cadastro de turma
+            CarregarPropriedadesAttTurma(); // carrega as propriedades do form de att da turma.
         }
 
         private void AtivarPainel(Panel p)
         {
             panel_GerenciarTurmas.Visible = false;
             panel_CadTurma.Visible = false;
+            panel_AtualizarTurma.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
         }
@@ -65,6 +69,42 @@ namespace Escola.Forms
             cb_EscMaxAluno.DisplayMember = "Value";
             cb_EscMaxAluno.ValueMember = "Key";
             cb_EscMaxAluno.SelectedIndex = 0;
+        }
+
+        private void CarregarPropriedadesAttTurma()
+        {
+            for (int i = 0; i < 9; i++)
+            {
+                int numero = i + 1;
+                string texto = numero + " ano";
+                cb_EscSerieAtt.Items.Add(new KeyValuePair<int, string>(numero, texto));
+            }
+            cb_EscSerieAtt.DisplayMember = "Value";
+            cb_EscSerieAtt.ValueMember = "Key";
+            cb_EscSerieAtt.SelectedIndex = 0;
+
+
+            cb_EscTipoAtt.Items.Add("Fundamental");
+            cb_EscTipoAtt.Items.Add("Medio");
+            cb_EscTipoAtt.SelectedIndex = 0;
+
+
+            cb_EscTurnoAtt.Items.Add("Matutino");
+            cb_EscTurnoAtt.Items.Add("Vespertino");
+            cb_EscTurnoAtt.Items.Add("Noturno");
+            cb_EscTurnoAtt.SelectedIndex = 0;
+
+
+            for (int i = 0; i < 50; i++)
+            {
+                int numero = i + 1;
+                string texto = numero + (numero == 1 ? " aluno" : " alunos");
+
+                cb_EscMaxAlunosAtt.Items.Add(new KeyValuePair<int, string>(numero, texto));
+            }
+            cb_EscMaxAlunosAtt.DisplayMember = "Value";
+            cb_EscMaxAlunosAtt.ValueMember = "Key";
+            cb_EscMaxAlunosAtt.SelectedIndex = 0;
         }
 
         private void F_GerenciarTurmas_Load(object sender, EventArgs e)
@@ -176,7 +216,7 @@ namespace Escola.Forms
             string tipo = cb_EscTipo.Text;
             string turno = cb_EscTurno.Text;
 
-            if(valorSerie > 3 && tipo == "Medio")
+            if (valorSerie > 3 && tipo == "Medio")
             {
                 MessageBox.Show("Erro, a serie não pode ser maior que 3 e o tipo medio!");
                 return;
@@ -192,13 +232,94 @@ namespace Escola.Forms
 
             TurmasRepository tr = new TurmasRepository();
             bool sucesso = tr.CadTurma(turma);
-            if (sucesso) {
+            if (sucesso)
+            {
                 MessageBox.Show("Turma cadastrada!");
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Turma não cadastrada!");
+                return;
+            }
+        }
+
+        private void btn_EditarTurma_Click(object sender, EventArgs e)
+        {
+            ConfiguraAtualizarTurma();
+        }
+
+        private void ConfiguraAtualizarTurma() // configura a tela de atualizacao de turma
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+                AtivarPainel(panel_AtualizarTurma);
+
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+                int turma = Convert.ToInt32(row.Cells["id"].Value);
+                string tipo = row.Cells["tipo"].Value.ToString();
+                string turno = row.Cells["turno"].Value.ToString();
+
+                int maxAlunos = Convert.ToInt32(row.Cells["maxAlunos"].Value);
+                int serie = Convert.ToInt32(row.Cells["serie"].Value);
+
+                lbl_TextAttTurma.Text = $"Atualizar Turma: {turma}";
+                cb_EscSerieAtt.SelectedIndex = serie - 1;
+                cb_EscMaxAlunosAtt.SelectedIndex = maxAlunos - 1;
+                cb_EscTurnoAtt.SelectedItem = turno;
+                cb_EscTipoAtt.SelectedItem = tipo;
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma turma para poder atualizar!");
+                return;
+            }
+        }
+
+        private void LimparTelaAtualizarTurma() // apaga todos os campos onde tem os dados para atualização
+        {
+
+        }
+
+        private void btn_CancelarAttTurmaPanel_Click(object sender, EventArgs e)
+        {
+            AtivarPainel(panel_GerenciarTurmas);
+            LimparTelaAtualizarTurma();
+        }
+
+        private void btn_AttTurmaPanel_Click(object sender, EventArgs e)
+        {
+            AtualizarTurma();
+        }
+
+        private void AtualizarTurma()
+        {
+            DataGridViewRow row = dgv_Dados.SelectedRows[0];
+            int turma = Convert.ToInt32(row.Cells["id"].Value);
+
+            string tipoAtt = cb_EscTipoAtt.Text;
+            string turnoAtt = cb_EscTurnoAtt.Text;
+            int serieAtt = cb_EscSerieAtt.SelectedIndex + 1;
+            int maxAlunosAtt = cb_EscMaxAlunosAtt.SelectedIndex + 1;
+
+            Turma t = new Turma
+            {
+                id = turma,
+                turno = turnoAtt,
+                tipo = tipoAtt,
+                serie = serieAtt.ToString(),
+                maxAlunos = maxAlunosAtt
+            };
+            TurmasRepository tr = new TurmasRepository();
+            bool sucesso = tr.AttTurma(t);
+            if (sucesso)
+            {
+                MessageBox.Show("Turma atualizada!");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar turma!");
                 return;
             }
         }

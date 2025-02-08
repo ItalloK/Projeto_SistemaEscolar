@@ -13,9 +13,51 @@ namespace Escola.Core.Repositories
 {
     public class TurmasRepository:ITurmas
     {
+        public bool AttTurma(Turma t)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"UPDATE Turmas SET Tipo = @Tipo, Turno = @Turno, Serie = @Serie, MaxAlunos = @MaxAlunos WHERE Id = @Id";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Tipo", t.tipo);
+                        command.Parameters.AddWithValue("@Turno", t.turno);
+                        command.Parameters.AddWithValue("@Serie", t.serie);
+                        command.Parameters.AddWithValue("@MaxAlunos", t.maxAlunos);
+                        command.Parameters.AddWithValue("@Id", t.id);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro de banco de dados: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro inesperado: {ex.Message}");
+                return false;
+            }
+        }
+
+
         public bool CadTurma(Turma t)
         {
-            Debug.WriteLine($"Tipo:{t.tipo} | Turno: {t.turno} | Serie: {t.serie} | MaxAlunos: {t.maxAlunos}");
             try
             {
                 using (var connection = BancoDeDados.GetConnection())

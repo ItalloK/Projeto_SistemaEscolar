@@ -391,6 +391,7 @@
             Name = "F_Matricular";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Matricular";
+            Load += F_Matricular_Load;
             ResumeLayout(false);
             PerformLayout();
         }

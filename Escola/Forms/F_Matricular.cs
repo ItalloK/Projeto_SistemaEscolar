@@ -24,7 +24,6 @@ namespace Escola.Forms
         {
             InitializeComponent();
             cb_Turmas.Enabled = false; // desativa para não poder ser alterado caso não haja turmas
-            CarregarTurmas();
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
@@ -70,6 +69,7 @@ namespace Escola.Forms
             if (turmas == null || turmas.Count == 0)
             {
                 MessageBox.Show("Não foram encontradas turmas.");
+                this.Close();
                 return;
             }
 
@@ -80,7 +80,7 @@ namespace Escola.Forms
             {
                 if (e.Value != null)
                 {
-                    e.Value = "Turma: " + e.Value.ToString();  
+                    e.Value = "Turma: " + e.Value.ToString();
                 }
             };
 
@@ -117,8 +117,8 @@ namespace Escola.Forms
             string cpf = mtb_CpfBuscar.Text;
 
             if (!Funcoes.ValidarCPF(cpf)) return;
-            
-            if(idAluno == -1)
+
+            if (idAluno == -1)
             {
                 MessageBox.Show("Voce deve procurar o aluno antes de tentar matricular ele!");
                 return;
@@ -164,6 +164,11 @@ namespace Escola.Forms
                 MessageBox.Show("Erro ao cadastrar aluno.");
                 return;
             }
+        }
+
+        private void F_Matricular_Load(object sender, EventArgs e)
+        {
+            CarregarTurmas();
         }
     }
 }
