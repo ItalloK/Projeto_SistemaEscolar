@@ -12,7 +12,7 @@ namespace Escola.Core.Interfaces
         public bool CadResponsavel(Responsavel r);
         public void DadosCadastro(Responsavel r);
         public bool VerificarResponsavel(Responsavel r);
-        public bool ResponsavelParaAluno(Responsavel r, Aluno a);
         public Responsavel? PegarResponsavel(string cpf);
+        public List<Responsavel> PegarResponsaveisPorAluno(Aluno a);
     }
 }

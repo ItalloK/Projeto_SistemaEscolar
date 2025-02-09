@@ -20,7 +20,7 @@ namespace Escola.Core.Repositories
                 using (var connection = BancoDeDados.GetConnection())
                 {
                     connection.Open();
-                    string sql = @"DELETE FROM Turmas WHERE Id = @Id";
+                    string sql = @"DELETE FROM Turma WHERE Id = @Id";
                     using (var command = new SQLiteCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Id", t.id);
@@ -55,7 +55,7 @@ namespace Escola.Core.Repositories
                 using (var connection = BancoDeDados.GetConnection())
                 {
                     connection.Open();
-                    string sql = @"UPDATE Turmas SET Tipo = @Tipo, Turno = @Turno, Serie = @Serie, MaxAlunos = @MaxAlunos WHERE Id = @Id";
+                    string sql = @"UPDATE Turma SET Tipo = @Tipo, Turno = @Turno, Serie = @Serie, MaxAlunos = @MaxAlunos WHERE Id = @Id";
 
                     using (var command = new SQLiteCommand(sql, connection))
                     {
@@ -98,7 +98,7 @@ namespace Escola.Core.Repositories
                 using (var connection = BancoDeDados.GetConnection())
                 {
                     connection.Open();
-                    string sql = @"INSERT INTO Turmas (Tipo, Turno, Serie, MaxAlunos) 
+                    string sql = @"INSERT INTO Turma (Tipo, Turno, Serie, MaxAlunos) 
                                     VALUES (@Tipo, @Turno, @Serie, @MaxAlunos)";
 
                     using (var command = new SQLiteCommand(sql, connection))
@@ -153,7 +153,7 @@ namespace Escola.Core.Repositories
                     t.Serie,
                     t.MaxAlunos,
                     COUNT(at.AlunoId) AS QuantidadeAlunos
-                FROM Turmas t
+                FROM Turma t
                 LEFT JOIN Aluno_Turma at ON t.Id = at.TurmaId
                 GROUP BY t.Id, t.Tipo, t.Turno, t.Serie, t.MaxAlunos;";
                 using (var command = new SQLiteCommand(sql, connection))

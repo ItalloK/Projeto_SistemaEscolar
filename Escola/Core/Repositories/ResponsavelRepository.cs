@@ -108,9 +108,44 @@ namespace Escola.Core.Repositories
             Debug.WriteLine(" ~~~~~~~~~~~~ > Responsavel Cadastrado < ~~~~~~~~~~~~");
         }
 
-        public bool ResponsavelParaAluno(Responsavel r, Aluno a)
+        public List<Responsavel> PegarResponsaveisPorAluno(Aluno a)
         {
-            return true;
+            var responsaveis = new List<Responsavel>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"
+                        SELECT 
+                            R.Id,
+                            R.Nome,
+                            R.Cpf,
+                            R.Telefone
+                        FROM Responsavel R
+                        JOIN Aluno_Responsavel AT ON R.Cpf = AT.ResponsavelCpf
+                        WHERE AT.AlunoCpf = @Cpf;";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Cpf", a.cpf);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var resp = new Responsavel
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                telefone = reader["Telefone"]?.ToString() ?? string.Empty
+                            };
+                            responsaveis.Add(resp);
+                        }
+                    }
+                }
+            }
+            return responsaveis;
         }
     }
 }

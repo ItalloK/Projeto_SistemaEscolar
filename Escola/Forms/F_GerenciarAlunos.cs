@@ -91,6 +91,8 @@ namespace Escola
                 return;
             }
 
+            if (!Funcoes.ValidarData(dataNasc)) return;
+
             if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
 
             /**/
@@ -118,7 +120,7 @@ namespace Escola
                 {
                     return;
                 }
-            }            
+            }
 
             Aluno aluno = new Aluno
             {
@@ -238,6 +240,39 @@ namespace Escola
             else
             {
                 return false;
+            }
+        }
+
+        private void dgv_Dados_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_Dados.SelectedRows.Count > 0) // Verifica se tem linha selecionada
+            {
+                DataGridViewRow row = dgv_Dados.SelectedRows[0]; // Pega a primeira selecionada
+                string alunoCpf = row.Cells["cpf"].Value.ToString();
+
+                Aluno alunoSelecionado = new Aluno { cpf = alunoCpf };
+
+                ResponsavelRepository rr = new ResponsavelRepository();
+                var responsavel = rr.PegarResponsaveisPorAluno(alunoSelecionado);
+
+                dgv_Responsavel.DataSource = responsavel;
+
+                string[] colunasVisiveis = { "id", "nome", "telefone" };
+                foreach (DataGridViewColumn column in dgv_Responsavel.Columns)
+                {
+                    column.Visible = colunasVisiveis.Contains(column.Name);
+                }
+
+                if (dgv_Responsavel.Columns.Count > 0)
+                {
+                    dgv_Responsavel.Columns["Id"]!.DisplayIndex = 0;
+                    dgv_Responsavel.Columns["Nome"]!.DisplayIndex = 1;
+                    dgv_Responsavel.Columns["Telefone"]!.DisplayIndex = 2;
+
+                    dgv_Responsavel.Columns["Id"]!.HeaderText = "Codigo";
+                    dgv_Responsavel.Columns["Nome"]!.HeaderText = "Nome";
+                    dgv_Responsavel.Columns["Telefone"]!.HeaderText = "Telefone";
+                }
             }
         }
     }

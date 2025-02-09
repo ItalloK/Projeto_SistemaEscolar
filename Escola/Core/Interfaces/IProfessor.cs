@@ -12,5 +12,6 @@ namespace Escola.Core.Interfaces
         public bool CadProfessor(Professor p);
         public void DadosCadastro(Professor p);
         public Professor? BuscarProfessorPorCPF(string cpf);
+        public List<Professor> PegarTodosProfessores();
     }
 }

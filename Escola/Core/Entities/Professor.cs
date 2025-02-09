@@ -16,10 +16,11 @@ namespace Escola.Core.Entities
         public string? naturalidade { get; set; }
         public string? nacionalidade { get; set; }
         public string? corraca { get; set; }
+        public string? telefone { get; set; }
 
         public Professor() { }
 
-        public Professor(string nome, string cpf, string dataNascimento, string sexo, string endereco, string naturalidade, string nacionalidade, string corraca)
+        public Professor(string nome, string cpf, string dataNascimento, string sexo, string endereco, string naturalidade, string nacionalidade, string corraca, string telefone)
         {
             this.nome = nome;
             this.cpf = cpf;
@@ -29,6 +30,7 @@ namespace Escola.Core.Entities
             this.naturalidade = naturalidade;
             this.nacionalidade = nacionalidade;
             this.corraca = corraca;
+            this.telefone = telefone;
         }
     }
 }

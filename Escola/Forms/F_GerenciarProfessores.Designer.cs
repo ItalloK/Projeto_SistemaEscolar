@@ -36,6 +36,7 @@
             textBox1 = new TextBox();
             btn_CadProfessor = new CustomControls.Botoes.ButtonIG();
             tableLayoutPanel2 = new TableLayoutPanel();
+            dgv_Dados = new DataGridView();
             label1 = new Label();
             panel_CadProfessor = new Panel();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -47,6 +48,8 @@
             tb_NomeProfessorCad = new TextBox();
             label3 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
+            mtb_TelefoneProfessorCad = new MaskedTextBox();
+            label11 = new Label();
             cb_nacionalidade = new ComboBox();
             cb_CorProfessorCad = new ComboBox();
             label9 = new Label();
@@ -68,6 +71,8 @@
             label2 = new Label();
             panel_GerenciarProfessores.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_Dados).BeginInit();
             panel_CadProfessor.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
@@ -187,12 +192,33 @@
             tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Controls.Add(dgv_Dados, 0, 0);
             tableLayoutPanel2.Location = new Point(3, 73);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Size = new Size(795, 373);
             tableLayoutPanel2.TabIndex = 8;
+            // 
+            // dgv_Dados
+            // 
+            dgv_Dados.AllowUserToAddRows = false;
+            dgv_Dados.AllowUserToDeleteRows = false;
+            dgv_Dados.AllowUserToResizeColumns = false;
+            dgv_Dados.AllowUserToResizeRows = false;
+            dgv_Dados.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_Dados.BackgroundColor = Color.White;
+            dgv_Dados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgv_Dados.Dock = DockStyle.Fill;
+            dgv_Dados.Location = new Point(0, 0);
+            dgv_Dados.Margin = new Padding(0);
+            dgv_Dados.MultiSelect = false;
+            dgv_Dados.Name = "dgv_Dados";
+            dgv_Dados.ReadOnly = true;
+            dgv_Dados.RowHeadersVisible = false;
+            dgv_Dados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_Dados.Size = new Size(795, 373);
+            dgv_Dados.TabIndex = 2;
             // 
             // label1
             // 
@@ -300,8 +326,8 @@
             tableLayoutPanel9.Location = new Point(3, 3);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 3;
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
-            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 41F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 15.1351347F));
+            tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 69.72973F));
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
             tableLayoutPanel9.Size = new Size(545, 370);
             tableLayoutPanel9.TabIndex = 0;
@@ -318,14 +344,14 @@
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel3.Size = new Size(539, 72);
+            tableLayoutPanel3.Size = new Size(539, 50);
             tableLayoutPanel3.TabIndex = 9;
             // 
             // tb_NomeProfessorCad
             // 
             tb_NomeProfessorCad.Dock = DockStyle.Fill;
             tb_NomeProfessorCad.Font = new Font("Segoe UI", 9.75F);
-            tb_NomeProfessorCad.Location = new Point(3, 31);
+            tb_NomeProfessorCad.Location = new Point(3, 23);
             tb_NomeProfessorCad.Name = "tb_NomeProfessorCad";
             tb_NomeProfessorCad.Size = new Size(533, 25);
             tb_NomeProfessorCad.TabIndex = 0;
@@ -335,7 +361,7 @@
             label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(3, 11);
+            label3.Location = new Point(3, 3);
             label3.Name = "label3";
             label3.Size = new Size(108, 17);
             label3.TabIndex = 9999;
@@ -348,6 +374,8 @@
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(mtb_TelefoneProfessorCad, 0, 7);
+            tableLayoutPanel5.Controls.Add(label11, 0, 6);
             tableLayoutPanel5.Controls.Add(cb_nacionalidade, 0, 3);
             tableLayoutPanel5.Controls.Add(cb_CorProfessorCad, 1, 5);
             tableLayoutPanel5.Controls.Add(label9, 1, 4);
@@ -360,18 +388,41 @@
             tableLayoutPanel5.Controls.Add(label4, 0, 0);
             tableLayoutPanel5.Controls.Add(mtb_DataNascCad, 0, 1);
             tableLayoutPanel5.Controls.Add(cb_SexoProfessorCad, 0, 5);
-            tableLayoutPanel5.Location = new Point(3, 81);
+            tableLayoutPanel5.Location = new Point(3, 59);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 6;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 13.333333F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 13.333333F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 13.333333F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(539, 207);
+            tableLayoutPanel5.RowCount = 8;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel5.Size = new Size(539, 252);
             tableLayoutPanel5.TabIndex = 11;
+            // 
+            // mtb_TelefoneProfessorCad
+            // 
+            mtb_TelefoneProfessorCad.Dock = DockStyle.Fill;
+            mtb_TelefoneProfessorCad.Font = new Font("Segoe UI", 9.75F);
+            mtb_TelefoneProfessorCad.Location = new Point(3, 220);
+            mtb_TelefoneProfessorCad.Mask = "(00) 0 0000-0000";
+            mtb_TelefoneProfessorCad.Name = "mtb_TelefoneProfessorCad";
+            mtb_TelefoneProfessorCad.Size = new Size(263, 25);
+            mtb_TelefoneProfessorCad.TabIndex = 10002;
+            // 
+            // label11
+            // 
+            label11.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(3, 200);
+            label11.Name = "label11";
+            label11.Size = new Size(60, 17);
+            label11.TabIndex = 10000;
+            label11.Text = "Telefone:";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // cb_nacionalidade
             // 
@@ -380,7 +431,7 @@
             cb_nacionalidade.Font = new Font("Segoe UI", 9.75F);
             cb_nacionalidade.FormattingEnabled = true;
             cb_nacionalidade.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
-            cb_nacionalidade.Location = new Point(3, 98);
+            cb_nacionalidade.Location = new Point(3, 96);
             cb_nacionalidade.Name = "cb_nacionalidade";
             cb_nacionalidade.Size = new Size(263, 25);
             cb_nacionalidade.TabIndex = 3;
@@ -392,7 +443,7 @@
             cb_CorProfessorCad.Font = new Font("Segoe UI", 9.75F);
             cb_CorProfessorCad.FormattingEnabled = true;
             cb_CorProfessorCad.Items.AddRange(new object[] { "Branca", "Preta", "Parda", "Amarela", "Indígena", "Prefiro não informar" });
-            cb_CorProfessorCad.Location = new Point(272, 166);
+            cb_CorProfessorCad.Location = new Point(272, 158);
             cb_CorProfessorCad.Name = "cb_CorProfessorCad";
             cb_CorProfessorCad.Size = new Size(264, 25);
             cb_CorProfessorCad.TabIndex = 6;
@@ -402,7 +453,7 @@
             label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(272, 146);
+            label9.Location = new Point(272, 138);
             label9.Name = "label9";
             label9.Size = new Size(65, 17);
             label9.TabIndex = 9999;
@@ -414,7 +465,7 @@
             label8.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(3, 146);
+            label8.Location = new Point(3, 138);
             label8.Name = "label8";
             label8.Size = new Size(39, 17);
             label8.TabIndex = 9999;
@@ -425,7 +476,7 @@
             // 
             tb_NaturalidadeProfessorCad.Dock = DockStyle.Fill;
             tb_NaturalidadeProfessorCad.Font = new Font("Segoe UI", 9.75F);
-            tb_NaturalidadeProfessorCad.Location = new Point(272, 98);
+            tb_NaturalidadeProfessorCad.Location = new Point(272, 96);
             tb_NaturalidadeProfessorCad.Name = "tb_NaturalidadeProfessorCad";
             tb_NaturalidadeProfessorCad.Size = new Size(264, 25);
             tb_NaturalidadeProfessorCad.TabIndex = 4;
@@ -435,7 +486,7 @@
             label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(272, 78);
+            label7.Location = new Point(272, 76);
             label7.Name = "label7";
             label7.Size = new Size(87, 17);
             label7.TabIndex = 9999;
@@ -447,7 +498,7 @@
             label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(3, 78);
+            label6.Location = new Point(3, 76);
             label6.Name = "label6";
             label6.Size = new Size(95, 17);
             label6.TabIndex = 9999;
@@ -458,7 +509,7 @@
             // 
             mtb_CpfProfessorCad.Dock = DockStyle.Fill;
             mtb_CpfProfessorCad.Font = new Font("Segoe UI", 9.75F);
-            mtb_CpfProfessorCad.Location = new Point(272, 30);
+            mtb_CpfProfessorCad.Location = new Point(272, 34);
             mtb_CpfProfessorCad.Mask = "000.000.000-00";
             mtb_CpfProfessorCad.Name = "mtb_CpfProfessorCad";
             mtb_CpfProfessorCad.Size = new Size(264, 25);
@@ -469,7 +520,7 @@
             label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(272, 10);
+            label5.Location = new Point(272, 14);
             label5.Name = "label5";
             label5.Size = new Size(112, 17);
             label5.TabIndex = 9999;
@@ -481,7 +532,7 @@
             label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(3, 10);
+            label4.Location = new Point(3, 14);
             label4.Name = "label4";
             label4.Size = new Size(130, 17);
             label4.TabIndex = 9999;
@@ -492,7 +543,7 @@
             // 
             mtb_DataNascCad.Dock = DockStyle.Fill;
             mtb_DataNascCad.Font = new Font("Segoe UI", 9.75F);
-            mtb_DataNascCad.Location = new Point(3, 30);
+            mtb_DataNascCad.Location = new Point(3, 34);
             mtb_DataNascCad.Mask = "00/00/0000";
             mtb_DataNascCad.Name = "mtb_DataNascCad";
             mtb_DataNascCad.Size = new Size(263, 25);
@@ -505,7 +556,7 @@
             cb_SexoProfessorCad.Font = new Font("Segoe UI", 9.75F);
             cb_SexoProfessorCad.FormattingEnabled = true;
             cb_SexoProfessorCad.Items.AddRange(new object[] { "Masculino", "Feminino" });
-            cb_SexoProfessorCad.Location = new Point(3, 166);
+            cb_SexoProfessorCad.Location = new Point(3, 158);
             cb_SexoProfessorCad.Name = "cb_SexoProfessorCad";
             cb_SexoProfessorCad.Size = new Size(263, 25);
             cb_SexoProfessorCad.TabIndex = 5;
@@ -517,19 +568,19 @@
             tableLayoutPanel7.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel7.Controls.Add(tb_EnderecoProfessorCad, 0, 1);
             tableLayoutPanel7.Controls.Add(label10, 0, 0);
-            tableLayoutPanel7.Location = new Point(3, 294);
+            tableLayoutPanel7.Location = new Point(3, 317);
             tableLayoutPanel7.Name = "tableLayoutPanel7";
             tableLayoutPanel7.RowCount = 2;
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel7.Size = new Size(539, 73);
+            tableLayoutPanel7.Size = new Size(539, 50);
             tableLayoutPanel7.TabIndex = 13;
             // 
             // tb_EnderecoProfessorCad
             // 
             tb_EnderecoProfessorCad.Dock = DockStyle.Fill;
             tb_EnderecoProfessorCad.Font = new Font("Segoe UI", 9.75F);
-            tb_EnderecoProfessorCad.Location = new Point(3, 32);
+            tb_EnderecoProfessorCad.Location = new Point(3, 23);
             tb_EnderecoProfessorCad.Name = "tb_EnderecoProfessorCad";
             tb_EnderecoProfessorCad.Size = new Size(533, 25);
             tb_EnderecoProfessorCad.TabIndex = 7;
@@ -539,7 +590,7 @@
             label10.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(3, 12);
+            label10.Location = new Point(3, 3);
             label10.Name = "label10";
             label10.Size = new Size(66, 17);
             label10.TabIndex = 9999;
@@ -612,16 +663,20 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_GerenciarProfessores);
             Controls.Add(panel_CadProfessor);
+            Controls.Add(panel_GerenciarProfessores);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarProfessores";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciar Professores";
+            Load += F_GerenciarProfessores_Load;
             panel_GerenciarProfessores.ResumeLayout(false);
             panel_GerenciarProfessores.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgv_Dados).EndInit();
             panel_CadProfessor.ResumeLayout(false);
             panel_CadProfessor.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);
@@ -676,5 +731,8 @@
         private TableLayoutPanel tableLayoutPanel7;
         private TextBox tb_EnderecoProfessorCad;
         private Label label10;
+        private DataGridView dgv_Dados;
+        private MaskedTextBox mtb_TelefoneProfessorCad;
+        private Label label11;
     }
 }

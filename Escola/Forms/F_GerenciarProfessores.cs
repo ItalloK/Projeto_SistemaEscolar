@@ -80,11 +80,19 @@ namespace Escola
             string sexo = cb_SexoProfessorCad.Text;
             string cor = cb_CorProfessorCad.Text;
 
+            mtb_TelefoneProfessorCad.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtb_TelefoneProfessorCad.Text;
+
             if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
                 || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
-                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor))
+                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor) || string.IsNullOrEmpty(telefone))
             {
                 MessageBox.Show("Preencha todos os dados para poder cadastrar o PROFESSOR.");
+                return;
+            }
+            if(telefone.Length != 11)
+            {
+                MessageBox.Show("Digite corretamente o telefone!");
                 return;
             }
 
@@ -99,7 +107,8 @@ namespace Escola
                 naturalidade = naturalidade,
                 sexo = sexo,
                 corraca = cor,
-                endereco = endereco
+                endereco = endereco,
+                telefone = telefone
             };
             ProfessorRepository repository = new ProfessorRepository();
 
@@ -115,6 +124,39 @@ namespace Escola
             {
                 MessageBox.Show("Erro ao cadastrar professor.");
                 return;
+            }
+        }
+
+        private void F_GerenciarProfessores_Load(object sender, EventArgs e)
+        {
+            CarregarProfessores();
+        }
+
+        private void CarregarProfessores()
+        {
+            ProfessorRepository pr = new ProfessorRepository();
+            var listProf = pr.PegarTodosProfessores();
+
+            dgv_Dados.DataSource = listProf;
+
+            string[] colunasVisiveis = { "id", "nome", "sexo", "telefone" };
+            foreach (DataGridViewColumn column in dgv_Dados.Columns)
+            {
+                column.Visible = colunasVisiveis.Contains(column.Name);
+            }
+
+            if (dgv_Dados.Columns.Count > 0)
+            {
+                dgv_Dados.Columns["Id"]!.DisplayIndex = 0;
+                dgv_Dados.Columns["Nome"]!.DisplayIndex = 1;
+                dgv_Dados.Columns["Sexo"]!.DisplayIndex = 2;
+                dgv_Dados.Columns["Telefone"]!.DisplayIndex = 3;
+
+
+                dgv_Dados.Columns["Id"]!.HeaderText = "Codigo";
+                dgv_Dados.Columns["Nome"]!.HeaderText = "Nome";
+                dgv_Dados.Columns["Sexo"]!.HeaderText = "Sexo";
+                dgv_Dados.Columns["Telefone"]!.HeaderText = "Telefone";
             }
         }
     }

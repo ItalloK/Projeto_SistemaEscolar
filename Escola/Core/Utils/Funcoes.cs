@@ -100,5 +100,33 @@ namespace Escola.Core.Utils
                 return true;
             }
         }
+
+        public static bool ValidarData(string data)
+        {
+            if (data.Length != 8)
+            {
+                MessageBox.Show("Digite a data corretamente!");
+                return false;
+            }
+
+            if (DateTime.TryParseExact(data, "ddMMyyyy", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime dataConvertida))
+            {
+                if (dataConvertida.Year >= 1900)
+                {
+                    Debug.WriteLine("Data válida: " + dataConvertida.ToString("dd/MM/yyyy"));
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Erro a data não pode ser menor que 1900!");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Erro: Data inválida!");
+                return false;
+            }
+        }
     }
 }

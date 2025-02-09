@@ -38,60 +38,73 @@ namespace Escola.Core.Infrastructure
                     {
                         { "Aluno", @"
                             CREATE TABLE IF NOT EXISTS Aluno (
-                                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                    Nome TEXT NOT NULL,
-                                    Cpf TEXT NOT NULL,
-                                    DataNascimento TEXT NOT NULL,
-                                    Nacionalidade TEXT NOT NULL,
-                                    Naturalidade TEXT NOT NULL,
-                                    Sexo TEXT NOT NULL,
-                                    CorRaca TEXT NOT NULL,
-                                    Endereco TEXT NOT NULL
-                                )" },
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Nome TEXT NOT NULL,
+                                Cpf TEXT NOT NULL UNIQUE,
+                                DataNascimento TEXT NOT NULL,
+                                Nacionalidade TEXT NOT NULL,
+                                Naturalidade TEXT NOT NULL,
+                                Sexo TEXT NOT NULL,
+                                CorRaca TEXT NOT NULL,
+                                Endereco TEXT NOT NULL
+                            ); 
+                            CREATE INDEX IF NOT EXISTS idx_aluno_cpf ON Aluno(Cpf);" },
+
                         { "Responsavel", @"
                             CREATE TABLE IF NOT EXISTS Responsavel (
-                                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                                    Nome TEXT NOT NULL,
-                                    Cpf TEXT NOT NULL,
-                                    Telefone TEXT NOT NULL
-                            )" },
-                        {"Professor", @"
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Nome TEXT NOT NULL,
+                                Cpf TEXT NOT NULL UNIQUE,
+                                Telefone TEXT NOT NULL
+                            );
+                            CREATE INDEX IF NOT EXISTS idx_responsavel_cpf ON Responsavel(Cpf);" },
+
+                        { "Professor", @"
                             CREATE TABLE IF NOT EXISTS Professor (
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 Nome TEXT NOT NULL,
-                                Cpf TEXT NOT NULL,
+                                Cpf TEXT NOT NULL UNIQUE,
                                 DataNascimento TEXT NOT NULL,
                                 Sexo TEXT NOT NULL,
                                 Endereco TEXT NOT NULL,
                                 Naturalidade TEXT NOT NULL,
                                 Nacionalidade TEXT NOT NULL,
-                                CorRaca TEXT NOT NULL
-                            )"},
-                        {"Turmas",@"
-                            CREATE TABLE Turmas (
+                                CorRaca TEXT NOT NULL,
+                                Telefone TEXT NOT NULL
+                            );
+                            CREATE INDEX IF NOT EXISTS idx_professor_cpf ON Professor(Cpf);" },
+
+                        { "Turma", @"
+                            CREATE TABLE IF NOT EXISTS Turma (
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 Tipo TEXT NOT NULL,
                                 Turno TEXT NOT NULL,
                                 Serie TEXT NOT NULL,
                                 MaxAlunos INTEGER NOT NULL
-                            )"},
-                        {"Aluno_Turma", @"
-                            CREATE TABLE Aluno_Turma (
+                            );" },
+
+                        { "Aluno_Turma", @"
+                            CREATE TABLE IF NOT EXISTS Aluno_Turma (
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 AlunoId INTEGER NOT NULL,
                                 TurmaId INTEGER NOT NULL,
-                                FOREIGN KEY (AlunoId) REFERENCES Aluno(Id),
-                                FOREIGN KEY (TurmaId) REFERENCES Turmas(Id)
-                            )" },
-                        {"Aluno_Responsavel", @"
-                                CREATE TABLE Aluno_Responsavel (
+                                DataMatricula TEXT DEFAULT CURRENT_DATE,
+                                FOREIGN KEY (AlunoId) REFERENCES Aluno(Id) ON DELETE CASCADE,
+                                FOREIGN KEY (TurmaId) REFERENCES Turma(Id) ON DELETE CASCADE
+                            );
+                            CREATE INDEX IF NOT EXISTS idx_aluno_turma ON Aluno_Turma(AlunoId, TurmaId);" },
+
+                        { "Aluno_Responsavel", @"
+                            CREATE TABLE IF NOT EXISTS Aluno_Responsavel (
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 AlunoCpf INTEGER NOT NULL,
                                 ResponsavelCpf INTEGER NOT NULL,
-                                FOREIGN KEY (AlunoCpf) REFERENCES Aluno(Cpf),
-                                FOREIGN KEY (ResponsavelCpf) REFERENCES Responsavel(Cpf)
-                            )"}
+                                FOREIGN KEY (AlunoCpf) REFERENCES Aluno(Cpf) ON DELETE CASCADE,
+                                FOREIGN KEY (ResponsavelCpf) REFERENCES Responsavel(Cpf) ON DELETE CASCADE
+                            );
+                            CREATE INDEX IF NOT EXISTS idx_aluno_responsavel ON Aluno_Responsavel(AlunoCpf, ResponsavelCpf);" }
                     };
+
 
                     foreach (var tabela in tabelasSQL)
                     {

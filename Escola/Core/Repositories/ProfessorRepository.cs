@@ -20,7 +20,7 @@ namespace Escola.Core.Repositories
                 using (var connection = BancoDeDados.GetConnection())
                 {
                     connection.Open();
-                    string sql = "INSERT INTO Professor (Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca) VALUES (@Nome, @Cpf, @DataNascimento, @Sexo, @Endereco, @Naturalidade, @Nacionalidade, @CorRaca)";
+                    string sql = "INSERT INTO Professor (Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca, Telefone) VALUES (@Nome, @Cpf, @DataNascimento, @Sexo, @Endereco, @Naturalidade, @Nacionalidade, @CorRaca, @Telefone)";
                     using (var command = new SQLiteCommand(sql, connection))
                     {
                         command.Parameters.AddWithValue("@Nome", p.nome);
@@ -31,6 +31,7 @@ namespace Escola.Core.Repositories
                         command.Parameters.AddWithValue("@Naturalidade", p.naturalidade);
                         command.Parameters.AddWithValue("@Nacionalidade", p.nacionalidade);
                         command.Parameters.AddWithValue("@CorRaca", p.corraca);
+                        command.Parameters.AddWithValue("@Telefone", p.telefone);
 
                         int linhasAfetadas = command.ExecuteNonQuery();
 
@@ -69,6 +70,7 @@ namespace Escola.Core.Repositories
             Debug.WriteLine($"Sexo..........: {p.sexo}");
             Debug.WriteLine($"Cor e Raça....: {p.corraca}");
             Debug.WriteLine($"Endereço......: {p.endereco}");
+            Debug.WriteLine($"Telefone......: {p.telefone}");
             Debug.WriteLine(" ~~~~~~~~~~~~ > Professor Cadastrado < ~~~~~~~~~~~~");
         }
 
@@ -77,7 +79,7 @@ namespace Escola.Core.Repositories
             using (var connection = BancoDeDados.GetConnection())
             {
                 connection.Open();
-                string sql = "SELECT Id, Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca FROM Professor WHERE Cpf = @Cpf";
+                string sql = "SELECT Id, Nome, Cpf, DataNascimento, Sexo, Endereco, Naturalidade, Nacionalidade, CorRaca, Telefone FROM Professor WHERE Cpf = @Cpf";
 
                 using (var command = new SQLiteCommand(sql, connection))
                 {
@@ -97,13 +99,49 @@ namespace Escola.Core.Repositories
                                 endereco = reader["Endereco"]?.ToString() ?? string.Empty,
                                 naturalidade = reader["Naturalidade"]?.ToString() ?? string.Empty,
                                 nacionalidade = reader["Nacionalidade"]?.ToString() ?? string.Empty,
-                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty
+                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty,
+                                telefone = reader["Telefone"]?.ToString() ?? string.Empty
                             };
                         }
                     }
                 }
             }
             return null;
+        }
+        public List<Professor> PegarTodosProfessores()
+        {
+            var professores = new List<Professor>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"SELECT * FROM Professor;";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var prof = new Professor
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                dataNascimento = reader["DataNascimento"]?.ToString() ?? string.Empty,
+                                sexo = reader["Sexo"]?.ToString() ?? string.Empty,
+                                endereco = reader["Endereco"]?.ToString() ?? string.Empty,
+                                naturalidade = reader["Naturalidade"]?.ToString() ?? string.Empty,
+                                nacionalidade = reader["Nacionalidade"]?.ToString() ?? string.Empty,
+                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty,
+                                telefone = reader["Telefone"]?.ToString() ?? string.Empty
+                            };
+                            professores.Add(prof);
+                        }
+                    }
+                }
+            }
+            return professores;
         }
     }
 }
