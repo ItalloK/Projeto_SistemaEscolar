@@ -80,11 +80,11 @@
             label16 = new Label();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            buttonig4 = new CustomControls.Botoes.ButtonIG();
-            buttonig3 = new CustomControls.Botoes.ButtonIG();
-            buttonig2 = new CustomControls.Botoes.ButtonIG();
-            textBox1 = new TextBox();
+            btn_BuscarAlunoG = new Button();
             btn_CadAlunoGerenciador = new CustomControls.Botoes.ButtonIG();
+            buttonig2 = new CustomControls.Botoes.ButtonIG();
+            btn_DeletarAlunoG = new CustomControls.Botoes.ButtonIG();
+            tb_BuscarAlunoG = new TextBox();
             Panel_CadAluno.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel9.SuspendLayout();
@@ -790,16 +790,16 @@
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Controls.Add(buttonig4, 4, 0);
-            tableLayoutPanel1.Controls.Add(buttonig3, 3, 0);
-            tableLayoutPanel1.Controls.Add(buttonig2, 2, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(btn_CadAlunoGerenciador, 1, 0);
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.Controls.Add(btn_BuscarAlunoG, 1, 0);
+            tableLayoutPanel1.Controls.Add(btn_CadAlunoGerenciador, 2, 0);
+            tableLayoutPanel1.Controls.Add(buttonig2, 3, 0);
+            tableLayoutPanel1.Controls.Add(btn_DeletarAlunoG, 4, 0);
+            tableLayoutPanel1.Controls.Add(tb_BuscarAlunoG, 0, 0);
             tableLayoutPanel1.Location = new Point(3, 35);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -807,77 +807,18 @@
             tableLayoutPanel1.Size = new Size(794, 32);
             tableLayoutPanel1.TabIndex = 3;
             // 
-            // buttonig4
+            // btn_BuscarAlunoG
             // 
-            buttonig4.BackColor = Color.Gray;
-            buttonig4.BackgroundColor = Color.Gray;
-            buttonig4.BorderColor = Color.PaleVioletRed;
-            buttonig4.BorderRadius = 5;
-            buttonig4.BorderSize = 0;
-            buttonig4.Dock = DockStyle.Fill;
-            buttonig4.FlatAppearance.BorderSize = 0;
-            buttonig4.FlatStyle = FlatStyle.Flat;
-            buttonig4.Font = new Font("Segoe UI", 9.75F);
-            buttonig4.ForeColor = Color.White;
-            buttonig4.HoverBackgroundColor = Color.Black;
-            buttonig4.Location = new Point(663, 3);
-            buttonig4.Name = "buttonig4";
-            buttonig4.Size = new Size(128, 26);
-            buttonig4.TabIndex = 4;
-            buttonig4.Text = "Deletar Aluno";
-            buttonig4.TextColor = Color.White;
-            buttonig4.UseVisualStyleBackColor = false;
-            // 
-            // buttonig3
-            // 
-            buttonig3.BackColor = Color.Gray;
-            buttonig3.BackgroundColor = Color.Gray;
-            buttonig3.BorderColor = Color.PaleVioletRed;
-            buttonig3.BorderRadius = 5;
-            buttonig3.BorderSize = 0;
-            buttonig3.Dock = DockStyle.Fill;
-            buttonig3.FlatAppearance.BorderSize = 0;
-            buttonig3.FlatStyle = FlatStyle.Flat;
-            buttonig3.Font = new Font("Segoe UI", 9.75F);
-            buttonig3.ForeColor = Color.White;
-            buttonig3.HoverBackgroundColor = Color.Black;
-            buttonig3.Location = new Point(531, 3);
-            buttonig3.Name = "buttonig3";
-            buttonig3.Size = new Size(126, 26);
-            buttonig3.TabIndex = 3;
-            buttonig3.Text = "Atualizar Aluno";
-            buttonig3.TextColor = Color.White;
-            buttonig3.UseVisualStyleBackColor = false;
-            // 
-            // buttonig2
-            // 
-            buttonig2.BackColor = Color.Gray;
-            buttonig2.BackgroundColor = Color.Gray;
-            buttonig2.BorderColor = Color.PaleVioletRed;
-            buttonig2.BorderRadius = 5;
-            buttonig2.BorderSize = 0;
-            buttonig2.Dock = DockStyle.Fill;
-            buttonig2.FlatAppearance.BorderSize = 0;
-            buttonig2.FlatStyle = FlatStyle.Flat;
-            buttonig2.Font = new Font("Segoe UI", 9.75F);
-            buttonig2.ForeColor = Color.White;
-            buttonig2.HoverBackgroundColor = Color.Black;
-            buttonig2.Location = new Point(399, 3);
-            buttonig2.Name = "buttonig2";
-            buttonig2.Size = new Size(126, 26);
-            buttonig2.TabIndex = 2;
-            buttonig2.Text = "Ver Responsáveis";
-            buttonig2.TextColor = Color.White;
-            buttonig2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(3, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(258, 25);
-            textBox1.TabIndex = 0;
+            btn_BuscarAlunoG.Anchor = AnchorStyles.Left;
+            btn_BuscarAlunoG.BackgroundImage = Properties.Resources.lupa;
+            btn_BuscarAlunoG.BackgroundImageLayout = ImageLayout.Zoom;
+            btn_BuscarAlunoG.Location = new Point(285, 1);
+            btn_BuscarAlunoG.Margin = new Padding(0);
+            btn_BuscarAlunoG.Name = "btn_BuscarAlunoG";
+            btn_BuscarAlunoG.Size = new Size(29, 29);
+            btn_BuscarAlunoG.TabIndex = 16;
+            btn_BuscarAlunoG.UseVisualStyleBackColor = true;
+            btn_BuscarAlunoG.Click += btn_BuscarAlunoG_Click;
             // 
             // btn_CadAlunoGerenciador
             // 
@@ -892,14 +833,66 @@
             btn_CadAlunoGerenciador.Font = new Font("Segoe UI", 9.75F);
             btn_CadAlunoGerenciador.ForeColor = Color.White;
             btn_CadAlunoGerenciador.HoverBackgroundColor = Color.Black;
-            btn_CadAlunoGerenciador.Location = new Point(267, 3);
+            btn_CadAlunoGerenciador.Location = new Point(319, 3);
             btn_CadAlunoGerenciador.Name = "btn_CadAlunoGerenciador";
-            btn_CadAlunoGerenciador.Size = new Size(126, 26);
-            btn_CadAlunoGerenciador.TabIndex = 1;
+            btn_CadAlunoGerenciador.Size = new Size(152, 26);
+            btn_CadAlunoGerenciador.TabIndex = 13;
             btn_CadAlunoGerenciador.Text = "Cadastrar Aluno";
             btn_CadAlunoGerenciador.TextColor = Color.White;
             btn_CadAlunoGerenciador.UseVisualStyleBackColor = false;
             btn_CadAlunoGerenciador.Click += btn_CadAlunoGerenciador_Click;
+            // 
+            // buttonig2
+            // 
+            buttonig2.BackColor = Color.Gray;
+            buttonig2.BackgroundColor = Color.Gray;
+            buttonig2.BorderColor = Color.PaleVioletRed;
+            buttonig2.BorderRadius = 5;
+            buttonig2.BorderSize = 0;
+            buttonig2.Dock = DockStyle.Fill;
+            buttonig2.FlatAppearance.BorderSize = 0;
+            buttonig2.FlatStyle = FlatStyle.Flat;
+            buttonig2.Font = new Font("Segoe UI", 9.75F);
+            buttonig2.ForeColor = Color.White;
+            buttonig2.HoverBackgroundColor = Color.Black;
+            buttonig2.Location = new Point(477, 3);
+            buttonig2.Name = "buttonig2";
+            buttonig2.Size = new Size(152, 26);
+            buttonig2.TabIndex = 11;
+            buttonig2.Text = "Atualizar Aluno";
+            buttonig2.TextColor = Color.White;
+            buttonig2.UseVisualStyleBackColor = false;
+            // 
+            // btn_DeletarAlunoG
+            // 
+            btn_DeletarAlunoG.BackColor = Color.Gray;
+            btn_DeletarAlunoG.BackgroundColor = Color.Gray;
+            btn_DeletarAlunoG.BorderColor = Color.PaleVioletRed;
+            btn_DeletarAlunoG.BorderRadius = 5;
+            btn_DeletarAlunoG.BorderSize = 0;
+            btn_DeletarAlunoG.Dock = DockStyle.Fill;
+            btn_DeletarAlunoG.FlatAppearance.BorderSize = 0;
+            btn_DeletarAlunoG.FlatStyle = FlatStyle.Flat;
+            btn_DeletarAlunoG.Font = new Font("Segoe UI", 9.75F);
+            btn_DeletarAlunoG.ForeColor = Color.White;
+            btn_DeletarAlunoG.HoverBackgroundColor = Color.Black;
+            btn_DeletarAlunoG.Location = new Point(635, 3);
+            btn_DeletarAlunoG.Name = "btn_DeletarAlunoG";
+            btn_DeletarAlunoG.Size = new Size(156, 26);
+            btn_DeletarAlunoG.TabIndex = 9;
+            btn_DeletarAlunoG.Text = "Deletar Aluno";
+            btn_DeletarAlunoG.TextColor = Color.White;
+            btn_DeletarAlunoG.UseVisualStyleBackColor = false;
+            btn_DeletarAlunoG.Click += btn_DeletarAlunoG_Click;
+            // 
+            // tb_BuscarAlunoG
+            // 
+            tb_BuscarAlunoG.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tb_BuscarAlunoG.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_BuscarAlunoG.Location = new Point(3, 3);
+            tb_BuscarAlunoG.Name = "tb_BuscarAlunoG";
+            tb_BuscarAlunoG.Size = new Size(279, 25);
+            tb_BuscarAlunoG.TabIndex = 0;
             // 
             // F_GerenciarAlunos
             // 
@@ -907,8 +900,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(Panel_Gerenciar);
             Controls.Add(Panel_CadAluno);
+            Controls.Add(Panel_Gerenciar);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarAlunos";
@@ -976,11 +969,7 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private CustomControls.Botoes.ButtonIG buttonig4;
-        private CustomControls.Botoes.ButtonIG buttonig3;
-        private CustomControls.Botoes.ButtonIG buttonig2;
-        private TextBox textBox1;
-        private CustomControls.Botoes.ButtonIG btn_CadAlunoGerenciador;
+        private TextBox tb_BuscarAlunoG;
         private TableLayoutPanel tableLayoutPanel8;
         private PictureBox pb_FotoAluno;
         private ComboBox cb_nacionalidade;
@@ -1005,5 +994,9 @@
         private DataGridView dgv_Dados;
         private DataGridView dgv_Responsavel;
         private Label label16;
+        private CustomControls.Botoes.ButtonIG btn_CadAlunoGerenciador;
+        private CustomControls.Botoes.ButtonIG buttonig2;
+        private CustomControls.Botoes.ButtonIG btn_DeletarAlunoG;
+        private Button btn_BuscarAlunoG;
     }
 }

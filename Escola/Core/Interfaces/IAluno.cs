@@ -14,5 +14,6 @@ namespace Escola.Core.Interfaces
         public void DadosCadastro(Aluno a);
         public Aluno? BuscarAlunoPorCPF(string cpf);
         public List<Aluno> PegarTodosAlunos();
+        public bool DelAluno(Aluno a);
     }
 }

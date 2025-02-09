@@ -13,5 +13,6 @@ namespace Escola.Core.Interfaces
         public void DadosCadastro(Professor p);
         public Professor? BuscarProfessorPorCPF(string cpf);
         public List<Professor> PegarTodosProfessores();
+        public bool DelProfessor(Professor p);
     }
 }

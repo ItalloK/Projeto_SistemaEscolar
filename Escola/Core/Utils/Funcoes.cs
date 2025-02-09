@@ -10,6 +10,27 @@ namespace Escola.Core.Utils
 {
     public class Funcoes
     {
+        public static string FormatarTelefone(string telefone)
+        {
+            telefone = telefone.Trim();
+            telefone = new string(telefone?.Where(char.IsDigit).ToArray());
+            if (telefone.Length != 11)
+            {
+                Console.WriteLine("[FUNCOES] O telefone deve ter exatamente 11 dígitos.");
+                return telefone; // Retorna o telefone original se não tiver 11 dígitos
+            }
+            return $"({telefone.Substring(0, 2)}) {telefone.Substring(2, 1)} {telefone.Substring(3, 4)}-{telefone.Substring(7, 4)}";
+        }
+
+        public static string FormatarCPF(string cpf)
+        {
+            if (cpf.Length != 11)
+            {
+                Console.WriteLine("[FUNCOES] O CPF deve ter exatamente 11 dígitos.");
+                return cpf;
+            }
+            return String.Format("{0:000\\.000\\.000\\-00}", long.Parse(cpf));
+        }
         public static string FormatarCodigo(int numero)
         {
             return numero.ToString().PadLeft(6, '0');
@@ -74,6 +95,63 @@ namespace Escola.Core.Utils
             }
         }
 
+        public static void DeletarFoto(string cpf, int tipo)
+        {
+            string tipoStr = tipo == Global.TIPO_ALUNO ? "Alunos" : tipo == Global.TIPO_PROFESSOR ? "Professores" : string.Empty;
+            string localDeletar = "Fotos";
+            string qrDeletar = "QrCodes";
+            string pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, localDeletar, tipoStr);
+            string pastaDestinoQr = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, qrDeletar, tipoStr);
+
+            if (string.IsNullOrEmpty(tipoStr))
+            {
+                Debug.WriteLine("Tipo inválido");
+                return;
+            }
+
+            if (!Directory.Exists(pastaDestino) || !Directory.Exists(pastaDestinoQr))
+            {
+                Debug.WriteLine("Pasta não encontrada.");
+                return;
+            }
+
+            string[] arquivos = Directory.GetFiles(pastaDestino, $"{cpf}.*");
+            string[] arquivosQr = Directory.GetFiles(pastaDestinoQr, $"{cpf}.*");
+
+            if (arquivos.Length > 0 || arquivosQr.Length > 0)
+            {
+                try
+                {
+                    if (arquivos.Length > 0)
+                    {
+                        File.Delete(arquivos[0]);
+                        Debug.WriteLine($"Foto deletada com sucesso: {arquivos[0]}");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Foto não encontrada para deletar.");
+                    }
+
+                    if (arquivosQr.Length > 0)
+                    {
+                        File.Delete(arquivosQr[0]);
+                        Debug.WriteLine($"QrCode deletado com sucesso: {arquivosQr[0]}");
+                    }
+                    else
+                    {
+                        Debug.WriteLine("QrCode não encontrado para deletar.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Erro ao deletar os arquivos: {ex.Message}");
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Nenhum arquivo encontrado para deletar.");
+            }
+        }
 
         public static bool ValidarCPF(string cpf)
         {

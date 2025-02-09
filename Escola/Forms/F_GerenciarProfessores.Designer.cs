@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_GerenciarProfessores));
             panel_GerenciarProfessores = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            buttonig3 = new CustomControls.Botoes.ButtonIG();
-            buttonig2 = new CustomControls.Botoes.ButtonIG();
-            textBox1 = new TextBox();
+            btn_BuscarProfessorG = new Button();
             btn_CadProfessor = new CustomControls.Botoes.ButtonIG();
+            btn_AttProfessorG = new CustomControls.Botoes.ButtonIG();
+            btn_DeletarProfessor = new CustomControls.Botoes.ButtonIG();
+            tb_BuscarProfessorG = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             dgv_Dados = new DataGridView();
             label1 = new Label();
@@ -98,15 +99,17 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Controls.Add(buttonig3, 3, 0);
-            tableLayoutPanel1.Controls.Add(buttonig2, 2, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(btn_CadProfessor, 1, 0);
+            tableLayoutPanel1.ColumnCount = 5;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.Controls.Add(btn_BuscarProfessorG, 1, 0);
+            tableLayoutPanel1.Controls.Add(btn_CadProfessor, 2, 0);
+            tableLayoutPanel1.Controls.Add(btn_AttProfessorG, 3, 0);
+            tableLayoutPanel1.Controls.Add(btn_DeletarProfessor, 4, 0);
+            tableLayoutPanel1.Controls.Add(tb_BuscarProfessorG, 0, 0);
             tableLayoutPanel1.Location = new Point(3, 35);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -114,56 +117,17 @@
             tableLayoutPanel1.Size = new Size(795, 32);
             tableLayoutPanel1.TabIndex = 6;
             // 
-            // buttonig3
+            // btn_BuscarProfessorG
             // 
-            buttonig3.BackColor = Color.Gray;
-            buttonig3.BackgroundColor = Color.Gray;
-            buttonig3.BorderColor = Color.PaleVioletRed;
-            buttonig3.BorderRadius = 5;
-            buttonig3.BorderSize = 0;
-            buttonig3.Dock = DockStyle.Fill;
-            buttonig3.FlatAppearance.BorderSize = 0;
-            buttonig3.FlatStyle = FlatStyle.Flat;
-            buttonig3.Font = new Font("Segoe UI", 9.75F);
-            buttonig3.ForeColor = Color.White;
-            buttonig3.HoverBackgroundColor = Color.Black;
-            buttonig3.Location = new Point(639, 3);
-            buttonig3.Name = "buttonig3";
-            buttonig3.Size = new Size(153, 26);
-            buttonig3.TabIndex = 6;
-            buttonig3.Text = "Deletar Professor";
-            buttonig3.TextColor = Color.White;
-            buttonig3.UseVisualStyleBackColor = false;
-            // 
-            // buttonig2
-            // 
-            buttonig2.BackColor = Color.Gray;
-            buttonig2.BackgroundColor = Color.Gray;
-            buttonig2.BorderColor = Color.PaleVioletRed;
-            buttonig2.BorderRadius = 5;
-            buttonig2.BorderSize = 0;
-            buttonig2.Dock = DockStyle.Fill;
-            buttonig2.FlatAppearance.BorderSize = 0;
-            buttonig2.FlatStyle = FlatStyle.Flat;
-            buttonig2.Font = new Font("Segoe UI", 9.75F);
-            buttonig2.ForeColor = Color.White;
-            buttonig2.HoverBackgroundColor = Color.Black;
-            buttonig2.Location = new Point(480, 3);
-            buttonig2.Name = "buttonig2";
-            buttonig2.Size = new Size(153, 26);
-            buttonig2.TabIndex = 5;
-            buttonig2.Text = "Atualizar Professor";
-            buttonig2.TextColor = Color.White;
-            buttonig2.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(3, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(312, 25);
-            textBox1.TabIndex = 0;
+            btn_BuscarProfessorG.Anchor = AnchorStyles.Left;
+            btn_BuscarProfessorG.BackgroundImage = Properties.Resources.lupa;
+            btn_BuscarProfessorG.BackgroundImageLayout = ImageLayout.Zoom;
+            btn_BuscarProfessorG.Location = new Point(286, 1);
+            btn_BuscarProfessorG.Margin = new Padding(0);
+            btn_BuscarProfessorG.Name = "btn_BuscarProfessorG";
+            btn_BuscarProfessorG.Size = new Size(29, 29);
+            btn_BuscarProfessorG.TabIndex = 18;
+            btn_BuscarProfessorG.UseVisualStyleBackColor = true;
             // 
             // btn_CadProfessor
             // 
@@ -178,14 +142,66 @@
             btn_CadProfessor.Font = new Font("Segoe UI", 9.75F);
             btn_CadProfessor.ForeColor = Color.White;
             btn_CadProfessor.HoverBackgroundColor = Color.Black;
-            btn_CadProfessor.Location = new Point(321, 3);
+            btn_CadProfessor.Location = new Point(320, 3);
             btn_CadProfessor.Name = "btn_CadProfessor";
             btn_CadProfessor.Size = new Size(153, 26);
-            btn_CadProfessor.TabIndex = 1;
+            btn_CadProfessor.TabIndex = 15;
             btn_CadProfessor.Text = "Cadastrar Professor";
             btn_CadProfessor.TextColor = Color.White;
             btn_CadProfessor.UseVisualStyleBackColor = false;
             btn_CadProfessor.Click += btn_CadProfessor_Click;
+            // 
+            // btn_AttProfessorG
+            // 
+            btn_AttProfessorG.BackColor = Color.Gray;
+            btn_AttProfessorG.BackgroundColor = Color.Gray;
+            btn_AttProfessorG.BorderColor = Color.PaleVioletRed;
+            btn_AttProfessorG.BorderRadius = 5;
+            btn_AttProfessorG.BorderSize = 0;
+            btn_AttProfessorG.Dock = DockStyle.Fill;
+            btn_AttProfessorG.FlatAppearance.BorderSize = 0;
+            btn_AttProfessorG.FlatStyle = FlatStyle.Flat;
+            btn_AttProfessorG.Font = new Font("Segoe UI", 9.75F);
+            btn_AttProfessorG.ForeColor = Color.White;
+            btn_AttProfessorG.HoverBackgroundColor = Color.Black;
+            btn_AttProfessorG.Location = new Point(479, 3);
+            btn_AttProfessorG.Name = "btn_AttProfessorG";
+            btn_AttProfessorG.Size = new Size(153, 26);
+            btn_AttProfessorG.TabIndex = 13;
+            btn_AttProfessorG.Text = "Atualizar Professor";
+            btn_AttProfessorG.TextColor = Color.White;
+            btn_AttProfessorG.UseVisualStyleBackColor = false;
+            // 
+            // btn_DeletarProfessor
+            // 
+            btn_DeletarProfessor.BackColor = Color.Gray;
+            btn_DeletarProfessor.BackgroundColor = Color.Gray;
+            btn_DeletarProfessor.BorderColor = Color.PaleVioletRed;
+            btn_DeletarProfessor.BorderRadius = 5;
+            btn_DeletarProfessor.BorderSize = 0;
+            btn_DeletarProfessor.Dock = DockStyle.Fill;
+            btn_DeletarProfessor.FlatAppearance.BorderSize = 0;
+            btn_DeletarProfessor.FlatStyle = FlatStyle.Flat;
+            btn_DeletarProfessor.Font = new Font("Segoe UI", 9.75F);
+            btn_DeletarProfessor.ForeColor = Color.White;
+            btn_DeletarProfessor.HoverBackgroundColor = Color.Black;
+            btn_DeletarProfessor.Location = new Point(638, 3);
+            btn_DeletarProfessor.Name = "btn_DeletarProfessor";
+            btn_DeletarProfessor.Size = new Size(154, 26);
+            btn_DeletarProfessor.TabIndex = 11;
+            btn_DeletarProfessor.Text = "Deletar Professor";
+            btn_DeletarProfessor.TextColor = Color.White;
+            btn_DeletarProfessor.UseVisualStyleBackColor = false;
+            btn_DeletarProfessor.Click += btn_DeletarProfessor_Click;
+            // 
+            // tb_BuscarProfessorG
+            // 
+            tb_BuscarProfessorG.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            tb_BuscarProfessorG.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tb_BuscarProfessorG.Location = new Point(3, 3);
+            tb_BuscarProfessorG.Name = "tb_BuscarProfessorG";
+            tb_BuscarProfessorG.Size = new Size(280, 25);
+            tb_BuscarProfessorG.TabIndex = 0;
             // 
             // tableLayoutPanel2
             // 
@@ -696,10 +712,7 @@
         #endregion
         private Panel panel_GerenciarProfessores;
         private TableLayoutPanel tableLayoutPanel1;
-        private CustomControls.Botoes.ButtonIG buttonig3;
-        private CustomControls.Botoes.ButtonIG buttonig2;
-        private TextBox textBox1;
-        private CustomControls.Botoes.ButtonIG btn_CadProfessor;
+        private TextBox tb_BuscarProfessorG;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private Panel panel_CadProfessor;
@@ -734,5 +747,9 @@
         private DataGridView dgv_Dados;
         private MaskedTextBox mtb_TelefoneProfessorCad;
         private Label label11;
+        private CustomControls.Botoes.ButtonIG btn_DeletarProfessor;
+        private CustomControls.Botoes.ButtonIG btn_CadProfessor;
+        private CustomControls.Botoes.ButtonIG btn_AttProfessorG;
+        private Button btn_BuscarProfessorG;
     }
 }

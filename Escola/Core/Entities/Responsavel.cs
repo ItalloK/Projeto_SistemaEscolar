@@ -12,7 +12,7 @@ namespace Escola.Core.Entities
 {
     public class Responsavel : Pessoa
     {
-        public string? telefone { get; set; }
+        public string telefone { get; set; } = string.Empty;
 
         public Responsavel() { }
 

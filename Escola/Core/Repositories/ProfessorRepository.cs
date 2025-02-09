@@ -13,6 +13,43 @@ namespace Escola.Core.Repositories
 {
     public class ProfessorRepository : IProfessor
     {
+        public bool DelProfessor(Professor p)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sqlDelAluno = @"DELETE FROM Professor WHERE Cpf = @Cpf";
+
+                    using (var command = new SQLiteCommand(sqlDelAluno, connection))
+                    {
+                        command.Parameters.AddWithValue("@Cpf", p.cpf);
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
+
         public bool CadProfessor(Professor p)
         {
             try

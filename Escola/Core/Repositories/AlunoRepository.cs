@@ -13,6 +13,52 @@ namespace Escola.Core.Repositories
 {
     public class AlunoRepository : IAluno
     {
+        public bool DelAluno(Aluno a)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    // primeiro deleta a ligação entre aluno e responsavel
+                    string sqlDelResponsavel = @"DELETE FROM Aluno_Responsavel WHERE AlunoCpf = @Cpf";
+                    using (var command = new SQLiteCommand(sqlDelResponsavel, connection))
+                    {
+                        command.Parameters.AddWithValue("@Cpf", a.cpf);
+                        command.ExecuteNonQuery();
+                    }
+
+                    // agora remove o aluno e mantem o responsavel no sistema.
+                    string sqlDelAluno = @"DELETE FROM Aluno WHERE Cpf = @Cpf";
+
+                    using (var command = new SQLiteCommand(sqlDelAluno, connection))
+                    {
+                        command.Parameters.AddWithValue("@Cpf", a.cpf);
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
+
         public List<Aluno> PegarTodosAlunos()
         {
             var alunos = new List<Aluno>();
@@ -136,12 +182,12 @@ namespace Escola.Core.Repositories
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show($"Erro de banco de dados: {ex.Message}");
+                MessageBox.Show($"Erro SQL: {ex.Message}");
                 return false;
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Erro inesperado: {ex.Message}");
+                MessageBox.Show($"Erro: {ex.Message}");
                 return false;
             }
         }

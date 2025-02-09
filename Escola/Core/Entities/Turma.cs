@@ -8,12 +8,12 @@ namespace Escola.Core.Entities
 {
     public class Turma
     {
-        public int? id { get; set; }
-        public string? tipo { get; set; }
-        public string? turno { get; set; }
-        public string? serie { get; set; }
-        public int? maxAlunos { get; set; }
-        public int? quantidadeAlunos { get; set; }
+        public int id { get; set; }
+        public string tipo { get; set; } = string.Empty;
+        public string turno { get; set; } = string.Empty;
+        public string serie { get; set; } = string.Empty;
+        public int maxAlunos { get; set; }
+        public int quantidadeAlunos { get; set; }
 
 
         public Turma() { }

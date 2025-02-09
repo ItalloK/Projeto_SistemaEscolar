@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\repositories\\professorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\repositories\\professorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarprofessores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciaralunos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,27 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProfessorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\ProfessorRepository.cs",
-              "RelativeDocumentMoniker": "Core\\Repositories\\ProfessorRepository.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\ProfessorRepository.cs",
-              "RelativeToolTip": "Core\\Repositories\\ProfessorRepository.cs",
-              "ViewState": "AgIAAH4AAAAAAAAAAAAAAIgAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T13:15:16.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "F_GerenciarProfessores.cs",
               "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs",
               "RelativeDocumentMoniker": "Forms\\F_GerenciarProfessores.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs*",
-              "RelativeToolTip": "Forms\\F_GerenciarProfessores.cs*",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAlwJ4AAABHAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs",
+              "RelativeToolTip": "Forms\\F_GerenciarProfessores.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAGQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T12:59:33.732Z",
+              "WhenOpened": "2025-02-09T18:28:07.386Z",
               "EditorCaption": ""
             },
             {
@@ -60,10 +51,35 @@
               "Title": "F_GerenciarProfessores.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs",
               "RelativeDocumentMoniker": "Forms\\F_GerenciarProfessores.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs [Projeto]*",
-              "RelativeToolTip": "Forms\\F_GerenciarProfessores.cs [Projeto]*",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarProfessores.cs [Projeto]",
+              "RelativeToolTip": "Forms\\F_GerenciarProfessores.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-09T12:58:43.681Z",
+              "WhenOpened": "2025-02-09T18:28:05.228Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "F_GerenciarAlunos.cs",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs",
+              "RelativeDocumentMoniker": "Forms\\F_GerenciarAlunos.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs",
+              "RelativeToolTip": "Forms\\F_GerenciarAlunos.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAlwE0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T18:23:28.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "F_GerenciarAlunos.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs",
+              "RelativeDocumentMoniker": "Forms\\F_GerenciarAlunos.cs",
+              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarAlunos.cs [Projeto]",
+              "RelativeToolTip": "Forms\\F_GerenciarAlunos.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-09T18:23:17.703Z",
               "EditorCaption": " [Projeto]"
             }
           ]

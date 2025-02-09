@@ -10,13 +10,13 @@ namespace Escola.Core.Entities
 {
     public class Professor : Pessoa
     {
-        public string? dataNascimento { get; set; }
-        public string? sexo { get; set; }
-        public string? endereco { get; set; }
-        public string? naturalidade { get; set; }
-        public string? nacionalidade { get; set; }
-        public string? corraca { get; set; }
-        public string? telefone { get; set; }
+        public string dataNascimento { get; set; } = string.Empty;
+        public string sexo { get; set; } = string.Empty;
+        public string endereco { get; set; } = string.Empty;
+        public string naturalidade { get; set; } = string.Empty;
+        public string nacionalidade { get; set; } = string.Empty;
+        public string corraca { get; set; } = string.Empty;
+        public string telefone { get; set; } = string.Empty;
 
         public Professor() { }
 

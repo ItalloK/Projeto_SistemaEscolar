@@ -198,8 +198,18 @@ namespace Escola
         {
             if (pb_FundoCarteirinha.Image != null)
             {
-                pb_FundoCarteirinha.Image.Dispose(); // Libera os recursos da imagem
-                pb_FundoCarteirinha.Image = null;    // Define a imagem como null
+                pb_FundoCarteirinha.Image.Dispose(); 
+                pb_FundoCarteirinha.Image = null;    
+            }
+            if (pb_FotoPerfil.Image != null)
+            {
+                pb_FotoPerfil.Image.Dispose();  
+                pb_FotoPerfil.Image = null; 
+            }
+            if (pb_QrCode.Image != null)
+            {
+                pb_QrCode.Image.Dispose();
+                pb_QrCode.Image = null;
             }
         }
     }

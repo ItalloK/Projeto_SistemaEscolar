@@ -26,6 +26,9 @@ namespace Escola
         {
             InitializeComponent();
             AtivarPainel(Panel_Gerenciar);
+            cb_nacionalidade.SelectedIndex = 0;
+            cb_CorAlunoCad.SelectedIndex = 0;
+            cb_SexoAlunoCad.SelectedIndex = 0;
         }
 
 
@@ -40,9 +43,6 @@ namespace Escola
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
             AtivarPainel(Panel_CadAluno);
-            cb_nacionalidade.SelectedIndex = 0;
-            cb_CorAlunoCad.SelectedIndex = 0;
-            cb_SexoAlunoCad.SelectedIndex = 0;
         }
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
@@ -102,11 +102,14 @@ namespace Escola
             string cpfRes = mtb_CpfResponsavel.Text;
             mtb_TelResponsavel.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string telefoneRes = mtb_TelResponsavel.Text;
+
+
             if (nomeRes == "" || cpfRes == "" || telefoneRes == "")
             {
                 MessageBox.Show("Não é possivel cadastrar um aluno sem responsavel, digite os dados!");
                 return;
             }
+
             Responsavel responsavel = new Responsavel
             {
                 nome = nomeRes,
@@ -141,7 +144,10 @@ namespace Escola
                 MessageBox.Show("Aluno cadastrado com sucesso.");
                 QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
                 Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
-                this.Close();
+                //this.Close();
+                LimparCamposCadastro();
+                CarregarAlunos();
+                AtivarPainel(Panel_Gerenciar);
             }
             else
             {
@@ -149,7 +155,24 @@ namespace Escola
                 return;
             }
         }
+        private void LimparCamposCadastro()
+        {
+            tb_NomeAlunoCad.Clear();
+            pb_FotoAluno.Image = null;
+            fotoPath = string.Empty;
+            mtb_DataNascCad.Clear();
+            mtb_CpfAlunoCad.Clear();
+            cb_nacionalidade.SelectedIndex = 0;
+            tb_NaturalidadeAlunoCad.Clear();
+            cb_SexoAlunoCad.SelectedIndex = 0;
+            cb_CorAlunoCad.SelectedIndex = 0;
+            tb_EnderecoAlunoCad.Clear();
 
+            mtb_BuscarCPFResp.Clear();
+            tb_NomeResponsavel.Clear();
+            mtb_CpfResponsavel.Clear();
+            mtb_TelResponsavel.Clear();
+        }
         private bool CadastrarResponsavel(Responsavel r)
         {
             if (!Funcoes.ValidarCPF(r.cpf)) return false;
@@ -208,10 +231,12 @@ namespace Escola
         {
             AlunoRepository ar = new AlunoRepository();
             var alunos = ar.PegarTodosAlunos();
+
             dgv_Dados.DataSource = alunos;
+
             if (dgv_Dados.Columns.Count > 0) // Verifica se as colunas foram geradas
             {
-                string[] colunasVisiveis = { "id", "nome", "sexo", "dataNascimento" };
+                string[] colunasVisiveis = { "id", "nome", "sexo", "dataNascimento", "cpf" };
                 foreach (DataGridViewColumn column in dgv_Dados.Columns)
                 {
                     column.Visible = colunasVisiveis.Contains(column.Name);
@@ -221,13 +246,27 @@ namespace Escola
                 dgv_Dados.Columns["nome"]!.DisplayIndex = 1;
                 dgv_Dados.Columns["dataNascimento"]!.DisplayIndex = 2;
                 dgv_Dados.Columns["sexo"]!.DisplayIndex = 3;
+                dgv_Dados.Columns["cpf"]!.DisplayIndex = 4;
 
                 dgv_Dados.Columns["id"]!.HeaderText = "Codigo";
                 dgv_Dados.Columns["nome"]!.HeaderText = "Nome";
                 dgv_Dados.Columns["dataNascimento"]!.HeaderText = "Data de Nascimento";
                 dgv_Dados.Columns["sexo"]!.HeaderText = "Sexo";
+                dgv_Dados.Columns["cpf"]!.HeaderText = "CPF";
+            }
+
+            foreach (DataGridViewRow row in dgv_Dados.Rows)
+            {
+                string dataNascOriginal = row.Cells["dataNascimento"]?.Value?.ToString() ?? string.Empty;
+                string cpfOriginal = row.Cells["cpf"]?.Value?.ToString() ?? string.Empty;
+                
+                if (!string.IsNullOrEmpty(dataNascOriginal))
+                    row.Cells["dataNascimento"].Value = Funcoes.FormatarData(dataNascOriginal);
+                if(!string.IsNullOrEmpty(cpfOriginal))
+                    row.Cells["cpf"].Value = Funcoes.FormatarCPF(cpfOriginal);
             }
         }
+
 
         private bool VerificarSeResponsavelTaCadastrado(Responsavel r)
         {
@@ -245,10 +284,11 @@ namespace Escola
 
         private void dgv_Dados_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv_Dados.SelectedRows.Count > 0) // Verifica se tem linha selecionada
+            if (dgv_Dados.SelectedRows.Count > 0)
             {
-                DataGridViewRow row = dgv_Dados.SelectedRows[0]; // Pega a primeira selecionada
-                string alunoCpf = row.Cells["cpf"].Value.ToString();
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+                string alunoCpf = row.Cells["cpf"].Value?.ToString() ?? string.Empty;
+                alunoCpf = alunoCpf.Replace(".", "").Replace("-", ""); // remove a formatação do CPF antes de procurar o responsavel
 
                 Aluno alunoSelecionado = new Aluno { cpf = alunoCpf };
 
@@ -273,6 +313,61 @@ namespace Escola
                     dgv_Responsavel.Columns["Nome"]!.HeaderText = "Nome";
                     dgv_Responsavel.Columns["Telefone"]!.HeaderText = "Telefone";
                 }
+            }
+        }
+
+        private void btn_BuscarAlunoG_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_DeletarAlunoG_Click(object sender, EventArgs e)
+        {
+            DeletarAluno();
+        }
+
+        private void DeletarAluno()
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+                string cpf = row.Cells["cpf"].Value?.ToString() ?? string.Empty;
+
+                DialogResult resultado = MessageBox.Show($"Deseja realmente deletar o aluno de CPF: {cpf}", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                
+                cpf = cpf.Replace(".", "").Replace("-", "");
+                Debug.WriteLine($"Cpf aluno a ser deletado: {cpf}");
+                if (resultado == DialogResult.Yes)
+                {
+                    Aluno a = new Aluno
+                    {
+                        cpf = cpf
+                    };
+
+                    AlunoRepository ar = new AlunoRepository();
+                    bool sucesso = ar.DelAluno(a);
+                    if (sucesso)
+                    {
+                        Funcoes.DeletarFoto(cpf, Global.TIPO_ALUNO);
+                        MessageBox.Show("Aluno deletado!");
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Erro ao deletar aluno");
+                        return;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Voce cancelou!");
+                    return;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um aluno para poder deletar!");
+                return;
             }
         }
     }

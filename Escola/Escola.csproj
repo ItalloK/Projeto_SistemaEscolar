@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Core\Repositories\AlunoRepository.cs~RF29e67014.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="icone.ico" />
   </ItemGroup>
 
