@@ -1,6 +1,7 @@
 ﻿using Escola.Core;
 using Escola.Core.Entities;
 using Escola.Core.Infrastructure;
+using Escola.Core.Interfaces;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
 using System;
@@ -21,6 +22,7 @@ namespace Escola
     {
 
         private string fotoPath = string.Empty;
+        private string fotoPathAtt = string.Empty;
 
         public F_GerenciarAlunos()
         {
@@ -36,6 +38,7 @@ namespace Escola
         {
             Panel_Gerenciar.Visible = false;
             Panel_CadAluno.Visible = false;
+            panel_AtualizarAluno.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
         }
@@ -47,6 +50,7 @@ namespace Escola
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
         {
+            LimparCamposCadastro();
             AtivarPainel(Panel_Gerenciar);
         }
 
@@ -259,10 +263,10 @@ namespace Escola
             {
                 string dataNascOriginal = row.Cells["dataNascimento"]?.Value?.ToString() ?? string.Empty;
                 string cpfOriginal = row.Cells["cpf"]?.Value?.ToString() ?? string.Empty;
-                
+
                 if (!string.IsNullOrEmpty(dataNascOriginal))
                     row.Cells["dataNascimento"].Value = Funcoes.FormatarData(dataNascOriginal);
-                if(!string.IsNullOrEmpty(cpfOriginal))
+                if (!string.IsNullOrEmpty(cpfOriginal))
                     row.Cells["cpf"].Value = Funcoes.FormatarCPF(cpfOriginal);
             }
         }
@@ -334,7 +338,7 @@ namespace Escola
                 string cpf = row.Cells["cpf"].Value?.ToString() ?? string.Empty;
 
                 DialogResult resultado = MessageBox.Show($"Deseja realmente deletar o aluno de CPF: {cpf}", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                
+
                 cpf = cpf.Replace(".", "").Replace("-", "");
                 Debug.WriteLine($"Cpf aluno a ser deletado: {cpf}");
                 if (resultado == DialogResult.Yes)
@@ -367,6 +371,141 @@ namespace Escola
             else
             {
                 MessageBox.Show("Selecione um aluno para poder deletar!");
+                return;
+            }
+        }
+
+        private void btn_AtualizarAlunoG_Click(object sender, EventArgs e)
+        {
+            ConfigurarAtualizarAluno();
+        }
+
+        private void ConfigurarAtualizarAluno() // configura o ambiente de atualizacao do aluno
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+                AtivarPainel(panel_AtualizarAluno);
+
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+                int id = Convert.ToInt32(row.Cells["id"].Value);
+                string nome = row.Cells["Nome"].Value?.ToString() ?? string.Empty;
+                string dataNasc = row.Cells["dataNascimento"].Value?.ToString() ?? string.Empty;
+                string sexo = row.Cells["sexo"].Value?.ToString() ?? string.Empty;
+                string cpf = row.Cells["cpf"].Value?.ToString() ?? string.Empty;
+                string naturalidade = row.Cells["naturalidade"].Value?.ToString() ?? string.Empty;
+                string nacionalidade = row.Cells["nacionalidade"].Value?.ToString() ?? string.Empty;
+                string corraca = row.Cells["corraca"].Value?.ToString() ?? string.Empty;
+                string endereco = row.Cells["endereco"].Value?.ToString() ?? string.Empty;
+
+                tb_NomeAlunoAtt.Text = nome;
+                mtb_DataNascAlunoAtt.Text = dataNasc;
+                cb_SexoAlunoAtt.Text = sexo;
+                mtb_CpfAlunoAtt.Text = cpf;
+                mtb_CpfAlunoAtt.Enabled = false;
+                tb_NaturalidadeAlunoAtt.Text = naturalidade;
+                cb_NacionalidadeAlunoAtt.Text = nacionalidade;
+                cb_CorRacaAlunoAtt.Text = corraca;
+                tb_EnderecoAlunoAtt.Text = endereco;
+
+                mtb_CpfAlunoAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string CPFF = mtb_CpfAlunoAtt.Text;
+
+                Funcoes.CarregarImagem(CPFF, Global.TIPO_ALUNO, pb_FotoAlunoAtt, false, null);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma aluno para poder atualizar!");
+                return;
+            }
+        }
+
+        private void btn_CancelarAtualizacaoAluno_Click(object sender, EventArgs e)
+        {
+            LimparCamposAtualizacao();
+            AtivarPainel(Panel_Gerenciar);
+        }
+
+        private void LimparCamposAtualizacao()
+        {
+            tb_NomeAlunoAtt.Clear();
+            pb_FotoAlunoAtt.Image = null;
+            fotoPath = string.Empty;
+
+            mtb_DataNascAlunoAtt.Clear();
+            mtb_CpfAlunoAtt.Clear();
+            cb_NacionalidadeAlunoAtt.SelectedIndex = 0;
+            tb_NaturalidadeAlunoAtt.Clear();
+            cb_SexoAlunoAtt.SelectedIndex = 0;
+            cb_CorRacaAlunoAtt.SelectedIndex = 0;
+            tb_EnderecoAlunoAtt.Clear();
+        }
+
+        private void btn_CarregarImagemAlunoAtt_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Imagens|*.png; *.jpg; *.jpeg;",
+                Title = "Selecione uma foto"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fotoPathAtt = openFileDialog.FileName;
+                pb_FotoAlunoAtt.ImageLocation = fotoPathAtt;
+            }
+        }
+
+        private void btn_AttAluno_Click(object sender, EventArgs e)
+        {
+            mtb_CpfAlunoAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_CpfAlunoAtt.Text;
+            mtb_DataNascAlunoAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string dataNasc = mtb_DataNascAlunoAtt.Text;
+            string nome = tb_NomeAlunoAtt.Text;
+            string nacionalidade = cb_NacionalidadeAlunoAtt.Text;
+            string naturalidade = tb_NaturalidadeAlunoAtt.Text;
+            string endereco = tb_EnderecoAlunoAtt.Text;
+            string sexo = cb_SexoAlunoAtt.Text;
+            string cor = cb_CorRacaAlunoAtt.Text;
+
+            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
+                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
+                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor))
+            {
+                MessageBox.Show("Preencha todos os dados para poder atualizar o ALUNO.");
+                return;
+            }
+
+            if (!Funcoes.ValidarData(dataNasc)) return;
+            if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
+
+            Aluno aluno = new Aluno
+            {
+                nome = nome,
+                cpf = cpf,
+                dataNascimento = dataNasc,
+                nacionalidade = nacionalidade,
+                naturalidade = naturalidade,
+                sexo = sexo,
+                corraca = cor,
+                endereco = endereco
+            };
+
+            AlunoRepository repository = new AlunoRepository();
+            bool sucesso = repository.AttAluno(aluno); // atualiza o aluno
+
+            if (sucesso)
+            {
+                MessageBox.Show("Aluno atualizado com sucesso.");                
+                Funcoes.SalvarFoto(cpf, fotoPathAtt, Global.TIPO_ALUNO); // salvar foto na pasta do professor
+                pb_FotoAlunoAtt.Image = null;
+                LimparCamposAtualizacao();
+                CarregarAlunos();
+                AtivarPainel(Panel_Gerenciar);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar aluno.");
                 return;
             }
         }

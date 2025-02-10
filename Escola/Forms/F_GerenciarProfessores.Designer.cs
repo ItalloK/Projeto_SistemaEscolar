@@ -655,7 +655,6 @@
             // 
             pb_FotoProfessor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             pb_FotoProfessor.BorderStyle = BorderStyle.FixedSingle;
-            pb_FotoProfessor.Image = Properties.Resources.person;
             pb_FotoProfessor.Location = new Point(3, 36);
             pb_FotoProfessor.Name = "pb_FotoProfessor";
             pb_FotoProfessor.Size = new Size(225, 225);
@@ -679,8 +678,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_GerenciarProfessores);
             Controls.Add(panel_CadProfessor);
+            Controls.Add(panel_GerenciarProfessores);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarProfessores";

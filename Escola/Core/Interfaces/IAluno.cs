@@ -9,6 +9,7 @@ namespace Escola.Core.Interfaces
 {
     public interface IAluno
     {
+        public bool AttAluno(Aluno a);
         public bool CadAluno(Aluno a);
         public bool CadAlunoComResponsavel(Aluno a, Responsavel r);
         public void DadosCadastro(Aluno a);

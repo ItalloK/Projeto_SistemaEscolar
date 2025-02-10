@@ -13,6 +13,60 @@ namespace Escola.Core.Repositories
 {
     public class AlunoRepository : IAluno
     {
+        public bool AttAluno(Aluno a)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"UPDATE Aluno SET 
+                                    Nome = @Nome,
+                                    Cpf = @Cpf,
+                                    DataNascimento = @DataNascimento,
+                                    Nacionalidade = @Nacionalidade,
+                                    Naturalidade = @Naturalidade,
+                                    Sexo = @Sexo,
+                                    CorRaca = @CorRaca,
+                                    Endereco = @Endereco
+                                    WHERE Cpf = @Cpf;";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", a.nome);
+                        command.Parameters.AddWithValue("@Cpf", a.cpf);
+                        command.Parameters.AddWithValue("@DataNascimento", a.dataNascimento);
+                        command.Parameters.AddWithValue("@Nacionalidade", a.nacionalidade);
+                        command.Parameters.AddWithValue("@Naturalidade", a.naturalidade);
+                        command.Parameters.AddWithValue("@Sexo", a.sexo);
+                        command.Parameters.AddWithValue("@CorRaca", a.corraca);
+                        command.Parameters.AddWithValue("@Endereco", a.endereco);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            DadosCadastro(a);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
         public bool DelAluno(Aluno a)
         {
             try

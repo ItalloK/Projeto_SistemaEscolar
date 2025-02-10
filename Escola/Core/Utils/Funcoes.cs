@@ -83,17 +83,24 @@ namespace Escola.Core.Utils
 
             string extensao = Path.GetExtension(fotoPath);
             string novoCaminho = Path.Combine(pastaDestino, $"{cpf}{extensao}");
+
             try
             {
+                if (File.Exists(novoCaminho))
+                {
+                    File.Delete(novoCaminho);
+                    Debug.WriteLine("Foto anterior deletada.");
+                }
+
                 File.Copy(fotoPath, novoCaminho, true);
                 Debug.WriteLine("Foto salva com sucesso!");
             }
             catch (Exception ex)
             {
                 Debug.WriteLine($"Erro ao salvar a foto: {ex.Message}");
-                return;
             }
         }
+
 
         public static void DeletarFoto(string cpf, int tipo)
         {
@@ -204,6 +211,90 @@ namespace Escola.Core.Utils
             {
                 MessageBox.Show("Erro: Data inválida!");
                 return false;
+            }
+        }
+
+        public static void CarregarImagem(string cpf, int tipo, PictureBox pb, bool? TemQRCode, PictureBox? pb_Qr)
+        {
+            string pastaDestino = "";
+            string pastaDestQrCode = "";
+
+            if (tipo == Global.TIPO_ALUNO)
+            {
+                pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Alunos");
+                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Alunos");
+            }
+            else if (tipo == Global.TIPO_PROFESSOR)
+            {
+                pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Professores");
+                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Professores");
+            }
+
+            if (!Directory.Exists(pastaDestino))
+            {
+                MessageBox.Show("A pasta de fotos não foi encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (TemQRCode == true && !Directory.Exists(pastaDestQrCode))
+            {
+                MessageBox.Show("A pasta de QR Codes não foi encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string[] arquivos = Directory.GetFiles(pastaDestino, cpf + ".*"); // Procura a imagem com qualquer extensão
+
+            if (arquivos.Length > 0)
+            {
+                try
+                {
+                    using (var stream = new FileStream(arquivos[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    {
+                        using (var memoryStream = new MemoryStream())
+                        {
+                            stream.CopyTo(memoryStream);
+                            pb.Image = Image.FromStream(memoryStream);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erro ao carregar a foto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                pb.Image = null;
+                Debug.WriteLine("Imagem não encontrada, setada padrão.");
+            }
+
+            if (TemQRCode == true && pb_Qr != null)
+            {
+                string[] qrCodes = Directory.GetFiles(pastaDestQrCode, cpf + ".*");
+
+                if (qrCodes.Length > 0)
+                {
+                    try
+                    {
+                        using (var stream = new FileStream(qrCodes[0], FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                        {
+                            using (var memoryStream = new MemoryStream())
+                            {
+                                stream.CopyTo(memoryStream);
+                                pb_Qr.Image = Image.FromStream(memoryStream);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Erro ao carregar o QR Code: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    pb_Qr.Image = null;
+                    Debug.WriteLine("QR Code não encontrado, setado padrão.");
+                }
             }
         }
     }

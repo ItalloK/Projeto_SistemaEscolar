@@ -1,4 +1,5 @@
-﻿using Escola.Core.Entities;
+﻿using Escola.Core;
+using Escola.Core.Entities;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
 using System;
@@ -16,8 +17,6 @@ namespace Escola
 {
     public partial class F_Carteirinha : Form
     {
-        const int TIPO_PROFESSOR = 0;
-        const int TIPO_ALUNO = 1;
 
         public F_Carteirinha()
         {
@@ -72,7 +71,7 @@ namespace Escola
                 lbl_TextSerie.Text = "Serie:";
                 lbl_Serie.Text = "8º ANO";
 
-                CarregarImagem(cpf, TIPO_ALUNO);
+                Funcoes.CarregarImagem(cpf, Global.TIPO_ALUNO, pb_FotoPerfil, true, pb_QrCode);
             }
             else
             {
@@ -95,63 +94,11 @@ namespace Escola
                 lbl_Turma.Text = "Professor";
                 lbl_TextSerie.Text = "";
                 lbl_Serie.Text = "";
-                CarregarImagem(cpf, TIPO_PROFESSOR);
+                Funcoes.CarregarImagem(cpf, Global.TIPO_PROFESSOR, pb_FotoPerfil, true, pb_QrCode);
             }
             else
             {
                 MessageBox.Show("Professor não encontrado.");
-            }
-        }
-
-
-        private void CarregarImagem(string cpf, int tipo)
-        {
-            if (string.IsNullOrWhiteSpace(cpf))
-            {
-                MessageBox.Show("O CPF não pode estar vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            string pastaDestino = "";
-            string pastaDestQrCode = "";
-            if (tipo == TIPO_ALUNO)
-            {
-                pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Alunos");
-                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Alunos");
-            }
-            else if (tipo == TIPO_PROFESSOR)
-            {
-                pastaDestino = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Fotos", "Professores");
-                pastaDestQrCode = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QrCodes", "Professores");
-            }
-
-
-            if (!Directory.Exists(pastaDestino))
-            {
-                MessageBox.Show("A pasta de fotos não foi encontrada!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-
-            string[] arquivos = Directory.GetFiles(pastaDestino, cpf + ".*"); // Procura a imagem com qualquer extensao
-            string[] qrCodes = Directory.GetFiles(pastaDestQrCode, cpf + ".*");
-
-            if (arquivos.Length > 0)
-            {
-                try
-                {
-                    pb_FotoPerfil.Image = Image.FromFile(arquivos[0]); // Carrega a primeira imagem encontrada
-                    pb_QrCode.Image = Image.FromFile(qrCodes[0]);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Erro ao carregar a foto: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                pb_FotoPerfil.Image = Properties.Resources.person;
-                Debug.WriteLine("Imagem não encontrada, setada padrão.");
             }
         }
 
