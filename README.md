@@ -1,25 +1,40 @@
-<h1>Repositorio do Projeto Sistema Escolar.</h1>
+<h2>📌 Detalhes do Projeto</h2>
 
-<h2>Detalhes do Projeto:</h2>
+<h3>🏫 Cadastro, Exclusão e Atualização de Alunos e Professores</h3>
+<ul>
+    <li>Registro de dados pessoais, incluindo informações do responsável (apenas para alunos), endereço e foto.</li>
+</ul>
 
-<h4>- Cadastro, Delete e Atualização de Alunos e Professores</h4>
-<h5>> Dados pessoais, responsavel ( apenas para alunos ), dados de endereço e foto.</h5>
+<h3>📚 Cadastro, Exclusão e Atualização de Turmas</h3>
+<ul>
+    <li>Dados como Turno (Vespertino, Matutino e Noturno), Série, Tipo (Fundamental e Médio) e Máximo de alunos por turma.</li>
+</ul>
 
-<h4>- Cadastro, Delete e Atualização de Turmas</h4>
-<h5>> Dados como Turno ( Vespertino, Matutino e Noturno ), Serie, Tipo ( Fundamental e Medio ) e Maximo de Alunos por turma.</h5>
+<h3>🎓 Gerenciamento de Turmas</h3>
+<ul>
+    <li>Além do cadastro, exclusão e edição, é possível visualizar os alunos pertencentes a cada turma.</li>
+</ul>
 
-<h4>- Gerenciamento de Turmas</h4>
-<h5>> Alem de cadastrar, deletar e atualizar tambem é possivel ver os respectivos alunos por turma</h5>
+<h3>📝 Gerenciamento de Faltas e Notas</h3>
+<ul>
+    <li>Controle de presença dos alunos, registro de notas e geração de relatórios.</li>
+</ul>
 
-<h4>- Gerenciamento de Faltas e Notas</h4>
-<h5>> Alem de gerenciar as faltas e presença dos alunos, tambem salva suas notas e gera relatorios</h5>
+<h3>👨‍👩‍👦 Responsáveis</h3>
+<ul>
+    <li>Cada aluno deve possuir um responsável, que conta com dados como Nome, Telefone e CPF.</li>
+    <li>O gerenciamento permite visualizar todos os alunos vinculados a um responsável, bem como editar ou excluir esses dados.</li>
+</ul>
 
-<h4>- Responsaveis</h4>
-<h5>> Ao cadastrar um aluno ele nescessita de um responsavel, esse conta com dados como Nome, Telefone e Cpf. O gerenciamento de responsavel mostra todos os alunos que possui uma pessoa como responsavel e tambem pode deletar responsavel ou atualizar seus dados</h5>
+<h3>🆔 Carteirinha Escolar</h3>
+<ul>
+    <li>Gera uma carteirinha contendo informações básicas do aluno ou professor, incluindo Foto, Nome, Sexo e QR Code.</li>
+</ul>
 
-<h4>- Carteirinha</h4>
-<h5>> Gera uma carteirinha com dados basicos do aluno ou professor, dados como Foto, Nome, Sexo e até mesmo QrCode</h5>
+<h3>⚙️ Configurações</h3>
+<ul>
+    <li>Personalização do nome da escola, fundo da tela principal, fundo da carteirinha e outras informações gerais.</li>
+</ul>
 
-<h4>- Configurações</h4>
-<h5>> Pode ser alterado o nome da escola, fundo da tela principal, fundo da carteirinha e outras informações gerais</h5>
-
+<hr>
+<p>📌 <strong>Este projeto visa facilitar o gerenciamento escolar de maneira eficiente e organizada.</strong></p>
