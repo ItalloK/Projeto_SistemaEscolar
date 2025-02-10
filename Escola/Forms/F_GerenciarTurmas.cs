@@ -235,13 +235,23 @@ namespace Escola.Forms
             if (sucesso)
             {
                 MessageBox.Show("Turma cadastrada!");
-                this.Close();
+                LimparCadTela();
+                AtivarPainel(panel_GerenciarTurmas);
+                CarregarDados();
             }
             else
             {
                 MessageBox.Show("Turma não cadastrada!");
                 return;
             }
+        }
+
+        private void LimparCadTela()
+        {
+            cb_EscSerie.SelectedIndex = 0;
+            cb_EscMaxAluno.SelectedIndex = 0;
+            cb_EscTipo.SelectedIndex = 0;
+            cb_EscTurno.SelectedIndex = 0;
         }
 
         private void btn_EditarTurma_Click(object sender, EventArgs e)
@@ -315,7 +325,9 @@ namespace Escola.Forms
             if (sucesso)
             {
                 MessageBox.Show("Turma atualizada!");
-                this.Close();
+                LimparAttTela();
+                AtivarPainel(panel_GerenciarTurmas);
+                CarregarDados();
             }
             else
             {
@@ -323,7 +335,13 @@ namespace Escola.Forms
                 return;
             }
         }
-
+        private void LimparAttTela()
+        {
+            cb_EscSerieAtt.SelectedIndex = 0;
+            cb_EscMaxAlunosAtt.SelectedIndex = 0;
+            cb_EscTipoAtt.SelectedIndex = 0;
+            cb_EscTurnoAtt.SelectedIndex = 0;
+        }
         private void btn_DeletarTurma_Click(object sender, EventArgs e)
         {
             DeletarTurma();
@@ -349,7 +367,7 @@ namespace Escola.Forms
                     if (sucesso)
                     {
                         MessageBox.Show("Turma deletada!");
-                        this.Close();
+                        CarregarDados();
                     }
                     else
                     {

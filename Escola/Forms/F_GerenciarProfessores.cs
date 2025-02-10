@@ -221,7 +221,8 @@ namespace Escola
                     {
                         Funcoes.DeletarFoto(cpf, Global.TIPO_PROFESSOR);
                         MessageBox.Show("Professor deletado!");
-                        this.Close();
+                        CarregarProfessores();
+                        //this.Close();
                     }
                     else
                     {

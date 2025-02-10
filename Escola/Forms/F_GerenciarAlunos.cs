@@ -350,7 +350,7 @@ namespace Escola
                     {
                         Funcoes.DeletarFoto(cpf, Global.TIPO_ALUNO);
                         MessageBox.Show("Aluno deletado!");
-                        this.Close();
+                        CarregarAlunos();
                     }
                     else
                     {
