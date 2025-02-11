@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Escola.Core.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,21 @@ namespace Escola.Forms
         public F_GerenciarResponsaveis()
         {
             InitializeComponent();
+        }
+
+        private void F_GerenciarResponsaveis_Load(object sender, EventArgs e)
+        {
+            Funcoes.AtivarPainel(this, panel_GerenciarResponsaveis);
+        }
+
+        private void btn_CancelarCadResponsavelP_Click(object sender, EventArgs e)
+        {
+            Funcoes.AtivarPainel(this, panel_GerenciarResponsaveis);
+        }
+
+        private void btn_CadResponsavel_Click(object sender, EventArgs e)
+        {
+            Funcoes.AtivarPainel(this, panel_CadastrarResponsavel);
         }
     }
 }

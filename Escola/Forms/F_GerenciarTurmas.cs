@@ -21,19 +21,20 @@ namespace Escola.Forms
         public F_GerenciarTurmas()
         {
             InitializeComponent();
-            AtivarPainel(panel_GerenciarTurmas);
+            Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
+            //AtivarPainel(panel_GerenciarTurmas);
             CarregarPropriedadesCadTurma(); // carrega as propriedas do form de cadastro de turma
             CarregarPropriedadesAttTurma(); // carrega as propriedades do form de att da turma.
         }
 
-        private void AtivarPainel(Panel p)
+        /*private void AtivarPainel(Panel p)
         {
             panel_GerenciarTurmas.Visible = false;
             panel_CadTurma.Visible = false;
             panel_AtualizarTurma.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
-        }
+        }*/
 
         private void CarregarPropriedadesCadTurma()
         {
@@ -109,6 +110,7 @@ namespace Escola.Forms
 
         private void F_GerenciarTurmas_Load(object sender, EventArgs e)
         {
+            Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
             CarregarDados();
         }
 
@@ -169,25 +171,16 @@ namespace Escola.Forms
             }
         }
 
-        private void dgv_DadosAluno_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //função abaixo pega o ' id ' ou ' codigo ' e poe 5 zeros antes do id do aluno;
-            if (dgv_DadosAluno.Columns[e.ColumnIndex].Name == "id" && e.Value != null)
-            {
-                int id = Convert.ToInt32(e.Value);
-                e.Value = Funcoes.FormatarCodigo(id);
-                e.FormattingApplied = true;
-            }
-        }
-
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
-            AtivarPainel(panel_CadTurma);
+            Funcoes.AtivarPainel(this, panel_CadTurma);
+            //AtivarPainel(panel_CadTurma);
         }
 
         private void btn_CancelarCadTurma_Click(object sender, EventArgs e)
         {
-            AtivarPainel(panel_GerenciarTurmas);
+            Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
+            //AtivarPainel(panel_GerenciarTurmas);
         }
 
         private void btn_CadastrarTurma_Click(object sender, EventArgs e)
@@ -236,7 +229,8 @@ namespace Escola.Forms
             {
                 MessageBox.Show("Turma cadastrada!");
                 LimparCadTela();
-                AtivarPainel(panel_GerenciarTurmas);
+                Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
+                //AtivarPainel(panel_GerenciarTurmas);
                 CarregarDados();
             }
             else
@@ -263,12 +257,13 @@ namespace Escola.Forms
         {
             if (dgv_Dados.SelectedRows.Count > 0)
             {
-                AtivarPainel(panel_AtualizarTurma);
+                Funcoes.AtivarPainel(this, panel_AtualizarTurma);
+                //AtivarPainel(panel_AtualizarTurma);
 
                 DataGridViewRow row = dgv_Dados.SelectedRows[0];
                 int turma = Convert.ToInt32(row.Cells["id"].Value);
-                string tipo = row.Cells["tipo"].Value.ToString();
-                string turno = row.Cells["turno"].Value.ToString();
+                string tipo = row.Cells["tipo"].Value?.ToString() ?? string.Empty;
+                string turno = row.Cells["turno"].Value?.ToString() ?? string.Empty;
 
                 int maxAlunos = Convert.ToInt32(row.Cells["maxAlunos"].Value);
                 int serie = Convert.ToInt32(row.Cells["serie"].Value);
@@ -293,7 +288,8 @@ namespace Escola.Forms
 
         private void btn_CancelarAttTurmaPanel_Click(object sender, EventArgs e)
         {
-            AtivarPainel(panel_GerenciarTurmas);
+            Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
+            //AtivarPainel(panel_GerenciarTurmas);
             LimparTelaAtualizarTurma();
         }
 
@@ -326,7 +322,8 @@ namespace Escola.Forms
             {
                 MessageBox.Show("Turma atualizada!");
                 LimparAttTela();
-                AtivarPainel(panel_GerenciarTurmas);
+                Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
+                //AtivarPainel(panel_GerenciarTurmas);
                 CarregarDados();
             }
             else

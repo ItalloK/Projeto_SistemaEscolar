@@ -63,7 +63,7 @@ namespace Escola
                 lbl_Nome.Text = aluno.nome;
                 lbl_DataNasc.Text = Funcoes.FormatarData(aluno.dataNascimento);
                 lbl_Sexo.Text = aluno.sexo;
-                lbl_Codigo.Text = Funcoes.FormatarCodigo(aluno.id);
+                lbl_Codigo.Text = aluno.id.ToString();//Funcoes.FormatarCodigo(aluno.id);
 
                 lbl_TextTurma.Text = "Turma:";
                 lbl_Turma.Text = "101";
@@ -88,7 +88,7 @@ namespace Escola
                 lbl_Nome.Text = professor.nome;
                 lbl_DataNasc.Text = Funcoes.FormatarData(professor.dataNascimento);
                 lbl_Sexo.Text = professor.sexo;
-                lbl_Codigo.Text = Funcoes.FormatarCodigo(professor.id);
+                lbl_Codigo.Text = professor.id.ToString();//Funcoes.FormatarCodigo(professor.id);
                 lbl_TextTurma.Text = "Tipo:";
                 lbl_Turma.Text = "Professor";
                 lbl_TextSerie.Text = "";

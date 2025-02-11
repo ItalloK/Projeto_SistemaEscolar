@@ -10,6 +10,21 @@ namespace Escola.Core.Utils
 {
     public class Funcoes
     {
+
+        public static void AtivarPainel(Form formulario, Panel painelAtivar, Point? localizacao = null)
+        {
+            foreach (Control controle in formulario.Controls)
+            {
+                if (controle is Panel painel && painel.Visible)
+                {
+                    painel.Visible = false;
+                }
+            }
+
+            painelAtivar.Visible = true;
+            painelAtivar.Location = localizacao ?? new Point(0, 0);
+        }
+
         public static string FormatarTelefone(string telefone)
         {
             telefone = telefone.Trim();
@@ -31,10 +46,10 @@ namespace Escola.Core.Utils
             }
             return String.Format("{0:000\\.000\\.000\\-00}", long.Parse(cpf));
         }
-        public static string FormatarCodigo(int numero)
+        /*public static string FormatarCodigo(int numero)
         {
             return numero.ToString().PadLeft(6, '0');
-        }
+        }*/
         public static string FormatarData(string data)
         {
             data = data.Trim();

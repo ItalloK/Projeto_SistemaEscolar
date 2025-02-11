@@ -165,7 +165,6 @@
             dgv_DadosAluno.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgv_DadosAluno.Size = new Size(794, 159);
             dgv_DadosAluno.TabIndex = 2;
-            dgv_DadosAluno.CellFormatting += dgv_DadosAluno_CellFormatting;
             // 
             // label2
             // 

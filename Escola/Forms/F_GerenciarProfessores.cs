@@ -24,29 +24,32 @@ namespace Escola
         public F_GerenciarProfessores()
         {
             InitializeComponent();
-            AtivarPainel(panel_GerenciarProfessores);
+            Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
+            //AtivarPainel(panel_GerenciarProfessores);
             cb_nacionalidade.SelectedIndex = 0;
             cb_CorProfessorCad.SelectedIndex = 0;
             cb_SexoProfessorCad.SelectedIndex = 0;
         }
 
-        private void AtivarPainel(Panel p)
+        /*private void AtivarPainel(Panel p)
         {
             panel_GerenciarProfessores.Visible = false;
             panel_CadProfessor.Visible = false;
             Panel_AtualizarProfessor.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
-        }
+        }*/
 
         private void btn_CadProfessor_Click(object sender, EventArgs e)
         {
-            AtivarPainel(panel_CadProfessor);
+            Funcoes.AtivarPainel(this, panel_CadProfessor);
+            //AtivarPainel(panel_CadProfessor);
         }
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
         {
-            AtivarPainel(panel_GerenciarProfessores);
+            Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
+            //AtivarPainel(panel_GerenciarProfessores);
         }
 
         private void btn_CarregarFoto_Click(object sender, EventArgs e)
@@ -124,7 +127,8 @@ namespace Escola
                 Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_PROFESSOR); // salvar foto na pasta do professor
                 LimparCamposCadastro();
                 CarregarProfessores();
-                AtivarPainel(panel_GerenciarProfessores);
+                Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
+                //AtivarPainel(panel_GerenciarProfessores);
             }
             else
             {
@@ -150,6 +154,7 @@ namespace Escola
 
         private void F_GerenciarProfessores_Load(object sender, EventArgs e)
         {
+            Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
             CarregarProfessores();
         }
 
@@ -253,7 +258,8 @@ namespace Escola
         private void btn_CancelarAttProf_Click(object sender, EventArgs e)
         {
             LimparCamposAtualizacao();
-            AtivarPainel(panel_GerenciarProfessores);
+            Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
+            //AtivarPainel(panel_GerenciarProfessores);
         }
 
         private void LimparCamposAtualizacao()
@@ -276,8 +282,8 @@ namespace Escola
         {
             if (dgv_Dados.SelectedRows.Count > 0)
             {
-
-                AtivarPainel(Panel_AtualizarProfessor);
+                Funcoes.AtivarPainel(this, Panel_AtualizarProfessor);
+                //AtivarPainel(Panel_AtualizarProfessor);
                 DataGridViewRow row = dgv_Dados.SelectedRows[0];
 
                 int id = Convert.ToInt32(row.Cells["id"].Value);
@@ -366,7 +372,8 @@ namespace Escola
                 pb_FotoProfAtt.Image = null;
                 LimparCamposAtualizacao();
                 CarregarProfessores();
-                AtivarPainel(panel_GerenciarProfessores);
+                Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
+                //AtivarPainel(panel_GerenciarProfessores);
             }
             else
             {

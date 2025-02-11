@@ -27,31 +27,33 @@ namespace Escola
         public F_GerenciarAlunos()
         {
             InitializeComponent();
-            AtivarPainel(Panel_Gerenciar);
+            //AtivarPainel(Panel_Gerenciar);
             cb_nacionalidade.SelectedIndex = 0;
             cb_CorAlunoCad.SelectedIndex = 0;
             cb_SexoAlunoCad.SelectedIndex = 0;
         }
 
 
-        private void AtivarPainel(Panel p)
+        /*private void AtivarPainel(Panel p)
         {
             Panel_Gerenciar.Visible = false;
             Panel_CadAluno.Visible = false;
             panel_AtualizarAluno.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
-        }
+        }*/
 
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
-            AtivarPainel(Panel_CadAluno);
+            Funcoes.AtivarPainel(this, Panel_CadAluno);
+            //AtivarPainel(Panel_CadAluno);
         }
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
         {
             LimparCamposCadastro();
-            AtivarPainel(Panel_Gerenciar);
+            Funcoes.AtivarPainel(this, Panel_Gerenciar);
+            //AtivarPainel(Panel_Gerenciar);
         }
 
         private void btn_CarregarFoto_Click(object sender, EventArgs e)
@@ -151,7 +153,8 @@ namespace Escola
                 //this.Close();
                 LimparCamposCadastro();
                 CarregarAlunos();
-                AtivarPainel(Panel_Gerenciar);
+                Funcoes.AtivarPainel(this, Panel_Gerenciar);
+                //AtivarPainel(Panel_Gerenciar);
             }
             else
             {
@@ -228,6 +231,7 @@ namespace Escola
 
         private void F_GerenciarAlunos_Load(object sender, EventArgs e)
         {
+            Funcoes.AtivarPainel(this, Panel_Gerenciar); // qualquer coisa
             CarregarAlunos();
         }
 
@@ -384,7 +388,8 @@ namespace Escola
         {
             if (dgv_Dados.SelectedRows.Count > 0)
             {
-                AtivarPainel(panel_AtualizarAluno);
+                Funcoes.AtivarPainel(this, panel_AtualizarAluno);
+                //AtivarPainel(panel_AtualizarAluno);
 
                 DataGridViewRow row = dgv_Dados.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells["id"].Value);
@@ -423,7 +428,8 @@ namespace Escola
         private void btn_CancelarAtualizacaoAluno_Click(object sender, EventArgs e)
         {
             LimparCamposAtualizacao();
-            AtivarPainel(Panel_Gerenciar);
+            Funcoes.AtivarPainel(this, Panel_Gerenciar);
+            //AtivarPainel(Panel_Gerenciar);
         }
 
         private void LimparCamposAtualizacao()
@@ -502,7 +508,8 @@ namespace Escola
                 pb_FotoAlunoAtt.Image = null;
                 LimparCamposAtualizacao();
                 CarregarAlunos();
-                AtivarPainel(Panel_Gerenciar);
+                Funcoes.AtivarPainel(this, Panel_Gerenciar);
+                //AtivarPainel(Panel_Gerenciar);
             }
             else
             {
