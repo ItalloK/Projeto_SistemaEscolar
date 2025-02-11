@@ -70,6 +70,37 @@
             btn_CarregarFoto = new CustomControls.Botoes.ButtonIG();
             pb_FotoProfessor = new PictureBox();
             label2 = new Label();
+            Panel_AtualizarProfessor = new Panel();
+            tableLayoutPanel10 = new TableLayoutPanel();
+            btn_AttProf = new CustomControls.Botoes.ButtonIG();
+            btn_CancelarAttProf = new CustomControls.Botoes.ButtonIG();
+            tableLayoutPanel11 = new TableLayoutPanel();
+            tableLayoutPanel12 = new TableLayoutPanel();
+            tableLayoutPanel13 = new TableLayoutPanel();
+            tb_NomeProfAtt = new TextBox();
+            label12 = new Label();
+            tableLayoutPanel14 = new TableLayoutPanel();
+            mtb_TelProfAtt = new MaskedTextBox();
+            label13 = new Label();
+            cb_NacionalidadeProfAtt = new ComboBox();
+            cb_CorRacaProfAtt = new ComboBox();
+            label14 = new Label();
+            label15 = new Label();
+            tb_NaturalidadeProfAtt = new TextBox();
+            label16 = new Label();
+            label17 = new Label();
+            mtb_CpfProfAtt = new MaskedTextBox();
+            label18 = new Label();
+            label19 = new Label();
+            mtb_DataNascProfAtt = new MaskedTextBox();
+            cb_SexoProfAtt = new ComboBox();
+            tableLayoutPanel15 = new TableLayoutPanel();
+            tb_EnderecoProfAtt = new TextBox();
+            label20 = new Label();
+            tableLayoutPanel16 = new TableLayoutPanel();
+            btn_CarregarFotoAtt = new CustomControls.Botoes.ButtonIG();
+            pb_FotoProfAtt = new PictureBox();
+            label21 = new Label();
             panel_GerenciarProfessores.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -83,6 +114,15 @@
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_FotoProfessor).BeginInit();
+            Panel_AtualizarProfessor.SuspendLayout();
+            tableLayoutPanel10.SuspendLayout();
+            tableLayoutPanel11.SuspendLayout();
+            tableLayoutPanel12.SuspendLayout();
+            tableLayoutPanel13.SuspendLayout();
+            tableLayoutPanel14.SuspendLayout();
+            tableLayoutPanel15.SuspendLayout();
+            tableLayoutPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pb_FotoProfAtt).BeginInit();
             SuspendLayout();
             // 
             // panel_GerenciarProfessores
@@ -171,6 +211,7 @@
             btn_AttProfessorG.Text = "Atualizar Professor";
             btn_AttProfessorG.TextColor = Color.White;
             btn_AttProfessorG.UseVisualStyleBackColor = false;
+            btn_AttProfessorG.Click += btn_AttProfessorG_Click;
             // 
             // btn_DeletarProfessor
             // 
@@ -673,13 +714,440 @@
             label2.Text = "Cadastrar Professor";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // Panel_AtualizarProfessor
+            // 
+            Panel_AtualizarProfessor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Panel_AtualizarProfessor.Controls.Add(tableLayoutPanel10);
+            Panel_AtualizarProfessor.Controls.Add(tableLayoutPanel11);
+            Panel_AtualizarProfessor.Controls.Add(label21);
+            Panel_AtualizarProfessor.Location = new Point(0, 0);
+            Panel_AtualizarProfessor.Name = "Panel_AtualizarProfessor";
+            Panel_AtualizarProfessor.Size = new Size(800, 450);
+            Panel_AtualizarProfessor.TabIndex = 8;
+            // 
+            // tableLayoutPanel10
+            // 
+            tableLayoutPanel10.ColumnCount = 3;
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel10.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel10.Controls.Add(btn_AttProf, 2, 0);
+            tableLayoutPanel10.Controls.Add(btn_CancelarAttProf, 1, 0);
+            tableLayoutPanel10.Dock = DockStyle.Bottom;
+            tableLayoutPanel10.Location = new Point(0, 420);
+            tableLayoutPanel10.Name = "tableLayoutPanel10";
+            tableLayoutPanel10.RowCount = 1;
+            tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel10.Size = new Size(800, 30);
+            tableLayoutPanel10.TabIndex = 10002;
+            // 
+            // btn_AttProf
+            // 
+            btn_AttProf.BackColor = Color.Gray;
+            btn_AttProf.BackgroundColor = Color.Gray;
+            btn_AttProf.BorderColor = Color.PaleVioletRed;
+            btn_AttProf.BorderRadius = 4;
+            btn_AttProf.BorderSize = 0;
+            btn_AttProf.Dock = DockStyle.Fill;
+            btn_AttProf.FlatAppearance.BorderSize = 0;
+            btn_AttProf.FlatStyle = FlatStyle.Flat;
+            btn_AttProf.ForeColor = Color.White;
+            btn_AttProf.HoverBackgroundColor = Color.Black;
+            btn_AttProf.Location = new Point(643, 3);
+            btn_AttProf.Name = "btn_AttProf";
+            btn_AttProf.Size = new Size(154, 24);
+            btn_AttProf.TabIndex = 12;
+            btn_AttProf.Text = "Atualizar Professor";
+            btn_AttProf.TextColor = Color.White;
+            btn_AttProf.UseVisualStyleBackColor = false;
+            btn_AttProf.Click += btn_AttProf_Click;
+            // 
+            // btn_CancelarAttProf
+            // 
+            btn_CancelarAttProf.BackColor = Color.Gray;
+            btn_CancelarAttProf.BackgroundColor = Color.Gray;
+            btn_CancelarAttProf.BorderColor = Color.PaleVioletRed;
+            btn_CancelarAttProf.BorderRadius = 4;
+            btn_CancelarAttProf.BorderSize = 0;
+            btn_CancelarAttProf.Dock = DockStyle.Fill;
+            btn_CancelarAttProf.FlatAppearance.BorderSize = 0;
+            btn_CancelarAttProf.FlatStyle = FlatStyle.Flat;
+            btn_CancelarAttProf.ForeColor = Color.White;
+            btn_CancelarAttProf.HoverBackgroundColor = Color.Black;
+            btn_CancelarAttProf.Location = new Point(483, 3);
+            btn_CancelarAttProf.Name = "btn_CancelarAttProf";
+            btn_CancelarAttProf.Size = new Size(154, 24);
+            btn_CancelarAttProf.TabIndex = 11;
+            btn_CancelarAttProf.Text = "Cancelar Atualização";
+            btn_CancelarAttProf.TextColor = Color.White;
+            btn_CancelarAttProf.UseVisualStyleBackColor = false;
+            btn_CancelarAttProf.Click += btn_CancelarAttProf_Click;
+            // 
+            // tableLayoutPanel11
+            // 
+            tableLayoutPanel11.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel11.ColumnCount = 2;
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
+            tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
+            tableLayoutPanel11.Controls.Add(tableLayoutPanel12, 0, 0);
+            tableLayoutPanel11.Controls.Add(tableLayoutPanel16, 1, 0);
+            tableLayoutPanel11.Location = new Point(12, 36);
+            tableLayoutPanel11.Name = "tableLayoutPanel11";
+            tableLayoutPanel11.RowCount = 1;
+            tableLayoutPanel11.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel11.Size = new Size(779, 378);
+            tableLayoutPanel11.TabIndex = 10001;
+            // 
+            // tableLayoutPanel12
+            // 
+            tableLayoutPanel12.ColumnCount = 1;
+            tableLayoutPanel12.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel12.Controls.Add(tableLayoutPanel13, 0, 0);
+            tableLayoutPanel12.Controls.Add(tableLayoutPanel14, 0, 1);
+            tableLayoutPanel12.Controls.Add(tableLayoutPanel15, 0, 2);
+            tableLayoutPanel12.Dock = DockStyle.Fill;
+            tableLayoutPanel12.Location = new Point(3, 3);
+            tableLayoutPanel12.Name = "tableLayoutPanel12";
+            tableLayoutPanel12.RowCount = 3;
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 15.1351347F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 69.72973F));
+            tableLayoutPanel12.RowStyles.Add(new RowStyle(SizeType.Percent, 15F));
+            tableLayoutPanel12.Size = new Size(539, 372);
+            tableLayoutPanel12.TabIndex = 0;
+            // 
+            // tableLayoutPanel13
+            // 
+            tableLayoutPanel13.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel13.ColumnCount = 1;
+            tableLayoutPanel13.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel13.Controls.Add(tb_NomeProfAtt, 0, 1);
+            tableLayoutPanel13.Controls.Add(label12, 0, 0);
+            tableLayoutPanel13.Location = new Point(3, 3);
+            tableLayoutPanel13.Name = "tableLayoutPanel13";
+            tableLayoutPanel13.RowCount = 2;
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel13.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanel13.Size = new Size(533, 50);
+            tableLayoutPanel13.TabIndex = 9;
+            // 
+            // tb_NomeProfAtt
+            // 
+            tb_NomeProfAtt.Dock = DockStyle.Fill;
+            tb_NomeProfAtt.Font = new Font("Segoe UI", 9.75F);
+            tb_NomeProfAtt.Location = new Point(3, 23);
+            tb_NomeProfAtt.Name = "tb_NomeProfAtt";
+            tb_NomeProfAtt.Size = new Size(527, 25);
+            tb_NomeProfAtt.TabIndex = 0;
+            // 
+            // label12
+            // 
+            label12.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(3, 3);
+            label12.Name = "label12";
+            label12.Size = new Size(108, 17);
+            label12.TabIndex = 9999;
+            label12.Text = "Nome Completo:";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel14
+            // 
+            tableLayoutPanel14.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel14.ColumnCount = 2;
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel14.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel14.Controls.Add(mtb_TelProfAtt, 0, 7);
+            tableLayoutPanel14.Controls.Add(label13, 0, 6);
+            tableLayoutPanel14.Controls.Add(cb_NacionalidadeProfAtt, 0, 3);
+            tableLayoutPanel14.Controls.Add(cb_CorRacaProfAtt, 1, 5);
+            tableLayoutPanel14.Controls.Add(label14, 1, 4);
+            tableLayoutPanel14.Controls.Add(label15, 0, 4);
+            tableLayoutPanel14.Controls.Add(tb_NaturalidadeProfAtt, 1, 3);
+            tableLayoutPanel14.Controls.Add(label16, 1, 2);
+            tableLayoutPanel14.Controls.Add(label17, 0, 2);
+            tableLayoutPanel14.Controls.Add(mtb_CpfProfAtt, 1, 1);
+            tableLayoutPanel14.Controls.Add(label18, 1, 0);
+            tableLayoutPanel14.Controls.Add(label19, 0, 0);
+            tableLayoutPanel14.Controls.Add(mtb_DataNascProfAtt, 0, 1);
+            tableLayoutPanel14.Controls.Add(cb_SexoProfAtt, 0, 5);
+            tableLayoutPanel14.Location = new Point(3, 59);
+            tableLayoutPanel14.Name = "tableLayoutPanel14";
+            tableLayoutPanel14.RowCount = 8;
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel14.Size = new Size(533, 253);
+            tableLayoutPanel14.TabIndex = 11;
+            // 
+            // mtb_TelProfAtt
+            // 
+            mtb_TelProfAtt.Dock = DockStyle.Fill;
+            mtb_TelProfAtt.Font = new Font("Segoe UI", 9.75F);
+            mtb_TelProfAtt.Location = new Point(3, 220);
+            mtb_TelProfAtt.Mask = "(00) 0 0000-0000";
+            mtb_TelProfAtt.Name = "mtb_TelProfAtt";
+            mtb_TelProfAtt.Size = new Size(260, 25);
+            mtb_TelProfAtt.TabIndex = 10002;
+            // 
+            // label13
+            // 
+            label13.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Location = new Point(3, 200);
+            label13.Name = "label13";
+            label13.Size = new Size(60, 17);
+            label13.TabIndex = 10000;
+            label13.Text = "Telefone:";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // cb_NacionalidadeProfAtt
+            // 
+            cb_NacionalidadeProfAtt.Dock = DockStyle.Fill;
+            cb_NacionalidadeProfAtt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_NacionalidadeProfAtt.Font = new Font("Segoe UI", 9.75F);
+            cb_NacionalidadeProfAtt.FormattingEnabled = true;
+            cb_NacionalidadeProfAtt.Items.AddRange(new object[] { "Brasil", "Argentina", "Uruguai", "Chile", "Venezuela" });
+            cb_NacionalidadeProfAtt.Location = new Point(3, 96);
+            cb_NacionalidadeProfAtt.Name = "cb_NacionalidadeProfAtt";
+            cb_NacionalidadeProfAtt.Size = new Size(260, 25);
+            cb_NacionalidadeProfAtt.TabIndex = 3;
+            // 
+            // cb_CorRacaProfAtt
+            // 
+            cb_CorRacaProfAtt.Dock = DockStyle.Fill;
+            cb_CorRacaProfAtt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_CorRacaProfAtt.Font = new Font("Segoe UI", 9.75F);
+            cb_CorRacaProfAtt.FormattingEnabled = true;
+            cb_CorRacaProfAtt.Items.AddRange(new object[] { "Branca", "Preta", "Parda", "Amarela", "Indígena", "Prefiro não informar" });
+            cb_CorRacaProfAtt.Location = new Point(269, 158);
+            cb_CorRacaProfAtt.Name = "cb_CorRacaProfAtt";
+            cb_CorRacaProfAtt.Size = new Size(261, 25);
+            cb_CorRacaProfAtt.TabIndex = 6;
+            // 
+            // label14
+            // 
+            label14.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.Location = new Point(269, 138);
+            label14.Name = "label14";
+            label14.Size = new Size(65, 17);
+            label14.TabIndex = 9999;
+            label14.Text = "Cor/Raça:";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            label15.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label15.AutoSize = true;
+            label15.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.Location = new Point(3, 138);
+            label15.Name = "label15";
+            label15.Size = new Size(39, 17);
+            label15.TabIndex = 9999;
+            label15.Text = "Sexo:";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tb_NaturalidadeProfAtt
+            // 
+            tb_NaturalidadeProfAtt.Dock = DockStyle.Fill;
+            tb_NaturalidadeProfAtt.Font = new Font("Segoe UI", 9.75F);
+            tb_NaturalidadeProfAtt.Location = new Point(269, 96);
+            tb_NaturalidadeProfAtt.Name = "tb_NaturalidadeProfAtt";
+            tb_NaturalidadeProfAtt.Size = new Size(261, 25);
+            tb_NaturalidadeProfAtt.TabIndex = 4;
+            // 
+            // label16
+            // 
+            label16.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label16.AutoSize = true;
+            label16.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Location = new Point(269, 76);
+            label16.Name = "label16";
+            label16.Size = new Size(87, 17);
+            label16.TabIndex = 9999;
+            label16.Text = "Naturalidade:";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            label17.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label17.AutoSize = true;
+            label17.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Location = new Point(3, 76);
+            label17.Name = "label17";
+            label17.Size = new Size(95, 17);
+            label17.TabIndex = 9999;
+            label17.Text = "Nacionalidade:";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // mtb_CpfProfAtt
+            // 
+            mtb_CpfProfAtt.Dock = DockStyle.Fill;
+            mtb_CpfProfAtt.Font = new Font("Segoe UI", 9.75F);
+            mtb_CpfProfAtt.Location = new Point(269, 34);
+            mtb_CpfProfAtt.Mask = "000.000.000-00";
+            mtb_CpfProfAtt.Name = "mtb_CpfProfAtt";
+            mtb_CpfProfAtt.Size = new Size(261, 25);
+            mtb_CpfProfAtt.TabIndex = 2;
+            // 
+            // label18
+            // 
+            label18.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Location = new Point(269, 14);
+            label18.Name = "label18";
+            label18.Size = new Size(112, 17);
+            label18.TabIndex = 9999;
+            label18.Text = "CPF do Professor:";
+            label18.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label19
+            // 
+            label19.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(3, 14);
+            label19.Name = "label19";
+            label19.Size = new Size(130, 17);
+            label19.TabIndex = 9999;
+            label19.Text = "Data de Nascimento:";
+            label19.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // mtb_DataNascProfAtt
+            // 
+            mtb_DataNascProfAtt.Dock = DockStyle.Fill;
+            mtb_DataNascProfAtt.Font = new Font("Segoe UI", 9.75F);
+            mtb_DataNascProfAtt.Location = new Point(3, 34);
+            mtb_DataNascProfAtt.Mask = "00/00/0000";
+            mtb_DataNascProfAtt.Name = "mtb_DataNascProfAtt";
+            mtb_DataNascProfAtt.Size = new Size(260, 25);
+            mtb_DataNascProfAtt.TabIndex = 1;
+            // 
+            // cb_SexoProfAtt
+            // 
+            cb_SexoProfAtt.Dock = DockStyle.Fill;
+            cb_SexoProfAtt.DropDownStyle = ComboBoxStyle.DropDownList;
+            cb_SexoProfAtt.Font = new Font("Segoe UI", 9.75F);
+            cb_SexoProfAtt.FormattingEnabled = true;
+            cb_SexoProfAtt.Items.AddRange(new object[] { "Masculino", "Feminino" });
+            cb_SexoProfAtt.Location = new Point(3, 158);
+            cb_SexoProfAtt.Name = "cb_SexoProfAtt";
+            cb_SexoProfAtt.Size = new Size(260, 25);
+            cb_SexoProfAtt.TabIndex = 5;
+            // 
+            // tableLayoutPanel15
+            // 
+            tableLayoutPanel15.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel15.ColumnCount = 1;
+            tableLayoutPanel15.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel15.Controls.Add(tb_EnderecoProfAtt, 0, 1);
+            tableLayoutPanel15.Controls.Add(label20, 0, 0);
+            tableLayoutPanel15.Location = new Point(3, 318);
+            tableLayoutPanel15.Name = "tableLayoutPanel15";
+            tableLayoutPanel15.RowCount = 2;
+            tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel15.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanel15.Size = new Size(533, 51);
+            tableLayoutPanel15.TabIndex = 13;
+            // 
+            // tb_EnderecoProfAtt
+            // 
+            tb_EnderecoProfAtt.Dock = DockStyle.Fill;
+            tb_EnderecoProfAtt.Font = new Font("Segoe UI", 9.75F);
+            tb_EnderecoProfAtt.Location = new Point(3, 23);
+            tb_EnderecoProfAtt.Name = "tb_EnderecoProfAtt";
+            tb_EnderecoProfAtt.Size = new Size(527, 25);
+            tb_EnderecoProfAtt.TabIndex = 7;
+            // 
+            // label20
+            // 
+            label20.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label20.AutoSize = true;
+            label20.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label20.Location = new Point(3, 3);
+            label20.Name = "label20";
+            label20.Size = new Size(66, 17);
+            label20.TabIndex = 9999;
+            label20.Text = "Endereço:";
+            label20.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel16
+            // 
+            tableLayoutPanel16.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel16.ColumnCount = 1;
+            tableLayoutPanel16.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel16.Controls.Add(btn_CarregarFotoAtt, 0, 2);
+            tableLayoutPanel16.Controls.Add(pb_FotoProfAtt, 0, 1);
+            tableLayoutPanel16.Location = new Point(548, 3);
+            tableLayoutPanel16.Name = "tableLayoutPanel16";
+            tableLayoutPanel16.RowCount = 4;
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 7.070707F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 63.1313133F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 12.6262627F));
+            tableLayoutPanel16.RowStyles.Add(new RowStyle(SizeType.Percent, 17.1717167F));
+            tableLayoutPanel16.Size = new Size(228, 372);
+            tableLayoutPanel16.TabIndex = 16;
+            // 
+            // btn_CarregarFotoAtt
+            // 
+            btn_CarregarFotoAtt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            btn_CarregarFotoAtt.BackColor = Color.Gray;
+            btn_CarregarFotoAtt.BackgroundColor = Color.Gray;
+            btn_CarregarFotoAtt.BorderColor = Color.PaleVioletRed;
+            btn_CarregarFotoAtt.BorderRadius = 1;
+            btn_CarregarFotoAtt.BorderSize = 0;
+            btn_CarregarFotoAtt.FlatAppearance.BorderSize = 0;
+            btn_CarregarFotoAtt.FlatStyle = FlatStyle.Flat;
+            btn_CarregarFotoAtt.ForeColor = Color.White;
+            btn_CarregarFotoAtt.HoverBackgroundColor = Color.Black;
+            btn_CarregarFotoAtt.Location = new Point(3, 263);
+            btn_CarregarFotoAtt.Name = "btn_CarregarFotoAtt";
+            btn_CarregarFotoAtt.Size = new Size(222, 31);
+            btn_CarregarFotoAtt.TabIndex = 15;
+            btn_CarregarFotoAtt.Text = "Carregar Foto";
+            btn_CarregarFotoAtt.TextColor = Color.White;
+            btn_CarregarFotoAtt.UseVisualStyleBackColor = false;
+            btn_CarregarFotoAtt.Click += btn_CarregarFotoAtt_Click;
+            // 
+            // pb_FotoProfAtt
+            // 
+            pb_FotoProfAtt.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pb_FotoProfAtt.BorderStyle = BorderStyle.FixedSingle;
+            pb_FotoProfAtt.Location = new Point(3, 29);
+            pb_FotoProfAtt.Name = "pb_FotoProfAtt";
+            pb_FotoProfAtt.Size = new Size(222, 228);
+            pb_FotoProfAtt.SizeMode = PictureBoxSizeMode.Zoom;
+            pb_FotoProfAtt.TabIndex = 1;
+            pb_FotoProfAtt.TabStop = false;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label21.Location = new Point(12, 8);
+            label21.Name = "label21";
+            label21.Size = new Size(181, 25);
+            label21.TabIndex = 10000;
+            label21.Text = "Atualizar Professor";
+            label21.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // F_GerenciarProfessores
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_CadProfessor);
             Controls.Add(panel_GerenciarProfessores);
+            Controls.Add(panel_CadProfessor);
+            Controls.Add(Panel_AtualizarProfessor);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarProfessores";
@@ -705,6 +1173,19 @@
             tableLayoutPanel7.PerformLayout();
             tableLayoutPanel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pb_FotoProfessor).EndInit();
+            Panel_AtualizarProfessor.ResumeLayout(false);
+            Panel_AtualizarProfessor.PerformLayout();
+            tableLayoutPanel10.ResumeLayout(false);
+            tableLayoutPanel11.ResumeLayout(false);
+            tableLayoutPanel12.ResumeLayout(false);
+            tableLayoutPanel13.ResumeLayout(false);
+            tableLayoutPanel13.PerformLayout();
+            tableLayoutPanel14.ResumeLayout(false);
+            tableLayoutPanel14.PerformLayout();
+            tableLayoutPanel15.ResumeLayout(false);
+            tableLayoutPanel15.PerformLayout();
+            tableLayoutPanel16.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pb_FotoProfAtt).EndInit();
             ResumeLayout(false);
         }
 
@@ -750,5 +1231,36 @@
         private CustomControls.Botoes.ButtonIG btn_CadProfessor;
         private CustomControls.Botoes.ButtonIG btn_AttProfessorG;
         private Button btn_BuscarProfessorG;
+        private Panel Panel_AtualizarProfessor;
+        private TableLayoutPanel tableLayoutPanel10;
+        private CustomControls.Botoes.ButtonIG btn_AttProf;
+        private CustomControls.Botoes.ButtonIG btn_CancelarAttProf;
+        private TableLayoutPanel tableLayoutPanel11;
+        private TableLayoutPanel tableLayoutPanel12;
+        private TableLayoutPanel tableLayoutPanel13;
+        private TextBox tb_NomeProfAtt;
+        private Label label12;
+        private TableLayoutPanel tableLayoutPanel14;
+        private MaskedTextBox mtb_TelProfAtt;
+        private Label label13;
+        private ComboBox cb_NacionalidadeProfAtt;
+        private ComboBox cb_CorRacaProfAtt;
+        private Label label14;
+        private Label label15;
+        private TextBox tb_NaturalidadeProfAtt;
+        private Label label16;
+        private Label label17;
+        private MaskedTextBox mtb_CpfProfAtt;
+        private Label label18;
+        private Label label19;
+        private MaskedTextBox mtb_DataNascProfAtt;
+        private ComboBox cb_SexoProfAtt;
+        private TableLayoutPanel tableLayoutPanel15;
+        private TextBox tb_EnderecoProfAtt;
+        private Label label20;
+        private TableLayoutPanel tableLayoutPanel16;
+        private CustomControls.Botoes.ButtonIG btn_CarregarFotoAtt;
+        private PictureBox pb_FotoProfAtt;
+        private Label label21;
     }
 }

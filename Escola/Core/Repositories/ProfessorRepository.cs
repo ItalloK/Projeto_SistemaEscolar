@@ -13,6 +13,62 @@ namespace Escola.Core.Repositories
 {
     public class ProfessorRepository : IProfessor
     {
+        public bool AttProfessor(Professor p)
+        {
+            try
+            {
+                using (var connection = BancoDeDados.GetConnection())
+                {
+                    connection.Open();
+                    string sql = @"UPDATE Professor SET 
+                                    Nome = @Nome,
+                                    Cpf = @Cpf,
+                                    DataNascimento = @DataNascimento,
+                                    Nacionalidade = @Nacionalidade,
+                                    Naturalidade = @Naturalidade,
+                                    Sexo = @Sexo,
+                                    CorRaca = @CorRaca,
+                                    Endereco = @Endereco,
+                                    Telefone = @Telefone
+                                    WHERE Cpf = @Cpf;";
+
+                    using (var command = new SQLiteCommand(sql, connection))
+                    {
+                        command.Parameters.AddWithValue("@Nome", p.nome);
+                        command.Parameters.AddWithValue("@Cpf", p.cpf);
+                        command.Parameters.AddWithValue("@DataNascimento", p.dataNascimento);
+                        command.Parameters.AddWithValue("@Nacionalidade", p.nacionalidade);
+                        command.Parameters.AddWithValue("@Naturalidade", p.naturalidade);
+                        command.Parameters.AddWithValue("@Sexo", p.sexo);
+                        command.Parameters.AddWithValue("@CorRaca", p.corraca);
+                        command.Parameters.AddWithValue("@Endereco", p.endereco);
+                        command.Parameters.AddWithValue("@Telefone", p.telefone);
+
+                        int linhasAfetadas = command.ExecuteNonQuery();
+
+                        if (linhasAfetadas > 0)
+                        {
+                            DadosCadastro(p);
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show($"Erro SQL: {ex.Message}");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro: {ex.Message}");
+                return false;
+            }
+        }
         public bool DelProfessor(Professor p)
         {
             try

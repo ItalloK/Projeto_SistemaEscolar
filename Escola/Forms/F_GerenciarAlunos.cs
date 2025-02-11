@@ -401,11 +401,12 @@ namespace Escola
                 mtb_DataNascAlunoAtt.Text = dataNasc;
                 cb_SexoAlunoAtt.Text = sexo;
                 mtb_CpfAlunoAtt.Text = cpf;
-                mtb_CpfAlunoAtt.Enabled = false;
                 tb_NaturalidadeAlunoAtt.Text = naturalidade;
                 cb_NacionalidadeAlunoAtt.Text = nacionalidade;
                 cb_CorRacaAlunoAtt.Text = corraca;
                 tb_EnderecoAlunoAtt.Text = endereco;
+
+                mtb_CpfAlunoAtt.Enabled = false;
 
                 mtb_CpfAlunoAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
                 string CPFF = mtb_CpfAlunoAtt.Text;
@@ -477,7 +478,7 @@ namespace Escola
             }
 
             if (!Funcoes.ValidarData(dataNasc)) return;
-            if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
+            //if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
 
             Aluno aluno = new Aluno
             {

@@ -19,6 +19,7 @@ namespace Escola
     public partial class F_GerenciarProfessores : Form
     {
         private string fotoPath = string.Empty;
+        private string fotoPathAtt = string.Empty;
 
         public F_GerenciarProfessores()
         {
@@ -33,6 +34,7 @@ namespace Escola
         {
             panel_GerenciarProfessores.Visible = false;
             panel_CadProfessor.Visible = false;
+            Panel_AtualizarProfessor.Visible = false;
             p.Visible = true;
             p.Location = new Point(0, 0);
         }
@@ -169,7 +171,7 @@ namespace Escola
                 dgv_Dados.Columns["Id"]!.DisplayIndex = 0;
                 dgv_Dados.Columns["Nome"]!.DisplayIndex = 1;
                 dgv_Dados.Columns["Sexo"]!.DisplayIndex = 2;
-                dgv_Dados.Columns["Telefone"]!.DisplayIndex = 3; 
+                dgv_Dados.Columns["Telefone"]!.DisplayIndex = 3;
                 dgv_Dados.Columns["Cpf"]!.DisplayIndex = 4;
 
 
@@ -240,6 +242,151 @@ namespace Escola
             {
                 MessageBox.Show("Selecione um professor para poder deletar!");
                 return;
+            }
+        }
+
+        private void btn_AttProfessorG_Click(object sender, EventArgs e)
+        {
+            ConfigurarAtualizarProfessor();
+        }
+
+        private void btn_CancelarAttProf_Click(object sender, EventArgs e)
+        {
+            LimparCamposAtualizacao();
+            AtivarPainel(panel_GerenciarProfessores);
+        }
+
+        private void LimparCamposAtualizacao()
+        {
+            tb_NomeProfAtt.Clear();
+            tb_EnderecoProfAtt.Clear();
+            pb_FotoProfAtt.Image = null;
+            fotoPathAtt = string.Empty;
+
+            mtb_DataNascProfAtt.Clear();
+            mtb_CpfProfAtt.Clear();
+            cb_NacionalidadeProfAtt.SelectedIndex = 0;
+            tb_NaturalidadeProfAtt.Clear();
+            cb_SexoProfAtt.SelectedIndex = 0;
+            cb_CorRacaProfAtt.SelectedIndex = 0;
+            tb_EnderecoProfAtt.Clear();
+        }
+
+        private void ConfigurarAtualizarProfessor()
+        {
+            if (dgv_Dados.SelectedRows.Count > 0)
+            {
+
+                AtivarPainel(Panel_AtualizarProfessor);
+                DataGridViewRow row = dgv_Dados.SelectedRows[0];
+
+                int id = Convert.ToInt32(row.Cells["id"].Value);
+                string nome = row.Cells["Nome"].Value?.ToString() ?? string.Empty;
+                string dataNasc = row.Cells["dataNascimento"].Value?.ToString() ?? string.Empty;
+                string sexo = row.Cells["sexo"].Value?.ToString() ?? string.Empty;
+                string cpf = row.Cells["cpf"].Value?.ToString() ?? string.Empty;
+                string naturalidade = row.Cells["naturalidade"].Value?.ToString() ?? string.Empty;
+                string nacionalidade = row.Cells["nacionalidade"].Value?.ToString() ?? string.Empty;
+                string corraca = row.Cells["corraca"].Value?.ToString() ?? string.Empty;
+                string endereco = row.Cells["endereco"].Value?.ToString() ?? string.Empty;
+                string telefone = row.Cells["telefone"].Value?.ToString() ?? string.Empty;
+
+                //Debug.Print($"Nome: {nome} | Data: {dataNasc} | Sexo: {sexo} | Cpf: {cpf} | Naturalidade: {naturalidade} | Nacionalidade: {nacionalidade} | Cor: {corraca} | Telefone: {telefone} | Endereco: {endereco}");
+
+                tb_NomeProfAtt.Text = nome;
+                mtb_CpfProfAtt.Text = cpf;
+                mtb_DataNascProfAtt.Text = dataNasc;
+                cb_SexoProfAtt.Text = sexo;
+                cb_NacionalidadeProfAtt.Text = nacionalidade;
+                tb_NaturalidadeProfAtt.Text = naturalidade;
+                cb_CorRacaProfAtt.Text = corraca;
+                mtb_TelProfAtt.Text = telefone;
+                tb_EnderecoProfAtt.Text = endereco;
+
+                mtb_CpfProfAtt.Enabled = false;
+
+                mtb_CpfProfAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+                string CPFF = mtb_CpfProfAtt.Text;
+
+                Funcoes.CarregarImagem(CPFF, Global.TIPO_PROFESSOR, pb_FotoProfAtt, false, null);
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma professor para poder atualizar!");
+                return;
+            }
+        }
+
+        private void btn_AttProf_Click(object sender, EventArgs e)
+        {
+            mtb_CpfProfAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string cpf = mtb_CpfProfAtt.Text;
+            mtb_DataNascProfAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string dataNasc = mtb_DataNascProfAtt.Text;
+            string nome = tb_NomeProfAtt.Text;
+            string nacionalidade = cb_NacionalidadeProfAtt.Text;
+            string naturalidade = tb_NaturalidadeProfAtt.Text;
+            string endereco = tb_EnderecoProfAtt.Text;
+            string sexo = cb_SexoProfAtt.Text;
+            string cor = cb_CorRacaProfAtt.Text;
+            mtb_TelProfAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
+            string telefone = mtb_TelProfAtt.Text;
+
+            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
+                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
+                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor) || string.IsNullOrWhiteSpace(telefone))
+            {
+                MessageBox.Show("Preencha todos os dados para poder atualizar o PROFESSOR!");
+                return;
+            }
+
+            if (!Funcoes.ValidarData(dataNasc)) return;
+            //if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
+
+            Professor professor = new Professor
+            {
+                nome = nome,
+                telefone = telefone,
+                cpf = cpf,
+                dataNascimento = dataNasc,
+                nacionalidade = nacionalidade,
+                naturalidade = naturalidade,
+                sexo = sexo,
+                corraca = cor,
+                endereco = endereco
+            };
+
+            ProfessorRepository repository = new ProfessorRepository();
+            bool sucesso = repository.AttProfessor(professor); // atualiza o professor
+
+            if (sucesso)
+            {
+                MessageBox.Show("Professor atualizado com sucesso.");
+                Funcoes.SalvarFoto(cpf, fotoPathAtt, Global.TIPO_PROFESSOR); // salvar foto na pasta do professor
+                pb_FotoProfAtt.Image = null;
+                LimparCamposAtualizacao();
+                CarregarProfessores();
+                AtivarPainel(panel_GerenciarProfessores);
+            }
+            else
+            {
+                MessageBox.Show("Erro ao atualizar professor.");
+                return;
+            }
+        }
+
+        private void btn_CarregarFotoAtt_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Imagens|*.png; *.jpg; *.jpeg;",
+                Title = "Selecione uma foto"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                fotoPathAtt = openFileDialog.FileName;
+                pb_FotoProfAtt.ImageLocation = fotoPathAtt;
             }
         }
     }

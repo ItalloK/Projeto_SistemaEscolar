@@ -16,6 +16,9 @@
     <Compile Update="Forms\F_GerenciarProfessores.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\F_GerenciarResponsaveis.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\F_GerenciarTurmas.cs">
       <SubType>Form</SubType>
     </Compile>

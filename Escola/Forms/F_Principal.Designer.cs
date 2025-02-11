@@ -33,6 +33,8 @@
             alunosToolStripMenuItem = new ToolStripMenuItem();
             cadastrarAlunoToolStripMenuItem = new ToolStripMenuItem();
             matricularToolStripMenuItem = new ToolStripMenuItem();
+            responsavelToolStripMenuItem = new ToolStripMenuItem();
+            gerenciarResponsaveisToolStripMenuItem = new ToolStripMenuItem();
             professoresToolStripMenuItem = new ToolStripMenuItem();
             gerenciarProfessoresToolStripMenuItem = new ToolStripMenuItem();
             turmasToolStripMenuItem = new ToolStripMenuItem();
@@ -40,6 +42,7 @@
             carteirinhaToolStripMenuItem = new ToolStripMenuItem();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             pb_Principal = new PictureBox();
+            toolStripSeparator1 = new ToolStripSeparator();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pb_Principal).BeginInit();
             SuspendLayout();
@@ -55,7 +58,7 @@
             // 
             // alunosToolStripMenuItem
             // 
-            alunosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarAlunoToolStripMenuItem, matricularToolStripMenuItem });
+            alunosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { cadastrarAlunoToolStripMenuItem, matricularToolStripMenuItem, toolStripSeparator1, responsavelToolStripMenuItem });
             alunosToolStripMenuItem.Font = new Font("Segoe UI", 9.75F);
             alunosToolStripMenuItem.Image = Properties.Resources.estudantes;
             alunosToolStripMenuItem.ImageAlign = ContentAlignment.MiddleLeft;
@@ -66,16 +69,31 @@
             // cadastrarAlunoToolStripMenuItem
             // 
             cadastrarAlunoToolStripMenuItem.Name = "cadastrarAlunoToolStripMenuItem";
-            cadastrarAlunoToolStripMenuItem.Size = new Size(169, 22);
+            cadastrarAlunoToolStripMenuItem.Size = new Size(180, 22);
             cadastrarAlunoToolStripMenuItem.Text = "Gerenciar Aluno";
             cadastrarAlunoToolStripMenuItem.Click += cadastrarAlunoToolStripMenuItem_Click;
             // 
             // matricularToolStripMenuItem
             // 
             matricularToolStripMenuItem.Name = "matricularToolStripMenuItem";
-            matricularToolStripMenuItem.Size = new Size(169, 22);
+            matricularToolStripMenuItem.Size = new Size(180, 22);
             matricularToolStripMenuItem.Text = "Matricular";
             matricularToolStripMenuItem.Click += matricularToolStripMenuItem_Click;
+            // 
+            // responsavelToolStripMenuItem
+            // 
+            responsavelToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { gerenciarResponsaveisToolStripMenuItem });
+            responsavelToolStripMenuItem.Image = Properties.Resources.responsavel;
+            responsavelToolStripMenuItem.Name = "responsavelToolStripMenuItem";
+            responsavelToolStripMenuItem.Size = new Size(180, 22);
+            responsavelToolStripMenuItem.Text = "Responsavel";
+            // 
+            // gerenciarResponsaveisToolStripMenuItem
+            // 
+            gerenciarResponsaveisToolStripMenuItem.Name = "gerenciarResponsaveisToolStripMenuItem";
+            gerenciarResponsaveisToolStripMenuItem.Size = new Size(215, 22);
+            gerenciarResponsaveisToolStripMenuItem.Text = "Gerenciar Responsaveis";
+            gerenciarResponsaveisToolStripMenuItem.Click += gerenciarResponsaveisToolStripMenuItem_Click;
             // 
             // professoresToolStripMenuItem
             // 
@@ -107,7 +125,7 @@
             // gerenciarTurmasToolStripMenuItem
             // 
             gerenciarTurmasToolStripMenuItem.Name = "gerenciarTurmasToolStripMenuItem";
-            gerenciarTurmasToolStripMenuItem.Size = new Size(180, 22);
+            gerenciarTurmasToolStripMenuItem.Size = new Size(179, 22);
             gerenciarTurmasToolStripMenuItem.Text = "Gerenciar Turmas";
             gerenciarTurmasToolStripMenuItem.Click += gerenciarTurmasToolStripMenuItem_Click;
             // 
@@ -140,6 +158,11 @@
             pb_Principal.SizeMode = PictureBoxSizeMode.Zoom;
             pb_Principal.TabIndex = 1;
             pb_Principal.TabStop = false;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(177, 6);
             // 
             // F_Principal
             // 
@@ -175,5 +198,8 @@
         private ToolStripMenuItem turmasToolStripMenuItem;
         private ToolStripMenuItem gerenciarTurmasToolStripMenuItem;
         private PictureBox pb_Principal;
+        private ToolStripMenuItem responsavelToolStripMenuItem;
+        private ToolStripMenuItem gerenciarResponsaveisToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

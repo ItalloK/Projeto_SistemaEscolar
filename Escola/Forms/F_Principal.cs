@@ -65,5 +65,11 @@ namespace Escola
             F_GerenciarTurmas f_GerenciarTurmas = new F_GerenciarTurmas();
             f_GerenciarTurmas.ShowDialog();
         }
+
+        private void gerenciarResponsaveisToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            F_GerenciarResponsaveis f_GerenciarResponsaveis = new F_GerenciarResponsaveis();
+            f_GerenciarResponsaveis.ShowDialog();
+        }
     }
 }

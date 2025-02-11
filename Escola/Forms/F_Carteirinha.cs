@@ -28,7 +28,6 @@ namespace Escola
         private void F_Carteirinha_Load(object sender, EventArgs e)
         {
             cb_Tipo.SelectedIndex = 0;
-            pb_FotoPerfil.Image = Properties.Resources.person;
         }
 
         private void btn_Buscar_Click(object sender, EventArgs e)
