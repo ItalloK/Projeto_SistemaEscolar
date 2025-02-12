@@ -13,6 +13,87 @@ namespace Escola.Core.Repositories
 {
     public class ResponsavelRepository : IResponsavel
     {
+        public List<Aluno> PegarAlunosPorResponsavel(Responsavel r)
+        {
+            var alunos = new List<Aluno>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"
+                            SELECT 
+                                A.Id,
+                                A.Nome,
+                                A.Cpf,
+                                A.DataNascimento,
+                                A.Nacionalidade,
+                                A.Naturalidade,
+                                A.Sexo,
+                                A.CorRaca,
+                                A.Endereco
+                            FROM Aluno A
+                            JOIN Aluno_Responsavel AR ON A.Cpf = AR.AlunoCpf
+                            JOIN Responsavel R ON AR.ResponsavelCpf = R.Cpf
+                            WHERE R.Cpf = @ResponsavelCpf;";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@ResponsavelCpf", r.cpf);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var aluno = new Aluno
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                dataNascimento = reader["DataNascimento"]?.ToString() ?? string.Empty,
+                                nacionalidade = reader["Nacionalidade"]?.ToString() ?? string.Empty,
+                                naturalidade = reader["Naturalidade"]?.ToString() ?? string.Empty,
+                                sexo = reader["Sexo"]?.ToString() ?? string.Empty,
+                                corraca = reader["CorRaca"]?.ToString() ?? string.Empty,
+                                endereco = reader["Endereco"]?.ToString() ?? string.Empty
+                            };
+                            alunos.Add(aluno);
+                        }
+                    }
+                }
+            }
+            return alunos;
+        }
+
+        public List<Responsavel> PegarTodosResponsaveis()
+        {
+            var responsaveis = new List<Responsavel>();
+
+            using (var connection = BancoDeDados.GetConnection())
+            {
+                connection.Open();
+                string sql = @"SELECT * FROM Responsavel;";
+
+                using (var command = new SQLiteCommand(sql, connection))
+                {
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var resp = new Responsavel
+                            {
+                                id = Convert.ToInt32(reader["Id"]),
+                                nome = reader["Nome"]?.ToString() ?? string.Empty,
+                                cpf = reader["Cpf"]?.ToString() ?? string.Empty,
+                                telefone = reader["Telefone"]?.ToString() ?? string.Empty
+                            };
+                            responsaveis.Add(resp);
+                        }
+                    }
+                }
+            }
+            return responsaveis;
+        }
+
         public Responsavel? PegarResponsavel(string cpf)
         {
             using (var connection = BancoDeDados.GetConnection())

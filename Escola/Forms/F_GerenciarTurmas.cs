@@ -22,19 +22,9 @@ namespace Escola.Forms
         {
             InitializeComponent();
             Funcoes.AtivarPainel(this, panel_GerenciarTurmas);
-            //AtivarPainel(panel_GerenciarTurmas);
             CarregarPropriedadesCadTurma(); // carrega as propriedas do form de cadastro de turma
             CarregarPropriedadesAttTurma(); // carrega as propriedades do form de att da turma.
         }
-
-        /*private void AtivarPainel(Panel p)
-        {
-            panel_GerenciarTurmas.Visible = false;
-            panel_CadTurma.Visible = false;
-            panel_AtualizarTurma.Visible = false;
-            p.Visible = true;
-            p.Location = new Point(0, 0);
-        }*/
 
         private void CarregarPropriedadesCadTurma()
         {

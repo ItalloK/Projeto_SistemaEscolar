@@ -37,7 +37,9 @@
             btn_DeletarProfessor = new CustomControls.Botoes.ButtonIG();
             tb_BuscarProfessorG = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
+            dgv_DadosAlunos = new DataGridView();
             dgv_Dados = new DataGridView();
+            label2 = new Label();
             label1 = new Label();
             panel_CadastrarResponsavel = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -47,6 +49,7 @@
             panel_GerenciarResponsaveis.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_DadosAlunos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgv_Dados).BeginInit();
             panel_CadastrarResponsavel.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -173,14 +176,38 @@
             // 
             tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(dgv_DadosAlunos, 0, 2);
             tableLayoutPanel2.Controls.Add(dgv_Dados, 0, 0);
+            tableLayoutPanel2.Controls.Add(label2, 0, 1);
             tableLayoutPanel2.Location = new Point(3, 73);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 63F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 7F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tableLayoutPanel2.Size = new Size(794, 374);
             tableLayoutPanel2.TabIndex = 8;
+            // 
+            // dgv_DadosAlunos
+            // 
+            dgv_DadosAlunos.AllowUserToAddRows = false;
+            dgv_DadosAlunos.AllowUserToDeleteRows = false;
+            dgv_DadosAlunos.AllowUserToResizeColumns = false;
+            dgv_DadosAlunos.AllowUserToResizeRows = false;
+            dgv_DadosAlunos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgv_DadosAlunos.BackgroundColor = Color.White;
+            dgv_DadosAlunos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dgv_DadosAlunos.Dock = DockStyle.Fill;
+            dgv_DadosAlunos.Location = new Point(0, 261);
+            dgv_DadosAlunos.Margin = new Padding(0);
+            dgv_DadosAlunos.MultiSelect = false;
+            dgv_DadosAlunos.Name = "dgv_DadosAlunos";
+            dgv_DadosAlunos.ReadOnly = true;
+            dgv_DadosAlunos.RowHeadersVisible = false;
+            dgv_DadosAlunos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgv_DadosAlunos.Size = new Size(794, 113);
+            dgv_DadosAlunos.TabIndex = 4;
             // 
             // dgv_Dados
             // 
@@ -199,8 +226,21 @@
             dgv_Dados.ReadOnly = true;
             dgv_Dados.RowHeadersVisible = false;
             dgv_Dados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgv_Dados.Size = new Size(794, 374);
+            dgv_Dados.Size = new Size(794, 235);
             dgv_Dados.TabIndex = 2;
+            dgv_Dados.SelectionChanged += dgv_Dados_SelectionChanged;
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(3, 235);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 26);
+            label2.TabIndex = 3;
+            label2.Text = "Alunos:";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label1
             // 
@@ -297,8 +337,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_CadastrarResponsavel);
             Controls.Add(panel_GerenciarResponsaveis);
+            Controls.Add(panel_CadastrarResponsavel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_GerenciarResponsaveis";
             Text = "Gerenciar Responsaveis";
@@ -308,6 +348,8 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgv_DadosAlunos).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_Dados).EndInit();
             panel_CadastrarResponsavel.ResumeLayout(false);
             panel_CadastrarResponsavel.PerformLayout();
@@ -332,5 +374,7 @@
         private TableLayoutPanel tableLayoutPanel3;
         private CustomControls.Botoes.ButtonIG btn_CadResponsavelP;
         private CustomControls.Botoes.ButtonIG btn_CancelarCadResponsavelP;
+        private Label label2;
+        private DataGridView dgv_DadosAlunos;
     }
 }

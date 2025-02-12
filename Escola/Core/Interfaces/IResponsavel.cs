@@ -14,5 +14,7 @@ namespace Escola.Core.Interfaces
         public bool VerificarResponsavel(Responsavel r);
         public Responsavel? PegarResponsavel(string cpf);
         public List<Responsavel> PegarResponsaveisPorAluno(Aluno a);
+        public List<Responsavel> PegarTodosResponsaveis();
+        public List<Aluno> PegarAlunosPorResponsavel(Responsavel r);
     }
 }
