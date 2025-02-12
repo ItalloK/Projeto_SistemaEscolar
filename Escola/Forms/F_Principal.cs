@@ -1,5 +1,6 @@
 using Escola.Forms;
 using Escola.Properties;
+using System.Diagnostics;
 using System.Runtime;
 
 namespace Escola
@@ -20,7 +21,15 @@ namespace Escola
             this.Text = _settings.NomeEscola;
             if (!string.IsNullOrEmpty(_settings.FotoPrincipal) && File.Exists(_settings.FotoPrincipal))
             {
-                pb_Principal.Image = Image.FromFile(_settings.FotoPrincipal);
+                try
+                {
+                    pb_Principal.Image = Image.FromFile(_settings.FotoPrincipal);
+                }catch(Exception e)
+                {
+                    Debug.Print(e.Message);
+                    pb_Principal.Image = Resources.Fundo_Principal;
+                }
+                
             }
             else
             {

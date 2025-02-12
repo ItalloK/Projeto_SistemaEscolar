@@ -2,6 +2,7 @@
 using Escola.Core.Entities;
 using Escola.Core.Repositories;
 using Escola.Core.Utils;
+using Escola.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -106,7 +107,15 @@ namespace Escola
             Configs.AppSettings _settings = Configs.CarregarConfiguracoes();
             if (_settings.FundoCarteirinha != "")
             {
-                pb_FundoCarteirinha.Image = Image.FromFile(_settings.FundoCarteirinha);
+                try
+                {
+                    pb_FundoCarteirinha.Image = Image.FromFile(_settings.FundoCarteirinha);
+                }catch(Exception e)
+                {
+                    pb_FundoCarteirinha.Image = Resources.Fundo_Carteirinha;
+                    Debug.Print(e.Message);
+                }
+                
             }
             else
             {
