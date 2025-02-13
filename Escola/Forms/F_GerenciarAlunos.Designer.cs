@@ -1339,9 +1339,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_AtualizarAluno);
             Controls.Add(Panel_Gerenciar);
             Controls.Add(Panel_CadAluno);
+            Controls.Add(panel_AtualizarAluno);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarAlunos";

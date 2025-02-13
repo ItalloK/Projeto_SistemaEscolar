@@ -13,14 +13,26 @@ namespace Escola.Core.Entities
     public class Responsavel : Pessoa
     {
         public string telefone { get; set; } = string.Empty;
+        public string dataNascimento { get; set; } = string.Empty;
+        public string sexo { get; set; } = string.Empty;
+        public string endereco { get; set; } = string.Empty;
+        public string naturalidade { get; set; } = string.Empty;
+        public string nacionalidade { get; set; } = string.Empty;
+        public string corraca { get; set; } = string.Empty;
 
         public Responsavel() { }
 
-        public Responsavel(string nome, string cpf, string telefone)
+        public Responsavel(string nome, string cpf, string telefone, string dataNascimento, string sexo, string endereco, string naturalidade, string nacionalidade, string corraca)
         {
             this.nome = nome;
             this.cpf = cpf;
             this.telefone = telefone;
+            this.dataNascimento = dataNascimento;
+            this.sexo = sexo;
+            this.endereco = endereco;
+            this.naturalidade = naturalidade;
+            this.nacionalidade = nacionalidade;
+            this.corraca = corraca;
         }
     }
 }

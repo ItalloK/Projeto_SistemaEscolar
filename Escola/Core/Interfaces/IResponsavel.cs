@@ -9,6 +9,8 @@ namespace Escola.Core.Interfaces
 {
     public interface IResponsavel
     {
+        public bool DelResponsavel(Responsavel r);
+        public bool AttResponsavel(Responsavel r);
         public bool CadResponsavel(Responsavel r);
         public void DadosCadastro(Responsavel r);
         public bool VerificarResponsavel(Responsavel r);

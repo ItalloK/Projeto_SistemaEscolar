@@ -55,7 +55,13 @@ namespace Escola.Core.Infrastructure
                                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                                 Nome TEXT NOT NULL,
                                 Cpf TEXT NOT NULL UNIQUE,
-                                Telefone TEXT NOT NULL
+                                Telefone TEXT NOT NULL,
+                                DataNascimento TEXT,
+                                Nacionalidade TEXT,
+                                Naturalidade TEXT,
+                                Sexo TEXT,
+                                CorRaca TEXT,
+                                Endereco TEXT
                             );
                             CREATE INDEX IF NOT EXISTS idx_responsavel_cpf ON Responsavel(Cpf);" },
 

@@ -10,6 +10,18 @@ namespace Escola.Core.Utils
 {
     public class Funcoes
     {
+        public static bool VerificarStrings(string msg, params string[] args) // Verifica as string, caso tenha uma vazia, gera o erro e retorna a mensagem definida pelo usuario.
+        {   
+            foreach (string arg in args)
+            {
+                if (string.IsNullOrEmpty(arg))
+                {
+                    MessageBox.Show(msg);
+                    return false;
+                }
+            }
+            return true;
+        }
 
         public static void AtivarPainel(Form formulario, Panel painelAtivar, Point? localizacao = null)
         {
@@ -172,6 +184,19 @@ namespace Escola.Core.Utils
             else
             {
                 Debug.WriteLine("Nenhum arquivo encontrado para deletar.");
+            }
+        }
+
+        public static bool ValidarTelefone(string telefone)
+        {
+            if (telefone.Length != 11)
+            {
+                MessageBox.Show("Digite os 11 numeros do Telefone!");
+                return false;
+            }
+            else
+            {
+                return true;
             }
         }
 

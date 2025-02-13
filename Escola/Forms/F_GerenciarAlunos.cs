@@ -27,33 +27,20 @@ namespace Escola
         public F_GerenciarAlunos()
         {
             InitializeComponent();
-            //AtivarPainel(Panel_Gerenciar);
             cb_nacionalidade.SelectedIndex = 0;
             cb_CorAlunoCad.SelectedIndex = 0;
             cb_SexoAlunoCad.SelectedIndex = 0;
         }
 
-
-        /*private void AtivarPainel(Panel p)
-        {
-            Panel_Gerenciar.Visible = false;
-            Panel_CadAluno.Visible = false;
-            panel_AtualizarAluno.Visible = false;
-            p.Visible = true;
-            p.Location = new Point(0, 0);
-        }*/
-
         private void btn_CadAlunoGerenciador_Click(object sender, EventArgs e)
         {
             Funcoes.AtivarPainel(this, Panel_CadAluno);
-            //AtivarPainel(Panel_CadAluno);
         }
 
         private void btn_CancelarCadastro_Click(object sender, EventArgs e)
         {
             LimparCamposCadastro();
             Funcoes.AtivarPainel(this, Panel_Gerenciar);
-            //AtivarPainel(Panel_Gerenciar);
         }
 
         private void btn_CarregarFoto_Click(object sender, EventArgs e)
@@ -89,16 +76,9 @@ namespace Escola
             string sexo = cb_SexoAlunoCad.Text;
             string cor = cb_CorAlunoCad.Text;
 
-            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
-                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
-                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor))
-            {
-                MessageBox.Show("Preencha todos os dados para poder cadastrar o ALUNO.");
-                return;
-            }
-
+            if (!Funcoes.VerificarStrings("Preencha todos os dados para poder cadastrar o Aluno!", cpf, dataNasc, nome, naturalidade, nacionalidade, endereco, sexo, cor)) return;
             if (!Funcoes.ValidarData(dataNasc)) return;
-
+            if (!Funcoes.ValidarCPF(cpf)) return;
             if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
 
             /**/
@@ -150,11 +130,9 @@ namespace Escola
                 MessageBox.Show("Aluno cadastrado com sucesso.");
                 QrCode.GerarQRcode(cpf, Global.TIPO_ALUNO);
                 Funcoes.SalvarFoto(cpf, fotoPath, Global.TIPO_ALUNO); // salvar foto na pasta do professor
-                //this.Close();
                 LimparCamposCadastro();
                 CarregarAlunos();
                 Funcoes.AtivarPainel(this, Panel_Gerenciar);
-                //AtivarPainel(Panel_Gerenciar);
             }
             else
             {
@@ -389,7 +367,6 @@ namespace Escola
             if (dgv_Dados.SelectedRows.Count > 0)
             {
                 Funcoes.AtivarPainel(this, panel_AtualizarAluno);
-                //AtivarPainel(panel_AtualizarAluno);
 
                 DataGridViewRow row = dgv_Dados.SelectedRows[0];
                 int id = Convert.ToInt32(row.Cells["id"].Value);
@@ -475,16 +452,8 @@ namespace Escola
             string sexo = cb_SexoAlunoAtt.Text;
             string cor = cb_CorRacaAlunoAtt.Text;
 
-            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
-                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
-                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor))
-            {
-                MessageBox.Show("Preencha todos os dados para poder atualizar o ALUNO.");
-                return;
-            }
-
+            if (!Funcoes.VerificarStrings("Preencha todos os dados para poder atualizar o Aluno!", cpf, dataNasc, nome, naturalidade, nacionalidade, endereco, sexo, cor)) return;
             if (!Funcoes.ValidarData(dataNasc)) return;
-            //if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
 
             Aluno aluno = new Aluno
             {
@@ -509,7 +478,6 @@ namespace Escola
                 LimparCamposAtualizacao();
                 CarregarAlunos();
                 Funcoes.AtivarPainel(this, Panel_Gerenciar);
-                //AtivarPainel(Panel_Gerenciar);
             }
             else
             {

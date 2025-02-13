@@ -5,18 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarresponsaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarresponsaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\forms\\f_gerenciarresponsaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:forms\\f_gerenciarresponsaveis.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\repositories\\responsavelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\repositories\\responsavelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|c:\\users\\itall\\documents\\programa\u00E7\u00E3o\\projetos\\sistema escolar\\escola\\core\\infrastructure\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9FC948DC-3EFA-48DC-8C2D-C99A7987A521}|Escola.csproj|solutionrelative:core\\infrastructure\\bancodedados.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,49 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BancoDeDados.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Infrastructure\\BancoDeDados.cs",
-              "RelativeDocumentMoniker": "Core\\Infrastructure\\BancoDeDados.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Infrastructure\\BancoDeDados.cs",
-              "RelativeToolTip": "Core\\Infrastructure\\BancoDeDados.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAAAGkAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T14:00:33.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResponsavelRepository.cs",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\ResponsavelRepository.cs",
-              "RelativeDocumentMoniker": "Core\\Repositories\\ResponsavelRepository.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Core\\Repositories\\ResponsavelRepository.cs",
-              "RelativeToolTip": "Core\\Repositories\\ResponsavelRepository.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAQwCUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T13:56:58.243Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "F_GerenciarResponsaveis.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarResponsaveis.cs",
-              "RelativeDocumentMoniker": "Forms\\F_GerenciarResponsaveis.cs",
-              "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarResponsaveis.cs [Projeto]",
-              "RelativeToolTip": "Forms\\F_GerenciarResponsaveis.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T13:54:44.314Z",
-              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",
@@ -78,9 +28,9 @@
               "RelativeDocumentMoniker": "Forms\\F_GerenciarResponsaveis.cs",
               "ToolTip": "C:\\Users\\itall\\Documents\\Programa\u00E7\u00E3o\\Projetos\\Sistema Escolar\\Escola\\Forms\\F_GerenciarResponsaveis.cs",
               "RelativeToolTip": "Forms\\F_GerenciarResponsaveis.cs",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAQwGcAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAFUBAAAAAAAAAAAQwFkBAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-12T13:43:33.589Z",
+              "WhenOpened": "2025-02-13T13:44:24.378Z",
               "EditorCaption": ""
             }
           ]

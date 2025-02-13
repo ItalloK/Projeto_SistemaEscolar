@@ -88,22 +88,10 @@ namespace Escola
             mtb_TelefoneProfessorCad.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string telefone = mtb_TelefoneProfessorCad.Text;
 
-            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
-                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
-                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor) || string.IsNullOrEmpty(telefone))
-            {
-                MessageBox.Show("Preencha todos os dados para poder cadastrar o PROFESSOR.");
-                return;
-            }
-
+            if (!Funcoes.VerificarStrings("Preencha todos os dados para poder cadastrar o Professor!", cpf, dataNasc, nome, naturalidade, nacionalidade, endereco, sexo, cor, telefone)) return;
             if (!Funcoes.ValidarData(dataNasc)) return;
             if (!Funcoes.VerificarSeCarregouFoto(fotoPath)) return;
-
-            if (telefone.Length != 11)
-            {
-                MessageBox.Show("Digite corretamente o telefone!");
-                return;
-            }
+            if (!Funcoes.ValidarTelefone(telefone)) return;
 
             Professor professor = new Professor
             {
@@ -128,7 +116,6 @@ namespace Escola
                 LimparCamposCadastro();
                 CarregarProfessores();
                 Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
-                //AtivarPainel(panel_GerenciarProfessores);
             }
             else
             {
@@ -338,16 +325,8 @@ namespace Escola
             mtb_TelProfAtt.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
             string telefone = mtb_TelProfAtt.Text;
 
-            if (string.IsNullOrWhiteSpace(cpf) || string.IsNullOrEmpty(dataNasc) || string.IsNullOrEmpty(nome)
-                || string.IsNullOrWhiteSpace(naturalidade) || string.IsNullOrWhiteSpace(nacionalidade) || string.IsNullOrWhiteSpace(endereco)
-                || string.IsNullOrWhiteSpace(sexo) || string.IsNullOrWhiteSpace(cor) || string.IsNullOrWhiteSpace(telefone))
-            {
-                MessageBox.Show("Preencha todos os dados para poder atualizar o PROFESSOR!");
-                return;
-            }
-
+            if (!Funcoes.VerificarStrings("Preencha todos os dados para poder atualizar o Professor!", cpf, dataNasc, nome, naturalidade, nacionalidade, endereco, sexo, cor, telefone)) return;
             if (!Funcoes.ValidarData(dataNasc)) return;
-            //if (!Funcoes.VerificarSeCarregouFoto(fotoPathAtt)) return;
 
             Professor professor = new Professor
             {
@@ -373,7 +352,6 @@ namespace Escola
                 LimparCamposAtualizacao();
                 CarregarProfessores();
                 Funcoes.AtivarPainel(this, panel_GerenciarProfessores);
-                //AtivarPainel(panel_GerenciarProfessores);
             }
             else
             {
