@@ -46,6 +46,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[ALUNO ATUALIZADO]: Nome: {a.nome} | CPF: {a.cpf} | Data de Nascimento: {a.dataNascimento} | Sexo: {a.sexo} | Endereco: {a.endereco} | Naturalidade: {a.naturalidade} | Nacionalidade: {a.nacionalidade} | Cor/Raça: {a.corraca}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             DadosCadastro(a);
                             return true;
                         }
@@ -92,6 +99,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[ALUNO DELETADO]: Nome: {a.nome} | CPF: {a.cpf} | Data de Nascimento: {a.dataNascimento} | Sexo: {a.sexo} | Endereco: {a.endereco} | Naturalidade: {a.naturalidade} | Nacionalidade: {a.nacionalidade} | Cor/Raça: {a.corraca}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else
@@ -172,6 +186,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[ALUNO CADASTRADO]: Nome: {a.nome} | CPF: {a.cpf} | Data de Nascimento: {a.dataNascimento} | Sexo: {a.sexo} | Endereco: {a.endereco} | Naturalidade: {a.naturalidade} | Nacionalidade: {a.nacionalidade} | Cor/Raça: {a.corraca}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             string sqlNew = @"INSERT INTO Aluno_Responsavel (AlunoCpf, ResponsavelCpf) VALUES (@ACpf, @RCpf)";
                             using (var commandNew = new SQLiteCommand(sqlNew, connection))
                             {
@@ -224,6 +245,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[ALUNO CADASTRADO]: Nome: {a.nome} | CPF: {a.cpf} | Data de Nascimento: {a.dataNascimento} | Sexo: {a.sexo} | Endereco: {a.endereco} | Naturalidade: {a.naturalidade} | Nacionalidade: {a.nacionalidade} | Cor/Raça: {a.corraca}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             DadosCadastro(a);
                             return true;
                         }

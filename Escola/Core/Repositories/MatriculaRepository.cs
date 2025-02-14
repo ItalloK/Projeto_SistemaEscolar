@@ -27,6 +27,13 @@ namespace Escola.Core.Repositories
                         int linhasAfetadas = command.ExecuteNonQuery();
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[ALUNO MATRICULADO]: ID Aluno: {m.aluno.id} | ID Turma: {m.turma.id}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else

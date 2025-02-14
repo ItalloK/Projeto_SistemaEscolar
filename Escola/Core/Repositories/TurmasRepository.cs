@@ -27,6 +27,13 @@ namespace Escola.Core.Repositories
                         int linhasAfetadas = command.ExecuteNonQuery();
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[TURMA DELETADA]: Tipo: {t.tipo} | Turno: {t.turno} | Serie: {t.serie} | MaxAlunos: {t.maxAlunos} | ID: {t.id}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else
@@ -69,6 +76,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[TURMA ATUALIZADA]: Tipo: {t.tipo} | Turno: {t.turno} | Serie: {t.serie} | MaxAlunos: {t.maxAlunos} | ID: {t.id}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else
@@ -112,6 +126,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[TURMA CADASTRADA]: Tipo: {t.tipo} | Turno: {t.turno} | Serie: {t.serie} | MaxAlunos: {t.maxAlunos} | ID: {t.id}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else

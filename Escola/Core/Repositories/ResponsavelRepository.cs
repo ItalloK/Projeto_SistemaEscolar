@@ -38,6 +38,13 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[RESPONSAVEL DELETADO]: Nome: {r.nome} | CPF: {r.cpf} | Data de Nascimento: {r.dataNascimento} | Sexo: {r.sexo} | Endereco: {r.endereco} | Naturalidade: {r.naturalidade} | Nacionalidade: {r.nacionalidade} | Cor/Raça: {r.corraca} | Telefone: {r.telefone}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             return true;
                         }
                         else
@@ -91,6 +98,13 @@ namespace Escola.Core.Repositories
                         int linhasAfetadas = command.ExecuteNonQuery();
                         if (linhasAfetadas > 0)
                         {
+                            string msg = $"[RESPONSAVEL ATUALIZADO]: Nome: {r.nome} | CPF: {r.cpf} | Data de Nascimento: {r.dataNascimento} | Sexo: {r.sexo} | Endereco: {r.endereco} | Naturalidade: {r.naturalidade} | Nacionalidade: {r.nacionalidade} | Cor/Raça: {r.corraca} | Telefone: {r.telefone}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             DadosCadastro(r);
                             return true;
                         }
@@ -276,6 +290,13 @@ namespace Escola.Core.Repositories
                         int linhas = command.ExecuteNonQuery();
                         if (linhas > 0)
                         {
+                            string msg = $"[RESPONSAVEL CADASTRADO]: Nome: {r.nome} | CPF: {r.cpf} | Data de Nascimento: {r.dataNascimento} | Sexo: {r.sexo} | Endereco: {r.endereco} | Naturalidade: {r.naturalidade} | Nacionalidade: {r.nacionalidade} | Cor/Raça: {r.corraca} | Telefone: {r.telefone}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
                             DadosCadastro(r);
                             return true;
                         }
