@@ -130,6 +130,15 @@ namespace Escola.Core.Repositories
 
                         if (linhasAfetadas > 0)
                         {
+
+                            string msg = $"[PROFESSOR INSERIDO]: Nome: {p.nome} | CPF: {p.cpf} | Data de Nascimento: {p.dataNascimento} | Sexo: {p.sexo} | Endereco: {p.endereco} | Naturalidade: {p.naturalidade} | Nacionalidade: {p.nacionalidade} | Cor/Raça: {p.corraca} | Telefone: {p.telefone}";
+                            LogRepository lr = new LogRepository();
+                            Log l = new Log
+                            {
+                                mensagem = msg
+                            };
+                            lr.NovoLog(l);
+
                             DadosCadastro(p);
                             return true;
                         }

@@ -108,7 +108,14 @@ namespace Escola.Core.Infrastructure
                                 FOREIGN KEY (AlunoCpf) REFERENCES Aluno(Cpf) ON DELETE CASCADE,
                                 FOREIGN KEY (ResponsavelCpf) REFERENCES Responsavel(Cpf) ON DELETE CASCADE
                             );
-                            CREATE INDEX IF NOT EXISTS idx_aluno_responsavel ON Aluno_Responsavel(AlunoCpf, ResponsavelCpf);" }
+                            CREATE INDEX IF NOT EXISTS idx_aluno_responsavel ON Aluno_Responsavel(AlunoCpf, ResponsavelCpf);"
+                        },
+                        {"Logs", @"
+                                CREATE TABLE IF NOT EXISTS Logs(
+                                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                Mensagem TEXT NOT NULL,
+                                Data TEXT DEFAULT CURRENT_TIMESTAMP);"
+                        }
                     };
 
 
