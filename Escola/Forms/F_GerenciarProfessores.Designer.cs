@@ -564,6 +564,7 @@
             // 
             // mtb_CpfProfessorCad
             // 
+            mtb_CpfProfessorCad.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfProfessorCad.Dock = DockStyle.Fill;
             mtb_CpfProfessorCad.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfProfessorCad.Location = new Point(272, 34);
@@ -990,6 +991,7 @@
             // 
             // mtb_CpfProfAtt
             // 
+            mtb_CpfProfAtt.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfProfAtt.Dock = DockStyle.Fill;
             mtb_CpfProfAtt.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfProfAtt.Location = new Point(269, 34);
@@ -1145,9 +1147,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel_GerenciarProfessores);
             Controls.Add(panel_CadProfessor);
             Controls.Add(Panel_AtualizarProfessor);
-            Controls.Add(panel_GerenciarProfessores);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(816, 489);
             Name = "F_GerenciarProfessores";

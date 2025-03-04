@@ -672,9 +672,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel_GerenciarTurmas);
             Controls.Add(panel_AtualizarTurma);
             Controls.Add(panel_CadTurma);
+            Controls.Add(panel_GerenciarTurmas);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_GerenciarTurmas";
             StartPosition = FormStartPosition.CenterScreen;

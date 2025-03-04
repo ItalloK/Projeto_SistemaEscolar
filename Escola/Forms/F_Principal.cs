@@ -1,3 +1,4 @@
+using Escola.Core.Utils;
 using Escola.Forms;
 using Escola.Properties;
 using System.Diagnostics;
@@ -24,12 +25,13 @@ namespace Escola
                 try
                 {
                     pb_Principal.Image = Image.FromFile(_settings.FotoPrincipal);
-                }catch(Exception e)
+                }
+                catch (Exception e)
                 {
                     Debug.Print(e.Message);
                     pb_Principal.Image = Resources.Fundo_Principal;
                 }
-                
+
             }
             else
             {
@@ -79,6 +81,10 @@ namespace Escola
         {
             F_GerenciarResponsaveis f_GerenciarResponsaveis = new F_GerenciarResponsaveis();
             f_GerenciarResponsaveis.ShowDialog();
+        }
+
+        private void F_Principal_Load(object sender, EventArgs e)
+        {
         }
     }
 }

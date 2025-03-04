@@ -534,6 +534,7 @@
             // 
             // mtb_CpfCad
             // 
+            mtb_CpfCad.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfCad.Dock = DockStyle.Fill;
             mtb_CpfCad.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfCad.Location = new Point(391, 34);
@@ -911,6 +912,7 @@
             // 
             // mtb_CpfAtt
             // 
+            mtb_CpfAtt.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfAtt.Dock = DockStyle.Fill;
             mtb_CpfAtt.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfAtt.Location = new Point(391, 34);
@@ -1082,6 +1084,7 @@
             Controls.Add(panel_CadastrarResponsavel);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "F_GerenciarResponsaveis";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciar Responsaveis";
             Load += F_GerenciarResponsaveis_Load;
             panel_GerenciarResponsaveis.ResumeLayout(false);

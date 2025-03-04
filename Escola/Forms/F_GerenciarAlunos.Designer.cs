@@ -339,6 +339,7 @@
             // 
             // mtb_CpfAlunoCad
             // 
+            mtb_CpfAlunoCad.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfAlunoCad.Dock = DockStyle.Fill;
             mtb_CpfAlunoCad.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfAlunoCad.Location = new Point(272, 22);
@@ -555,6 +556,7 @@
             // 
             // mtb_CpfResponsavel
             // 
+            mtb_CpfResponsavel.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfResponsavel.Dock = DockStyle.Fill;
             mtb_CpfResponsavel.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfResponsavel.Location = new Point(3, 17);
@@ -655,6 +657,7 @@
             // mtb_BuscarCPFResp
             // 
             mtb_BuscarCPFResp.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            mtb_BuscarCPFResp.Culture = new System.Globalization.CultureInfo("");
             mtb_BuscarCPFResp.Font = new Font("Segoe UI", 9.75F);
             mtb_BuscarCPFResp.Location = new Point(3, 48);
             mtb_BuscarCPFResp.Mask = "000.000.000-00";
@@ -1125,6 +1128,7 @@
             // 
             // mtb_CpfAlunoAtt
             // 
+            mtb_CpfAlunoAtt.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfAlunoAtt.Dock = DockStyle.Fill;
             mtb_CpfAlunoAtt.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfAlunoAtt.Location = new Point(272, 30);

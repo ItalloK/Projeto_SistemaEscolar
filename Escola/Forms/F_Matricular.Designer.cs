@@ -70,6 +70,7 @@
             // 
             // mtb_CpfBuscar
             // 
+            mtb_CpfBuscar.Culture = new System.Globalization.CultureInfo("");
             mtb_CpfBuscar.Font = new Font("Segoe UI", 9.75F);
             mtb_CpfBuscar.Location = new Point(12, 65);
             mtb_CpfBuscar.Mask = "000.000.000-00";

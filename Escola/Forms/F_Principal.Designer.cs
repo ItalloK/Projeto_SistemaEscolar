@@ -178,6 +178,7 @@
             Name = "F_Principal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Escola: NomeDaEscola";
+            Load += F_Principal_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pb_Principal).EndInit();
