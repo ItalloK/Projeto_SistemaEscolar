@@ -7,7 +7,7 @@
 
 <h3>📚 Cadastro, Exclusão e Atualização de Turmas</h3>
 <ul>
-    <li>Dados como Turno (Vespertino, Matutino e Noturno), Série, Tipo (Fundamental e Médio) e Máximo de alunos por turma.</li>
+    <li>Definição de dados como turno (Vespertino, Matutino e Noturno), série, tipo (Fundamental e Médio) e número máximo de alunos por turma.</li>
 </ul>
 
 <h3>🎓 Gerenciamento de Turmas</h3>
@@ -22,13 +22,13 @@
 
 <h3>👨‍👩‍👦 Responsáveis</h3>
 <ul>
-    <li>Cada aluno deve possuir um responsável, que conta com dados como Nome, Telefone e CPF.</li>
-    <li>O gerenciamento permite visualizar todos os alunos vinculados a um responsável, bem como editar ou excluir esses dados.</li>
+    <li>Cada aluno deve possuir um responsável, com informações como nome, telefone e CPF.</li>
+    <li>O sistema permite visualizar todos os alunos vinculados a um responsável, além de possibilitar a edição ou exclusão desses dados.</li>
 </ul>
 
 <h3>🆔 Carteirinha Escolar</h3>
 <ul>
-    <li>Gera uma carteirinha contendo informações básicas do aluno ou professor, incluindo Foto, Nome, Sexo e QR Code.</li>
+    <li>Geração de uma carteirinha contendo informações básicas do aluno ou professor, incluindo foto, nome, sexo e QR Code.</li>
 </ul>
 
 <h3>⚙️ Configurações</h3>
@@ -39,6 +39,5 @@
 <hr>
 <p>📌 <strong>Este projeto visa facilitar o gerenciamento escolar de maneira eficiente e organizada.</strong></p>
 
-
-</br>
-<h6>Concluido, Ver: 1.0.0 - 29/03/2025 [Changelog](caminho/para/o/arquivo.txt)</h6>
+<br>
+<h6>✅ Concluído — Versão 1.0.0 (29/03/2025) • <a href="changelog.txt">Changelog</a></h6>
