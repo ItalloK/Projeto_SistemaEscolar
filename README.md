@@ -40,4 +40,4 @@
 <p>📌 <strong>Este projeto visa facilitar o gerenciamento escolar de maneira eficiente e organizada.</strong></p>
 
 <br>
-<h6>✅ Concluído — Versão 1.0.0 (29/03/2025) • <a href="changelog.txt">Changelog</a></h6>
+<h6>✅ Concluído — Versão 1.0.0 (29/03/2025) • <a href="Changelog.txt">Changelog</a></h6>
