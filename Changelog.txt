@@ -1,0 +1,22 @@
+29/03/2025:
+
+- Gerenciamento:
+	Gerenciamento completo de Professores 						( Concluido )
+	Gerenciamento completo de Alunos 						( Concluido )
+	Gerenciamento completo de Responsaveis 						( Concluido )
+	Gerenciamento completo de Matriculas 						( Concluido )
+	Gerenciamento completo de Turmas 						( Concluido )
+	Carteirinha ( Foto e QR Code ) para Professores e Alunos 			( Concluido )
+
+- Menu de Configurações:
+	Nome da Escola 									( Concluido ) 
+	Fundo de tela principal 							( Concluido )
+	Fundo de carteirinha 								( Concluido )
+
+- Pendentes:
+	Sistema de Controle de Mensalidades 						( Pendente )
+	Sistema de Cargos e Permissões 							( Pendente )
+	Sistema de Logs 								( Pendente )
+	Sistema de Notas e Faltas							( Pendente )
+	
+	

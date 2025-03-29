@@ -38,3 +38,7 @@
 
 <hr>
 <p>📌 <strong>Este projeto visa facilitar o gerenciamento escolar de maneira eficiente e organizada.</strong></p>
+
+
+</br>
+<h6>Concluido, Ver: 1.0.0 - 29/03/2025 [Changelog](caminho/para/o/arquivo.txt)</h6>
